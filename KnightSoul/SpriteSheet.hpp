@@ -35,7 +35,7 @@ public:
         OffsetY = offsetY;
         SourceWidth = sourceWidth;
         SourceHeight = sourceHeight;
-    }
+    };
     
     std::string Name;
     int X;
@@ -52,7 +52,7 @@ class SpriteSheet
 {
 public:
     static SpriteSheet* Create(std::string jsonPath);
-    static std::map<std::string, SpriteFrame> Frames;
+    std::map<std::string, SpriteFrame*> Frames;
     std::string Texture_Index;
 private:
     SpriteSheet();

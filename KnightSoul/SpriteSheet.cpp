@@ -30,7 +30,7 @@ SpriteSheet* SpriteSheet::Create(std::string jsonPath)
     auto frames = j["frames"];
     for (auto itr = frames.begin(); itr != frames.end(); itr++)
     {
-        auto key = itr.key();
+        std::string key = std::string(itr.key().c_str());
         int x = itr.value()["x"];
         int y = itr.value()["y"];
         int w = itr.value()["w"];
@@ -39,7 +39,7 @@ SpriteSheet* SpriteSheet::Create(std::string jsonPath)
         int offY = itr.value()["offY"];
         int sourceW = itr.value()["sourceW"];
         int sourceH = itr.value()["sourceH"];
-        auto spriteFrame = SpriteFrame(key,x,y,w,h,offX,offY,sourceW,sourceH);
+        SpriteFrame* spriteFrame = new SpriteFrame(key, x, y, w, h, offX, offY, sourceW, sourceH);
         spriteSheet->Frames[key] = spriteFrame;
     }
     spriteSheet->Texture_Index = texName;
