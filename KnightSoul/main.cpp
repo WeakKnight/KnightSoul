@@ -11,7 +11,6 @@
 #include "Include/SDL2/SDL.h"
 #include "Game.hpp"
 #include <sys/time.h>
-#include "lua.h"
 
 double getCurrentMillisecond() {
     struct timeval current;
@@ -23,6 +22,17 @@ const GLuint SCREEN_WIDTH = 1024;
 const GLuint SCREEN_HEIGHT = 768;
 
 Game GameInstance(SCREEN_WIDTH,SCREEN_HEIGHT);
+
+void* InitGL(SDL_Window* window)
+{
+    SDL_GL_SetAttribute(SDL_GL_CONTEXT_PROFILE_MASK, SDL_GL_CONTEXT_PROFILE_CORE);
+    SDL_GL_SetAttribute(SDL_GL_CONTEXT_MAJOR_VERSION, 3);
+    SDL_GL_SetAttribute(SDL_GL_CONTEXT_MINOR_VERSION, 3);
+    SDL_GL_SetAttribute(SDL_GL_CONTEXT_FLAGS, SDL_GL_CONTEXT_FORWARD_COMPATIBLE_FLAG);
+    SDL_GL_SetAttribute(SDL_GL_DOUBLEBUFFER, 1);
+    auto context = SDL_GL_CreateContext(window);
+    return context;
+}
 
 int main(int argc, const char * argv[]) {
     if(SDL_Init(SDL_INIT_VIDEO) < 0)
@@ -38,15 +48,7 @@ int main(int argc, const char * argv[]) {
                                   SDL_WINDOW_OPENGL
                                   );
     
-    // Create our opengl context and attach it to our window
-    SDL_GL_SetAttribute(SDL_GL_CONTEXT_PROFILE_MASK, SDL_GL_CONTEXT_PROFILE_CORE);
-    SDL_GL_SetAttribute(SDL_GL_CONTEXT_MAJOR_VERSION, 3);
-    SDL_GL_SetAttribute(SDL_GL_CONTEXT_MINOR_VERSION, 3);
-    SDL_GL_SetAttribute(SDL_GL_CONTEXT_FLAGS, SDL_GL_CONTEXT_FORWARD_COMPATIBLE_FLAG);
-    SDL_GL_SetAttribute(SDL_GL_DOUBLEBUFFER, 1);
-    //
-    auto mainContext = SDL_GL_CreateContext(mainWindow);
-    //
+    auto mainContext = InitGL(mainWindow);
     
     glViewport(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT);
     glEnable(GL_CULL_FACE);

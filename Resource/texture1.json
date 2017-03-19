@@ -1,0 +1,35 @@
+{
+"file": "skeletonTexture.png",
+"frames": {
+"spr_skeleton_idle_1.png": {
+"x": 0,
+"y": 0,
+"w": 24,
+"h": 35,
+"offX": 8,
+"offY": 13,
+"sourceW": 40,
+"sourceH": 48
+},
+"spr_skeleton_idle_0.png": {
+"x": 26,
+"y": 0,
+"w": 23,
+"h": 36,
+"offX": 8,
+"offY": 12,
+"sourceW": 40,
+"sourceH": 48
+},
+"spr_skeleton_idle_2.png": {
+"x": 0,
+"y": 37,
+"w": 23,
+"h": 35,
+"offX": 9,
+"offY": 13,
+"sourceW": 40,
+"sourceH": 48
+}
+}
+}

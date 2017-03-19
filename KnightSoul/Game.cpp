@@ -10,6 +10,7 @@
 #include "ResourceManager.hpp"
 #include "SpriteRenderer.hpp"
 #include "GameObject.hpp"
+#include "SpriteSheet.hpp"
 
 SpriteRenderer  *Renderer;
 
@@ -27,6 +28,8 @@ Game::~Game()
 
 void Game::Init()
 {
+    auto sheet = SpriteSheet::Create("Resource/texture1.json");
+    //
     ResourceManager::LoadShader("Resource/BaseShader.vsh", "Resource/BaseShader.fsh", "BaseShader");
     ResourceManager::LoadTexture("Resource/QQ20170106.png", "TestSprite");
     ResourceManager::LoadTexture("Resource/pikapika.png", "PikaSprite");
@@ -46,14 +49,6 @@ void Game::Init()
     obj1->Rotation = 0.0f;
     obj1->Image_Index = "skeletonTexture";
     obj1->Sprite_Frame = glm::vec4(0.0f,0.0f,24.0f/49.0f,35.0f/72.0f);
-    GameObject* obj2 = GameObject::Create();
-    obj2->X = 0.0f;
-    obj2->Y = 400.0f;
-    obj2->Image_XScale = 4.0;
-    obj2->Image_YScale = 4.0;
-    obj2->Rotation = 0.0f;
-    obj2->Image_Index = "skeletonTexture";
-    obj2->Sprite_Frame = glm::vec4(0.0f,0.0f,24.0f/49.0f,35.0f/72.0f);
     ////////
     for(auto index = 0; index < GameObject::GameObjectList.size(); index++)
     {
