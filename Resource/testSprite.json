@@ -1,0 +1,12 @@
+{
+"name":"skeleton_idle",
+"image_speed":6,
+"frames":
+[
+"spr_skeleton_idle_0.png",
+"spr_skeleton_idle_1.png",
+"spr_skeleton_idle_2.png"
+],
+"pivotX":0,
+"pivotY":0
+}

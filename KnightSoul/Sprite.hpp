@@ -17,12 +17,14 @@ class Sprite
 {
 public:
     static Sprite* Create();
+    static Sprite* Create(std::string jsonPath);
     void Update(float dt);
-    void SetFrame(int frameIndex, std::string frameName);
+    void SetFrame(int imageIndex, std::string imageName);
     std::map<int, std::string> SpriteFrames;
     SpriteSheet* SpriteSheetGroup;
-    float Image_Speed;
-    float Image_Index;
+    float ImageSpeed;
+    float ImageIndex;
+    float ImageNumber;
 };
 
 #endif /* Sprite_hpp */
