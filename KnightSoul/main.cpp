@@ -10,16 +10,10 @@
 #include <OpenGL/gl3.h>
 #include "Include/SDL2/SDL.h"
 #include "Game.hpp"
-#include <sys/time.h>
-
-double getCurrentMillisecond() {
-    struct timeval current;
-    gettimeofday(&current, 0);
-    return current.tv_sec * 1000.0 + current.tv_usec / 1000.0;
-}
 
 const GLuint SCREEN_WIDTH = 1024;
 const GLuint SCREEN_HEIGHT = 768;
+const unsigned int FPS = 60;
 
 Game GameInstance(SCREEN_WIDTH,SCREEN_HEIGHT);
 
@@ -65,6 +59,7 @@ int main(int argc, const char * argv[]) {
     GLfloat deltaTime = 0.0f;
     GLfloat lastFrame = 0.0f;
     //
+    float nextFrame = static_cast<float>(SDL_GetTicks());
     bool shouldExit = false;
     while(!shouldExit)
     {
@@ -72,7 +67,7 @@ int main(int argc, const char * argv[]) {
         {
             shouldExit = true;
         }
-        GLfloat currentFrame = getCurrentMillisecond();
+        GLfloat currentFrame = SDL_GetTicks();
         deltaTime = currentFrame - lastFrame;
         lastFrame = currentFrame;
         SDL_PollEvent(&event);
@@ -80,10 +75,18 @@ int main(int argc, const char * argv[]) {
         glClear(GL_COLOR_BUFFER_BIT);
         GameInstance.ProcessInput(deltaTime);
         GameInstance.Update(deltaTime);
-        GameInstance.Render();
-        SDL_GL_SwapWindow(mainWindow);
+        if(nextFrame > static_cast<float>(SDL_GetTicks()))
+        {
+            GameInstance.Render();
+            SDL_GL_SwapWindow(mainWindow);
+        }
+        float delay = static_cast<float> (nextFrame - static_cast<double>(SDL_GetTicks()));
+        if(delay > 0){
+            SDL_Delay(delay);
+        }
+        nextFrame += 1000.0 / FPS;
     }
-    
+
     SDL_GL_DeleteContext(mainContext);
     SDL_DestroyWindow(mainWindow);
     SDL_Quit();

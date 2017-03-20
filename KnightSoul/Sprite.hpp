@@ -10,11 +10,19 @@
 #define Sprite_hpp
 
 #include <stdio.h>
+#include "SpriteSheet.hpp"
+#include <map>
 
 class Sprite
 {
 public:
     static Sprite* Create();
+    void Update(float dt);
+    void SetFrame(int frameIndex, std::string frameName);
+    std::map<int, std::string> SpriteFrames;
+    SpriteSheet* SpriteSheetGroup;
+    float Image_Speed;
+    float Image_Index;
 };
 
 #endif /* Sprite_hpp */
