@@ -22,9 +22,12 @@ public:
     void SetFrame(int imageIndex, std::string imageName);
     std::map<int, std::string> SpriteFrames;
     SpriteSheet* SpriteSheetGroup;
+    std::string SpriteName;
     float ImageSpeed;
     float ImageIndex;
     float ImageNumber;
+    int pivotX;
+    int pivotY;
 };
 
 #endif /* Sprite_hpp */

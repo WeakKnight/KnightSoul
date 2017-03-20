@@ -11,6 +11,7 @@
 #include "SpriteRenderer.hpp"
 #include "GameObject.hpp"
 #include "SpriteSheet.hpp"
+#include "Sprite.hpp"
 
 SpriteRenderer  *Renderer;
 
@@ -29,6 +30,7 @@ Game::~Game()
 void Game::Init()
 {
     auto sheet = SpriteSheet::Create("Resource/texture1.json");
+    auto sprite = Sprite::Create("Resource/testSprite.json");
     //
     ResourceManager::LoadShader("Resource/BaseShader.vsh", "Resource/BaseShader.fsh", "BaseShader");
     ResourceManager::LoadTexture("Resource/QQ20170106.png", "TestSprite");

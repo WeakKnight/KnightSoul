@@ -8,6 +8,7 @@
 
 #include "Sprite.hpp"
 #include "json.hpp"
+#include "File.hpp"
 
 using namespace nlohmann;
 
@@ -22,10 +23,23 @@ Sprite* Sprite::Create()
 
 Sprite* Sprite::Create(std::string jsonPath)
 {
-    json j = json::parse(jsonPath);
-    std::string spriteName = j["file"];
-    
     auto sprite = new Sprite();
+    
+    auto str = File::ReadString(jsonPath);
+    json j = json::parse(str);
+    std::string spriteName = j["name"];
+    auto frames = j["frames"];
+    sprite->ImageNumber = 0;
+    for (auto index = 0; index < frames.size(); index++)
+    {
+        std::string imageName = frames[index];
+        sprite->SetFrame(index, imageName);
+        sprite->ImageNumber += 1;
+    }
+    sprite->pivotX = j["pivotX"];
+    sprite->pivotY = j["pivotY"];
+    sprite->ImageSpeed = j["image_speed"];
+    sprite->SpriteName = spriteName;
     return sprite;
 }
 
