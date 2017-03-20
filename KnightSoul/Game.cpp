@@ -38,7 +38,6 @@ void Game::Init()
     ResourceManager::LoadSprite("Resource/testSprite.json");
     ResourceManager::LoadSprite("Resource/testSprite2.json");
     auto spriteIdle = ResourceManager::Sprites["skeleton_idle"];
-    auto spriteRun = ResourceManager::Sprites["skeleton_run"];
     
     glm::mat4 projection = glm::ortho(0.0f, static_cast<GLfloat>(this->Width),
                                       static_cast<GLfloat>(this->Height), 0.0f, -1.0f, 1.0f);
@@ -52,8 +51,8 @@ void Game::Init()
     obj1->Image_XScale = 8.0;
     obj1->Image_YScale = 8.0;
     obj1->Rotation = 0.0f;
-    obj1->Image_Index = "skeletonTexture";
-    obj1->Sprite_Frame = glm::vec4(0.0f,0.0f,24.0f/49.0f,35.0f/72.0f);
+    //obj1->Image_Index = "skeletonTexture";
+    //obj1->Sprite_Frame = glm::vec4(0.0f,0.0f,24.0f/49.0f,35.0f/72.0f);
     obj1->SpritePointer = spriteIdle;
     
     ////////

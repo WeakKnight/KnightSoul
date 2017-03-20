@@ -30,10 +30,9 @@ public:
     float Rotation;
     float Image_XScale;
     float Image_YScale;
-    std::string Image_Index;
+    //std::string Image_Index;
     static std::vector<GameObject*> GameObjectList;
     Sprite* SpritePointer;
-    glm::vec4 Sprite_Frame;
 };
 
 #endif /* GameObject_hpp */
