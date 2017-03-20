@@ -9,9 +9,13 @@
 #include "ResourceManager.hpp"
 #include "RawImage.hpp"
 #include "File.hpp"
+#include "SpriteSheet.hpp"
+#include "Sprite.hpp"
 
 std::map<std::string, Texture2D>    ResourceManager::Textures;
 std::map<std::string, Shader>       ResourceManager::Shaders;
+std::map<std::string, SpriteSheet*> ResourceManager::SpriteSheets;
+std::map<std::string, Sprite*>      ResourceManager::Sprites;
 
 Shader ResourceManager::LoadShader(const std::string& vpath, const std::string& fpath, const std::string& name)
 {
@@ -42,6 +46,20 @@ Texture2D ResourceManager::LoadTexture(const std::string& path, const std::strin
     delete image;
     Textures[name] = texture;
     return texture;
+}
+
+SpriteSheet* ResourceManager::LoadSpriteSheet(const std::string& path)
+{
+    auto spriteSheet = SpriteSheet::Create(path);
+    SpriteSheets[spriteSheet->Name] = spriteSheet;
+    return spriteSheet;
+}
+
+Sprite* ResourceManager::LoadSprite(const std::string& path)
+{
+    auto sprite = Sprite::Create(path);
+    Sprites[sprite->SpriteName] = sprite;
+    return sprite;
 }
 
 void ResourceManager::Clear()

@@ -1,0 +1,16 @@
+{
+    "name":"skeleton_run",
+    "image_speed":0.15,
+    "frames":
+    [
+     "spr_skeleton_run_0.png",
+     "spr_skeleton_run_1.png",
+     "spr_skeleton_run_2.png",
+     "spr_skeleton_run_3.png",
+     "spr_skeleton_run_4.png",
+     "spr_skeleton_run_5.png"
+     ],
+    "pivotX":0,
+    "pivotY":0,
+    "sheet_name":"sheet_1"
+}

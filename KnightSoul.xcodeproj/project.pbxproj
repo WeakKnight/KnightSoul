@@ -32,6 +32,7 @@
 		DEB3ED6E1E7EB034009F8BB6 /* StringUtil.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DEB3ED6C1E7EB034009F8BB6 /* StringUtil.cpp */; };
 		DEB3ED711E7ECCE5009F8BB6 /* Sprite.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DEB3ED6F1E7ECCE5009F8BB6 /* Sprite.cpp */; };
 		DEB3ED801E800D71009F8BB6 /* Room.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DEB3ED7E1E800D71009F8BB6 /* Room.cpp */; };
+		DEB3ED831E8031BC009F8BB6 /* Input.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DEB3ED811E8031BC009F8BB6 /* Input.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -381,6 +382,8 @@
 		DEB3ED701E7ECCE5009F8BB6 /* Sprite.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Sprite.hpp; sourceTree = "<group>"; };
 		DEB3ED7E1E800D71009F8BB6 /* Room.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Room.cpp; sourceTree = "<group>"; };
 		DEB3ED7F1E800D71009F8BB6 /* Room.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Room.hpp; sourceTree = "<group>"; };
+		DEB3ED811E8031BC009F8BB6 /* Input.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Input.cpp; sourceTree = "<group>"; };
+		DEB3ED821E8031BC009F8BB6 /* Input.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Input.hpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -452,6 +455,8 @@
 				DEB3ED701E7ECCE5009F8BB6 /* Sprite.hpp */,
 				DEB3ED7E1E800D71009F8BB6 /* Room.cpp */,
 				DEB3ED7F1E800D71009F8BB6 /* Room.hpp */,
+				DEB3ED811E8031BC009F8BB6 /* Input.cpp */,
+				DEB3ED821E8031BC009F8BB6 /* Input.hpp */,
 			);
 			path = KnightSoul;
 			sourceTree = "<group>";
@@ -898,6 +903,7 @@
 				DEB3ED801E800D71009F8BB6 /* Room.cpp in Sources */,
 				DE741D211E6D9CDB008416EF /* MemoryBuffer.cpp in Sources */,
 				DE741E061E78228E008416EF /* Game.cpp in Sources */,
+				DEB3ED831E8031BC009F8BB6 /* Input.cpp in Sources */,
 				DE2430921E7D7F78005872D4 /* SpriteSheet.cpp in Sources */,
 				DEB3ED6E1E7EB034009F8BB6 /* StringUtil.cpp in Sources */,
 				DE741CB41E6D8D69008416EF /* main.cpp in Sources */,

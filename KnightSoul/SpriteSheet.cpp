@@ -43,5 +43,6 @@ SpriteSheet* SpriteSheet::Create(std::string jsonPath)
         spriteSheet->Frames[key] = spriteFrame;
     }
     spriteSheet->Texture_Index = texName;
+    spriteSheet->Name = j["name"];
     return spriteSheet;
 }

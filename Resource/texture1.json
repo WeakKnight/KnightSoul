@@ -1,35 +1,22 @@
 {
+"name": "sheet_1",
 "file": "skeletonTexture.png",
-"frames": {
-"spr_skeleton_idle_1.png": {
-"x": 0,
-"y": 0,
-"w": 24,
-"h": 35,
-"offX": 8,
-"offY": 13,
-"sourceW": 40,
-"sourceH": 48
-},
-"spr_skeleton_idle_0.png": {
-"x": 26,
-"y": 0,
-"w": 23,
-"h": 36,
-"offX": 8,
-"offY": 12,
-"sourceW": 40,
-"sourceH": 48
-},
-"spr_skeleton_idle_2.png": {
-"x": 0,
-"y": 37,
-"w": 23,
-"h": 35,
-"offX": 9,
-"offY": 13,
-"sourceW": 40,
-"sourceH": 48
-}
+"frames":
+{"spr_skeleton_run_1.png":{"x":0,"y":0,"w":28,"h":38,"offX":5,"offY":10,"sourceW":40,"sourceH":48},
+    "spr_skeleton_roll_2.png":{"x":30,"y":0,"w":34,"h":31,"offX":1,"offY":17,"sourceW":96,"sourceH":48},
+    "spr_skeleton_run_0.png":{"x":66,"y":0,"w":27,"h":38,"offX":5,"offY":9,"sourceW":40,"sourceH":48},
+    "spr_skeleton_roll_0.png":{"x":95,"y":0,"w":24,"h":39,"offX":10,"offY":8,"sourceW":96,"sourceH":48},
+    "spr_skeleton_run_3.png":{"x":30,"y":33,"w":24,"h":38,"offX":5,"offY":9,"sourceW":40,"sourceH":48},
+    "spr_skeleton_run_4.png":{"x":0,"y":40,"w":24,"h":38,"offX":5,"offY":10,"sourceW":40,"sourceH":48},
+    "spr_skeleton_run_5.png":{"x":56,"y":40,"w":24,"h":37,"offX":5,"offY":11,"sourceW":40,"sourceH":48},
+    "spr_skeleton_run_2.png":{"x":82,"y":41,"w":24,"h":37,"offX":5,"offY":11,"sourceW":40,"sourceH":48},
+    "spr_skeleton_roll_1.png":{"x":26,"y":79,"w":36,"h":24,"offX":3,"offY":19,"sourceW":96,"sourceH":48},
+    "spr_skeleton_idle_1.png":{"x":0,"y":80,"w":24,"h":35,"offX":8,"offY":13,"sourceW":40,"sourceH":48},
+    "spr_skeleton_idle_0.png":{"x":64,"y":80,"w":23,"h":36,"offX":8,"offY":12,"sourceW":40,"sourceH":48},
+    "spr_skeleton_idle_2.png":{"x":89,"y":80,"w":23,"h":35,"offX":9,"offY":13,"sourceW":40,"sourceH":48},
+    "spr_skeleton_roll_3.png":{"x":26,"y":105,"w":25,"h":30,"offX":8,"offY":18,"sourceW":96,"sourceH":48},
+    "spr_skeleton_roll_4.png":{"x":89,"y":117,"w":30,"h":18,"offX":5,"offY":30,"sourceW":96,"sourceH":48},
+    "spr_skeleton_roll_6.png":{"x":0,"y":117,"w":20,"h":27,"offX":8,"offY":21,"sourceW":96,"sourceH":48},
+    "spr_skeleton_roll_5.png":{"x":53,"y":118,"w":29,"h":17,"offX":6,"offY":31,"sourceW":96,"sourceH":48}
 }
 }

@@ -16,6 +16,8 @@
 #include "glm/glm.hpp"
 #include "glm/gtc/type_ptr.hpp"
 
+class Sprite;
+
 class GameObject
 {
     GameObject();
@@ -30,6 +32,7 @@ public:
     float Image_YScale;
     std::string Image_Index;
     static std::vector<GameObject*> GameObjectList;
+    Sprite* SpritePointer;
     glm::vec4 Sprite_Frame;
 };
 

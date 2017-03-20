@@ -7,6 +7,9 @@
 //
 
 #include "GameObject.hpp"
+#include "Sprite.hpp"
+#include "Input.hpp"
+#include "ResourceManager.hpp"
 
 std::vector<GameObject*> GameObject::GameObjectList;
 
@@ -29,5 +32,24 @@ void GameObject::Init()
 
 void GameObject::Update(float dt)
 {
-    
+    auto spriteIdle = ResourceManager::Sprites["skeleton_idle"];
+    auto spriteRun = ResourceManager::Sprites["skeleton_run"];
+    if(SpritePointer)
+    {
+        SpritePointer->Update(dt);
+    }
+    if(Input::KeyboardPressed(SDL_SCANCODE_LEFT))
+    {
+        X -= 3;
+        SpritePointer = spriteRun;
+    }
+    if(Input::KeyboardPressed(SDL_SCANCODE_RIGHT))
+    {
+        X += 3;
+        SpritePointer = spriteRun;
+    }
+    if(!Input::KeyboardPressed(SDL_SCANCODE_LEFT) && !Input::KeyboardPressed(SDL_SCANCODE_RIGHT))
+    {
+        SpritePointer = spriteIdle;
+    }
 }

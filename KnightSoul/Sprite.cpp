@@ -9,6 +9,7 @@
 #include "Sprite.hpp"
 #include "json.hpp"
 #include "File.hpp"
+#include "ResourceManager.hpp"
 
 using namespace nlohmann;
 
@@ -40,12 +41,15 @@ Sprite* Sprite::Create(std::string jsonPath)
     sprite->pivotY = j["pivotY"];
     sprite->ImageSpeed = j["image_speed"];
     sprite->SpriteName = spriteName;
+    sprite->ImageIndex = 0.0f;
+    std::string sheetName = j["sheet_name"];
+    sprite->SpriteSheetGroup = ResourceManager::SpriteSheets[sheetName];
     return sprite;
 }
 
 void Sprite::Update(float dt)
 {
-    if(ImageIndex + ImageSpeed > ImageNumber)
+    if(ImageIndex + ImageSpeed >= ImageNumber)
     {
         ImageIndex = ImageIndex + ImageSpeed - ImageNumber;
     }

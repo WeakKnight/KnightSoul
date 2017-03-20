@@ -54,6 +54,7 @@ public:
     static SpriteSheet* Create(std::string jsonPath);
     std::map<std::string, SpriteFrame*> Frames;
     std::string Texture_Index;
+    std::string Name;
 private:
     SpriteSheet();
 };

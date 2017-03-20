@@ -1,6 +1,6 @@
 {
 "name":"skeleton_idle",
-"image_speed":6,
+"image_speed":0.05,
 "frames":
 [
 "spr_skeleton_idle_0.png",
@@ -8,5 +8,6 @@
 "spr_skeleton_idle_2.png"
 ],
 "pivotX":0,
-"pivotY":0
+"pivotY":0,
+"sheet_name":"sheet_1"
 }

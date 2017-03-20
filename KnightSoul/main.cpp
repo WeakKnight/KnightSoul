@@ -10,6 +10,7 @@
 #include <OpenGL/gl3.h>
 #include "Include/SDL2/SDL.h"
 #include "Game.hpp"
+#include "Input.hpp"
 
 const GLuint SCREEN_WIDTH = 1024;
 const GLuint SCREEN_HEIGHT = 768;
@@ -53,7 +54,8 @@ int main(int argc, const char * argv[]) {
     GameInstance.State = GAME_ACTIVE;
     //
     SDL_GL_SetSwapInterval(1);
-    const Uint8* state = SDL_GetKeyboardState(NULL);
+    //const Uint8* state = SDL_GetKeyboardState(NULL);
+    Input::InitInput(SDL_GetKeyboardState(NULL));
     SDL_Event event;
     /////////
     GLfloat deltaTime = 0.0f;
@@ -63,7 +65,7 @@ int main(int argc, const char * argv[]) {
     bool shouldExit = false;
     while(!shouldExit)
     {
-        if(state[SDL_SCANCODE_ESCAPE] == SDL_PRESSED)
+        if(Input::KeyboardPressed(SDL_SCANCODE_ESCAPE))
         {
             shouldExit = true;
         }
