@@ -13,7 +13,7 @@
 #include "SpriteSheet.hpp"
 #include "Sprite.hpp"
 
-SpriteRenderer  *Renderer;
+SpriteRenderer* Game::SpriteRendererInstance;
 
 Game::Game(GLuint width, GLuint height)
 :
@@ -43,7 +43,7 @@ void Game::Init()
                                       static_cast<GLfloat>(this->Height), 0.0f, -1.0f, 1.0f);
     ResourceManager::Shaders["BaseShader"].Use().SetInteger("image", 0);
     ResourceManager::Shaders["BaseShader"].SetMatrix4("projection", projection);
-    Renderer = new SpriteRenderer(ResourceManager::Shaders["BaseShader"]);
+    SpriteRendererInstance = new SpriteRenderer(ResourceManager::Shaders["BaseShader"]);
     ////////
     GameObject* obj1 = GameObject::Create();
     obj1->X = 200.0f;
@@ -89,7 +89,7 @@ void Game::Render()
         auto texture = ResourceManager::Textures[sprite->SpriteSheetGroup->Texture_Index];
         
         //spriteFrame->
-        Renderer->DrawSprite(texture,
+        SpriteRendererInstance->DrawSprite(texture,
                              glm::vec2(gameObject->X, gameObject->Y),
                              glm::vec2(spriteFrame->W * gameObject->Image_XScale, spriteFrame->H * gameObject->Image_YScale),
                              gameObject->Rotation,

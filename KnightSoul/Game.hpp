@@ -19,9 +19,12 @@ enum GameState
     GAME_WIN
 };
 
+class SpriteRenderer;
+
 class Game
 {
 public:
+    static SpriteRenderer* SpriteRendererInstance;
     GameState State;
     GLuint Width,Height;
     Game(GLuint width,GLuint height);
