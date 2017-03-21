@@ -10,9 +10,25 @@
 #define Room_hpp
 
 #include <stdio.h>
+#include <list>
+#include <string>
+
+class GameObject;
+
+class InstanceInfo
+{
+    int X;
+    int Y;
+    float Rotation;
+    float Image_XScale;
+    float Image_YScale;
+    std::string ObjectName;
+};
 
 class Room
 {
+    static Room* Create();
+    std::list<InstanceInfo> InstanceList;
 };
 
 #endif /* Room_hpp */

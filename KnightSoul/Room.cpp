@@ -7,3 +7,8 @@
 //
 
 #include "Room.hpp"
+
+Room* Room::Create()
+{
+    return nullptr;
+}

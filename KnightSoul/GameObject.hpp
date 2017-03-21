@@ -25,6 +25,7 @@ public:
     static GameObject* Create();
     virtual void Init();
     virtual void Update(float dt);
+    virtual void Draw();
     float X;
     float Y;
     float Rotation;

@@ -32,6 +32,7 @@ void GameObject::Init()
 
 void GameObject::Update(float dt)
 {
+    /*
     auto spriteIdle = ResourceManager::Sprites["skeleton_idle"];
     auto spriteRun = ResourceManager::Sprites["skeleton_run"];
     if(SpritePointer)
@@ -40,16 +41,23 @@ void GameObject::Update(float dt)
     }
     if(Input::KeyboardPressed(SDL_SCANCODE_LEFT))
     {
-        X -= 3;
+        X -= 3.0;
         SpritePointer = spriteRun;
     }
     if(Input::KeyboardPressed(SDL_SCANCODE_RIGHT))
     {
-        X += 3;
+        X += 3.0;
         SpritePointer = spriteRun;
     }
     if(!Input::KeyboardPressed(SDL_SCANCODE_LEFT) && !Input::KeyboardPressed(SDL_SCANCODE_RIGHT))
     {
         SpritePointer = spriteIdle;
     }
+     */
 }
+
+void GameObject::Draw()
+{
+    
+}
+
