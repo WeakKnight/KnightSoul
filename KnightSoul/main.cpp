@@ -73,7 +73,7 @@ int main(int argc, const char * argv[]) {
         deltaTime = currentFrame - lastFrame;
         lastFrame = currentFrame;
         SDL_PollEvent(&event);
-        glClearColor(1.0, 1.0, 1.0, 1.0);
+        glClearColor(0.3, 0.6, 0.45, 1.0);
         glClear(GL_COLOR_BUFFER_BIT);
         GameInstance.ProcessInput(deltaTime);
         GameInstance.Update(deltaTime);
