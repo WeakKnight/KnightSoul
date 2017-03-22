@@ -82,7 +82,7 @@ namespace File
         memset(data , 0 , size + 1);
         data[size] = '\0';
         size += 1;
-        size_t readSize = fread(data, sizeof(unsigned char), size, fp);
+        fread(data, sizeof(unsigned char), size, fp);
         
         fclose(fp);
         
