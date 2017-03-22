@@ -51,7 +51,6 @@ int main(int argc, const char * argv[]) {
     glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
     //
     GameInstance.Init();
-    GameInstance.State = GAME_ACTIVE;
     //
     SDL_GL_SetSwapInterval(1);
     //const Uint8* state = SDL_GetKeyboardState(NULL);

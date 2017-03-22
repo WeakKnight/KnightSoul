@@ -17,9 +17,9 @@ class Sprite
 {
 public:
     static Sprite* Create();
-    static Sprite* Create(std::string jsonPath);
+    static Sprite* Create(const std::string& jsonPath);
     void Update(float dt);
-    void SetFrame(int imageIndex, std::string imageName);
+    void SetFrame(int imageIndex, const std::string& imageName);
     std::map<int, std::string> SpriteFrames;
     SpriteSheet* SpriteSheetGroup;
     std::string SpriteName;

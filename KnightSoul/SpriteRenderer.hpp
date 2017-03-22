@@ -16,6 +16,8 @@
 #include "glm/glm.hpp"
 #include "glm/gtc/matrix_transform.hpp"
 
+class Sprite;
+
 class SpriteRenderer
 {
 public:
@@ -28,6 +30,7 @@ public:
                     GLfloat rotate = 0.0f,
                     glm::vec3 color = glm::vec3(1.0f),
                     glm::vec4 spriteFrame = glm::vec4(0.0f, 0.0f,1.0f,1.0f));
+    void DrawSprite(glm::vec2 position, Sprite* sprite);
 private:
     Shader shader;
     GLuint quadVAO;

@@ -12,3 +12,8 @@ Room* Room::Create()
 {
     return nullptr;
 }
+
+Room* Room::Create(const std::string& path)
+{
+    return nullptr;
+}

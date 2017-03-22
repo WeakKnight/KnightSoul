@@ -22,7 +22,7 @@ Sprite* Sprite::Create()
     return sprite;
 }
 
-Sprite* Sprite::Create(std::string jsonPath)
+Sprite* Sprite::Create(const std::string& jsonPath)
 {
     auto sprite = new Sprite();
     
@@ -59,7 +59,7 @@ void Sprite::Update(float dt)
     }
 }
 
-void Sprite::SetFrame(int imageIndex, std::string imageName)
+void Sprite::SetFrame(int imageIndex, const std::string& imageName)
 {
     SpriteFrames[imageIndex] = imageName;
 }

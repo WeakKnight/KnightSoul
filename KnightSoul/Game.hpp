@@ -12,20 +12,12 @@
 #include <stdio.h>
 #include <OpenGL/gl3.h>
 
-enum GameState
-{
-    GAME_ACTIVE,
-    GAME_MENU,
-    GAME_WIN
-};
-
 class SpriteRenderer;
 
 class Game
 {
 public:
     static SpriteRenderer* SpriteRendererInstance;
-    GameState State;
     GLuint Width,Height;
     Game(GLuint width,GLuint height);
     ~Game();

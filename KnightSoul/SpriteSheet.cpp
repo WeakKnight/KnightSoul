@@ -18,7 +18,7 @@ SpriteSheet::SpriteSheet()
 {
 }
 
-SpriteSheet* SpriteSheet::Create(std::string jsonPath)
+SpriteSheet* SpriteSheet::Create(const std::string& jsonPath)
 {
     auto str = File::ReadString(jsonPath);
     json j = json::parse(str);

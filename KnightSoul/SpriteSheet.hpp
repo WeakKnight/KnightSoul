@@ -16,7 +16,7 @@
 class SpriteFrame
 {
 public:
-    SpriteFrame(std::string name,
+    SpriteFrame(const std::string& name,
                 int x,
                 int y,
                 int w,
@@ -51,7 +51,7 @@ public:
 class SpriteSheet
 {
 public:
-    static SpriteSheet* Create(std::string jsonPath);
+    static SpriteSheet* Create(const std::string& jsonPath);
     std::map<std::string, SpriteFrame*> Frames;
     std::string Texture_Index;
     std::string Name;

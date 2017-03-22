@@ -76,3 +76,8 @@ void SpriteRenderer::DrawSprite(Texture2D &texture,
     glDrawArrays(GL_TRIANGLES, 0, 6);
     glBindVertexArray(0);
 }
+
+void SpriteRenderer::DrawSprite(glm::vec2 position, Sprite* sprite)
+{
+    
+}

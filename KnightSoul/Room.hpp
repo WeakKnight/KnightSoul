@@ -28,7 +28,7 @@ class InstanceInfo
 class Room
 {
     static Room* Create();
-    std::list<InstanceInfo> InstanceList;
+    static Room* Create(const std::string& path);
 };
 
 #endif /* Room_hpp */

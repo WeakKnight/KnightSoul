@@ -17,7 +17,6 @@ SpriteRenderer* Game::SpriteRendererInstance;
 
 Game::Game(GLuint width, GLuint height)
 :
-State(GAME_ACTIVE),
 Width(width),
 Height(height)
 {
@@ -29,6 +28,7 @@ Game::~Game()
 
 void Game::Init()
 {
+    //todo: move in resource.json
     ResourceManager::LoadShader("Resource/BaseShader.vsh", "Resource/BaseShader.fsh", "BaseShader");
     ResourceManager::LoadTexture("Resource/QQ20170106.png", "TestSprite");
     ResourceManager::LoadTexture("Resource/pikapika.png", "PikaSprite");
@@ -37,6 +37,7 @@ void Game::Init()
     ResourceManager::LoadSpriteSheet("Resource/texture1.json");
     ResourceManager::LoadSprite("Resource/testSprite.json");
     ResourceManager::LoadSprite("Resource/testSprite2.json");
+    //
     auto spriteIdle = ResourceManager::Sprites["skeleton_idle"];
     
     glm::mat4 projection = glm::ortho(0.0f, static_cast<GLfloat>(this->Width),
@@ -51,10 +52,7 @@ void Game::Init()
     obj1->Image_XScale = 8.0;
     obj1->Image_YScale = 8.0;
     obj1->Rotation = 0.0f;
-    //obj1->Image_Index = "skeletonTexture";
-    //obj1->Sprite_Frame = glm::vec4(0.0f,0.0f,24.0f/49.0f,35.0f/72.0f);
     obj1->SpritePointer = spriteIdle;
-    
     ////////
     for(auto index = 0; index < GameObject::GameObjectList.size(); index++)
     {
@@ -82,18 +80,6 @@ void Game::Render()
     for(auto index = 0; index < GameObject::GameObjectList.size(); index++)
     {
         auto gameObject = GameObject::GameObjectList[index];
-        auto sprite = gameObject->SpritePointer;
-        int imageIndex = (int)(sprite->ImageIndex);
-        std::string imageName = sprite->SpriteFrames[imageIndex];
-        auto spriteFrame = sprite->SpriteSheetGroup->Frames[imageName];
-        auto texture = ResourceManager::Textures[sprite->SpriteSheetGroup->Texture_Index];
-        
-        //spriteFrame->
-        SpriteRendererInstance->DrawSprite(texture,
-                             glm::vec2(gameObject->X, gameObject->Y),
-                             glm::vec2(spriteFrame->W * gameObject->Image_XScale, spriteFrame->H * gameObject->Image_YScale),
-                             gameObject->Rotation,
-                             glm::vec3(1.0f, 1.0f, 1.0f),
-                             glm::vec4((float)(spriteFrame->X)/(float)(texture.Width), (float)(spriteFrame->Y)/(float)(texture.Height), (float)(spriteFrame->W)/(float)(texture.Width), (float)(spriteFrame->H)/(float)(texture.Height)));
+        gameObject->Draw();
     }
 }
