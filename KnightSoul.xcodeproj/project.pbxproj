@@ -33,6 +33,11 @@
 		DEB3ED711E7ECCE5009F8BB6 /* Sprite.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DEB3ED6F1E7ECCE5009F8BB6 /* Sprite.cpp */; };
 		DEB3ED801E800D71009F8BB6 /* Room.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DEB3ED7E1E800D71009F8BB6 /* Room.cpp */; };
 		DEB3ED831E8031BC009F8BB6 /* Input.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DEB3ED811E8031BC009F8BB6 /* Input.cpp */; };
+		DEC12A211E8360CC00A0FD55 /* Editor.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DEC12A1F1E8360CC00A0FD55 /* Editor.cpp */; };
+		DEC12A2C1E83643E00A0FD55 /* imgui.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DEC12A241E83643E00A0FD55 /* imgui.cpp */; };
+		DEC12A2D1E83643E00A0FD55 /* imgui_demo.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DEC12A261E83643E00A0FD55 /* imgui_demo.cpp */; };
+		DEC12A2E1E83643E00A0FD55 /* imgui_draw.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DEC12A271E83643E00A0FD55 /* imgui_draw.cpp */; };
+		DEC12A311E8364DE00A0FD55 /* imgui_impl_sdl_gl3.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DEC12A2F1E8364DE00A0FD55 /* imgui_impl_sdl_gl3.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -384,6 +389,19 @@
 		DEB3ED7F1E800D71009F8BB6 /* Room.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Room.hpp; sourceTree = "<group>"; };
 		DEB3ED811E8031BC009F8BB6 /* Input.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Input.cpp; sourceTree = "<group>"; };
 		DEB3ED821E8031BC009F8BB6 /* Input.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Input.hpp; sourceTree = "<group>"; };
+		DEC12A1F1E8360CC00A0FD55 /* Editor.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Editor.cpp; sourceTree = "<group>"; };
+		DEC12A201E8360CC00A0FD55 /* Editor.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Editor.hpp; sourceTree = "<group>"; };
+		DEC12A231E83643E00A0FD55 /* imconfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = imconfig.h; sourceTree = "<group>"; };
+		DEC12A241E83643E00A0FD55 /* imgui.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = imgui.cpp; sourceTree = "<group>"; };
+		DEC12A251E83643E00A0FD55 /* imgui.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = imgui.h; sourceTree = "<group>"; };
+		DEC12A261E83643E00A0FD55 /* imgui_demo.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = imgui_demo.cpp; sourceTree = "<group>"; };
+		DEC12A271E83643E00A0FD55 /* imgui_draw.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = imgui_draw.cpp; sourceTree = "<group>"; };
+		DEC12A281E83643E00A0FD55 /* imgui_internal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = imgui_internal.h; sourceTree = "<group>"; };
+		DEC12A291E83643E00A0FD55 /* stb_rect_pack.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = stb_rect_pack.h; sourceTree = "<group>"; };
+		DEC12A2A1E83643E00A0FD55 /* stb_textedit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = stb_textedit.h; sourceTree = "<group>"; };
+		DEC12A2B1E83643E00A0FD55 /* stb_truetype.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = stb_truetype.h; sourceTree = "<group>"; };
+		DEC12A2F1E8364DE00A0FD55 /* imgui_impl_sdl_gl3.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = imgui_impl_sdl_gl3.cpp; sourceTree = "<group>"; };
+		DEC12A301E8364DE00A0FD55 /* imgui_impl_sdl_gl3.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = imgui_impl_sdl_gl3.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -428,6 +446,7 @@
 		DE741CB21E6D8D69008416EF /* KnightSoul */ = {
 			isa = PBXGroup;
 			children = (
+				DEC12A221E83643E00A0FD55 /* imgui */,
 				DE24308F1E7D7F56005872D4 /* json.hpp */,
 				DE741E0D1E783B8F008416EF /* glm */,
 				DE741D1F1E6D9CDB008416EF /* MemoryBuffer.cpp */,
@@ -457,6 +476,8 @@
 				DEB3ED7F1E800D71009F8BB6 /* Room.hpp */,
 				DEB3ED811E8031BC009F8BB6 /* Input.cpp */,
 				DEB3ED821E8031BC009F8BB6 /* Input.hpp */,
+				DEC12A1F1E8360CC00A0FD55 /* Editor.cpp */,
+				DEC12A201E8360CC00A0FD55 /* Editor.hpp */,
 			);
 			path = KnightSoul;
 			sourceTree = "<group>";
@@ -836,6 +857,24 @@
 			path = virtrev;
 			sourceTree = "<group>";
 		};
+		DEC12A221E83643E00A0FD55 /* imgui */ = {
+			isa = PBXGroup;
+			children = (
+				DEC12A2F1E8364DE00A0FD55 /* imgui_impl_sdl_gl3.cpp */,
+				DEC12A301E8364DE00A0FD55 /* imgui_impl_sdl_gl3.h */,
+				DEC12A231E83643E00A0FD55 /* imconfig.h */,
+				DEC12A241E83643E00A0FD55 /* imgui.cpp */,
+				DEC12A251E83643E00A0FD55 /* imgui.h */,
+				DEC12A261E83643E00A0FD55 /* imgui_demo.cpp */,
+				DEC12A271E83643E00A0FD55 /* imgui_draw.cpp */,
+				DEC12A281E83643E00A0FD55 /* imgui_internal.h */,
+				DEC12A291E83643E00A0FD55 /* stb_rect_pack.h */,
+				DEC12A2A1E83643E00A0FD55 /* stb_textedit.h */,
+				DEC12A2B1E83643E00A0FD55 /* stb_truetype.h */,
+			);
+			path = imgui;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -896,14 +935,19 @@
 			files = (
 				DE741E091E78300C008416EF /* Texture2D.cpp in Sources */,
 				DE741D1E1E6D9BDD008416EF /* RawImage.cpp in Sources */,
+				DEC12A211E8360CC00A0FD55 /* Editor.cpp in Sources */,
 				DE741D241E6D9D55008416EF /* File.cpp in Sources */,
 				DE73A8FD1E7A67D800D69323 /* SpriteRenderer.cpp in Sources */,
 				DEB3ED711E7ECCE5009F8BB6 /* Sprite.cpp in Sources */,
 				DE73A9001E7AAE7E00D69323 /* GameObject.cpp in Sources */,
 				DEB3ED801E800D71009F8BB6 /* Room.cpp in Sources */,
+				DEC12A2D1E83643E00A0FD55 /* imgui_demo.cpp in Sources */,
 				DE741D211E6D9CDB008416EF /* MemoryBuffer.cpp in Sources */,
 				DE741E061E78228E008416EF /* Game.cpp in Sources */,
+				DEC12A2C1E83643E00A0FD55 /* imgui.cpp in Sources */,
 				DEB3ED831E8031BC009F8BB6 /* Input.cpp in Sources */,
+				DEC12A2E1E83643E00A0FD55 /* imgui_draw.cpp in Sources */,
+				DEC12A311E8364DE00A0FD55 /* imgui_impl_sdl_gl3.cpp in Sources */,
 				DE2430921E7D7F78005872D4 /* SpriteSheet.cpp in Sources */,
 				DEB3ED6E1E7EB034009F8BB6 /* StringUtil.cpp in Sources */,
 				DE741CB41E6D8D69008416EF /* main.cpp in Sources */,

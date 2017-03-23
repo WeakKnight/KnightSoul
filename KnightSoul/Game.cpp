@@ -77,6 +77,12 @@ void Game::ProcessInput(GLfloat dt)
 
 void Game::Render()
 {
+    glViewport(0, 0, Width, Height);
+    glEnable(GL_CULL_FACE);
+    glEnable(GL_BLEND);
+    glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
+    glClearColor(49.0f/255.0f, 77.0f/255.0f, 121.0f/255.0f, 1.0f);
+    glClear(GL_COLOR_BUFFER_BIT);
     for(auto index = 0; index < GameObject::GameObjectList.size(); index++)
     {
         auto gameObject = GameObject::GameObjectList[index];
