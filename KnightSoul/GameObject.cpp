@@ -25,7 +25,7 @@ GameObject* GameObject::Create()
 
 GameObject::GameObject()
 {
-    
+    MoveSpeed = 3.0f;
 }
 
 void GameObject::Init()
@@ -43,12 +43,12 @@ void GameObject::Update(float dt)
     }
     if(Input::KeyboardPressed(SDL_SCANCODE_LEFT))
     {
-        X -= 3.0;
+        X -= MoveSpeed;
         SpritePointer = spriteRun;
     }
     if(Input::KeyboardPressed(SDL_SCANCODE_RIGHT))
     {
-        X += 3.0;
+        X += MoveSpeed;
         SpritePointer = spriteRun;
     }
     if(!Input::KeyboardPressed(SDL_SCANCODE_LEFT) && !Input::KeyboardPressed(SDL_SCANCODE_RIGHT))

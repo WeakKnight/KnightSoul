@@ -23,6 +23,7 @@ public:
     void Update(float dt);
     void Render();
     void SetGameView(GLuint textureID);
+    float* MoveSpeed;
 private:
     GLuint GameTextureID;
     SDL_Window* Window;

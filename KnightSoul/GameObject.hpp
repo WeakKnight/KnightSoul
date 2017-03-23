@@ -15,9 +15,7 @@
 #include <string>
 #include "glm/glm.hpp"
 #include "glm/gtc/type_ptr.hpp"
-
 class Sprite;
-
 class GameObject
 {
     GameObject();
@@ -31,7 +29,7 @@ public:
     float Rotation;
     float Image_XScale;
     float Image_YScale;
-    //std::string Image_Index;
+    float MoveSpeed;
     static std::vector<GameObject*> GameObjectList;
     Sprite* SpritePointer;
 };
