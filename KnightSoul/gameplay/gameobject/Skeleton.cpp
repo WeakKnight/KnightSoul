@@ -7,3 +7,10 @@
 //
 
 #include "Skeleton.hpp"
+#include "Context.hpp"
+
+Skeleton::Skeleton(Context* context)
+:
+GameObject(context)
+{
+}

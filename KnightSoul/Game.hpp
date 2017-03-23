@@ -14,6 +14,7 @@
 #include "Object.hpp"
 class SpriteRenderer;
 class Context;
+class Room;
 class Game: public Object
 {
 public:
@@ -22,9 +23,11 @@ public:
     Game(Context* context, GLuint width, GLuint height);
     ~Game();
     void Init();
+    void InitSpriteRenderer();
     void ProcessInput(GLfloat dt);
     void Update(GLfloat dt);
     void Render();
+    Room* ActiveRoom;
 };
 
 #endif /* Game_hpp */

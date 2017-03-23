@@ -15,15 +15,6 @@
 #include "Game.hpp"
 #include "Context.hpp"
 
-std::vector<GameObject*> GameObject::GameObjectList;
-
-GameObject* GameObject::Create(Context* context)
-{
-    auto gameObject = new GameObject(context);
-    GameObjectList.push_back(gameObject);
-    return gameObject;
-}
-
 GameObject::GameObject(Context* context)
 :
 Object(context)

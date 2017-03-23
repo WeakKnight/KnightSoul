@@ -13,6 +13,7 @@
 #include <list>
 #include <string>
 #include "Object.hpp"
+#include <OpenGL/gl3.h>
 
 class GameObject;
 class Context;
@@ -21,7 +22,9 @@ class Room : public Object
 {
 public:
     Room(Context* context);
-    static Room* Create(Context* context);
+    void Init();
+    void Update(GLfloat dt);
+    void Render();
     void AddInstance(GameObject* object);
     std::list<GameObject*> InstanceList;
 };

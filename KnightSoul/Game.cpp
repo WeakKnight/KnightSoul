@@ -13,6 +13,7 @@
 #include "SpriteSheet.hpp"
 #include "Sprite.hpp"
 #include "Context.hpp"
+#include "Room.hpp"
 
 Game::Game(Context* context,GLuint width, GLuint height)
 :
@@ -40,15 +41,13 @@ void Game::Init()
     ResourceManager::LoadSprite("Resource/testSprite.json");
     ResourceManager::LoadSprite("Resource/testSprite2.json");
     //
+    InitSpriteRenderer();
+    //
     auto spriteIdle = ResourceManager::Sprites["skeleton_idle"];
+    ActiveRoom = new Room(EngineContext);
     
-    glm::mat4 projection = glm::ortho(0.0f, static_cast<GLfloat>(this->Width),
-                                      static_cast<GLfloat>(this->Height), 0.0f, -1.0f, 1.0f);
-    ResourceManager::Shaders["BaseShader"].Use().SetInteger("image", 0);
-    ResourceManager::Shaders["BaseShader"].SetMatrix4("projection", projection);
-    SpriteRendererInstance = new SpriteRenderer(ResourceManager::Shaders["BaseShader"]);
     ////////
-    GameObject* obj1 = GameObject::Create(EngineContext);
+    GameObject* obj1 = new GameObject(EngineContext);
     obj1->X = 200.0f;
     obj1->Y = 200.0f;
     obj1->Image_XScale = 8.0;
@@ -56,20 +55,23 @@ void Game::Init()
     obj1->Rotation = 0.0f;
     obj1->SpritePointer = spriteIdle;
     ////////
-    for(auto index = 0; index < GameObject::GameObjectList.size(); index++)
-    {
-        auto gameObject = GameObject::GameObjectList[index];
-        gameObject->Init();
-    }
+    ActiveRoom->AddInstance(obj1);
+    //
+    ActiveRoom->Init();
+}
+
+void Game::InitSpriteRenderer()
+{
+    glm::mat4 projection = glm::ortho(0.0f, static_cast<GLfloat>(this->Width),
+                                      static_cast<GLfloat>(this->Height), 0.0f, -1.0f, 1.0f);
+    ResourceManager::Shaders["BaseShader"].Use().SetInteger("image", 0);
+    ResourceManager::Shaders["BaseShader"].SetMatrix4("projection", projection);
+    SpriteRendererInstance = new SpriteRenderer(ResourceManager::Shaders["BaseShader"]);
 }
 
 void Game::Update(GLfloat dt)
 {
-    for(auto index = 0; index < GameObject::GameObjectList.size(); index++)
-    {
-        auto gameObject = GameObject::GameObjectList[index];
-        gameObject->Update(dt);
-    }
+    ActiveRoom->Update(dt);
 }
 
 void Game::ProcessInput(GLfloat dt)
@@ -79,15 +81,5 @@ void Game::ProcessInput(GLfloat dt)
 
 void Game::Render()
 {
-    glViewport(0, 0, Width, Height);
-    glEnable(GL_CULL_FACE);
-    glEnable(GL_BLEND);
-    glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
-    glClearColor(49.0f/255.0f, 77.0f/255.0f, 121.0f/255.0f, 1.0f);
-    glClear(GL_COLOR_BUFFER_BIT);
-    for(auto index = 0; index < GameObject::GameObjectList.size(); index++)
-    {
-        auto gameObject = GameObject::GameObjectList[index];
-        gameObject->Draw();
-    }
+    ActiveRoom->Render();
 }

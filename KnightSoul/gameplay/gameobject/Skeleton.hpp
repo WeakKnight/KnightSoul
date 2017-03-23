@@ -12,9 +12,12 @@
 #include <stdio.h>
 #include "GameObject.hpp"
 
+class Context;
+
 class Skeleton : public GameObject
 {
-    
+public:
+    Skeleton(Context* context);
 };
 
 #endif /* Skeleton_hpp */

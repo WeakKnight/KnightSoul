@@ -21,9 +21,8 @@ class Sprite;
 class Context;
 class GameObject : public Object
 {
-    GameObject(Context* context);
 public:
-    static GameObject* Create(Context* context);
+    GameObject(Context* context);
     virtual void Init();
     virtual void Update(float dt);
     virtual void Draw();
@@ -33,7 +32,6 @@ public:
     float Image_XScale;
     float Image_YScale;
     float MoveSpeed;
-    static std::vector<GameObject*> GameObjectList;
     Sprite* SpritePointer;
 };
 
