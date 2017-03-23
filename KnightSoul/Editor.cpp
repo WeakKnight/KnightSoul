@@ -31,9 +31,8 @@ void Editor::Update(float dt)
 {
     ImGui_ImplSdlGL3_NewFrame(Window);
     {
-        ImGui::Text("Hello, world!");
-        ImGui::Image((void*)(ResourceManager::Textures["PikaSprite"].ID),ImVec2(ResourceManager::Textures["PikaSprite"].Width, ResourceManager::Textures["PikaSprite"].Height), ImVec2(0,0));
-        ImGui::Image((void*)GameTextureID,ImVec2(Width/2,Height/2), ImVec2(0,0));
+        //ImGui::Text("Hello, world!");
+        ImGui::Image((void*)GameTextureID,ImVec2(Width/2,Height/2), ImVec2(0,1), ImVec2(1,0));
     }
 }
 

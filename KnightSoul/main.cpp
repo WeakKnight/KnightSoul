@@ -14,6 +14,7 @@
 #include "Input.hpp"
 #include "imgui.h"
 #include "imgui_impl_sdl_gl3.h"
+#include "Texture2D.hpp"
 
 const GLuint SCREEN_WIDTH = 1024;
 const GLuint SCREEN_HEIGHT = 768;
@@ -59,16 +60,14 @@ int main(int argc, const char * argv[]) {
     GLfloat deltaTime = 0.0f;
     GLfloat lastFrame = 0.0f;
     //
+    Texture2D GameRendererTarget;
+    GameRendererTarget.Generate(SCREEN_WIDTH, SCREEN_HEIGHT, 0);
     GLuint frameBuffer;
     glGenFramebuffers(1, &frameBuffer);
-    GLuint texture;
-    glGenTextures(1, &texture);
-    glBindTexture(GL_TEXTURE_2D, texture);
-    glTexImage2D(GL_TEXTURE_2D, 0, GL_RGBA, SCREEN_WIDTH, SCREEN_HEIGHT, 0, GL_RGBA, GL_UNSIGNED_BYTE, 0);
     glBindFramebuffer(GL_FRAMEBUFFER, frameBuffer);
-    glFramebufferTexture2D(GL_FRAMEBUFFER, GL_COLOR_ATTACHMENT0, GL_TEXTURE_2D, texture, 0);
+    glFramebufferTexture2D(GL_FRAMEBUFFER, GL_COLOR_ATTACHMENT0, GL_TEXTURE_2D, GameRendererTarget.ID, 0);
     glBindFramebuffer(GL_FRAMEBUFFER, 0);
-    EditorInstance.SetGameView(texture);
+    EditorInstance.SetGameView(GameRendererTarget.ID);
     //
     float nextFrame = static_cast<float>(SDL_GetTicks());
     bool shouldExit = false;
