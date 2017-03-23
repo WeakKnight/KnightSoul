@@ -11,20 +11,21 @@
 #include "imgui_impl_sdl_gl3.h"
 #include "ResourceManager.hpp"
 #include "GameObject.hpp"
+#include "Context.hpp"
 
-Editor::Editor(GLuint width, GLuint height)
+Editor::Editor(Context* context,GLuint width, GLuint height)
 :
+Object(context),
 Width(width),
 Height(height)
 {
-    MoveSpeed = nullptr;
+    context->EditorInstance = this;
 }
 
 void Editor::Init(SDL_Window* window)
 {
     Window = window;
     ImGui_ImplSdlGL3_Init(window);
-    MoveSpeed = &GameObject::GameObjectList[0]->MoveSpeed;
 }
 
 void Editor::Update(float dt)
@@ -52,13 +53,6 @@ void Editor::Update(float dt)
         ImGui::Begin("Inspector",&Show, window_flags);
         ImGui::SetWindowPos(ImVec2(Width/2+22.0f, 0));
         ImGui::SetWindowSize(ImVec2(Width/2-22.0f,Height/2 + 40.0f),ImGuiSetCond_Once);
-        if(MoveSpeed)
-        {
-            
-            //ImGui::InputFloat("Move Speed", MoveSpeed);
-            ImGui::DragFloat("Move Speed", MoveSpeed, 0.5f);
-            ImGui::Text("Current Move Speed is %f", *MoveSpeed);
-        }
         ImGui::End();
     }
 }

@@ -15,12 +15,15 @@
 #include <string>
 #include "glm/glm.hpp"
 #include "glm/gtc/type_ptr.hpp"
+#include "Object.hpp"
+
 class Sprite;
-class GameObject
+class Context;
+class GameObject : public Object
 {
-    GameObject();
+    GameObject(Context* context);
 public:
-    static GameObject* Create();
+    static GameObject* Create(Context* context);
     virtual void Init();
     virtual void Update(float dt);
     virtual void Draw();

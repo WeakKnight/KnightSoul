@@ -12,14 +12,16 @@
 #include "GameObject.hpp"
 #include "SpriteSheet.hpp"
 #include "Sprite.hpp"
+#include "Context.hpp"
 
-SpriteRenderer* Game::SpriteRendererInstance;
-
-Game::Game(GLuint width, GLuint height)
+Game::Game(Context* context,GLuint width, GLuint height)
 :
+Object(context),
 Width(width),
-Height(height)
+Height(height),
+SpriteRendererInstance(nullptr)
 {
+    context->GameInstance = this;
 }
 
 Game::~Game()
@@ -46,7 +48,7 @@ void Game::Init()
     ResourceManager::Shaders["BaseShader"].SetMatrix4("projection", projection);
     SpriteRendererInstance = new SpriteRenderer(ResourceManager::Shaders["BaseShader"]);
     ////////
-    GameObject* obj1 = GameObject::Create();
+    GameObject* obj1 = GameObject::Create(EngineContext);
     obj1->X = 200.0f;
     obj1->Y = 200.0f;
     obj1->Image_XScale = 8.0;

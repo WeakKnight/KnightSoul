@@ -13,17 +13,20 @@
 #include "SpriteSheet.hpp"
 #include "SpriteRenderer.hpp"
 #include "Game.hpp"
+#include "Context.hpp"
 
 std::vector<GameObject*> GameObject::GameObjectList;
 
-GameObject* GameObject::Create()
+GameObject* GameObject::Create(Context* context)
 {
-    auto gameObject = new GameObject();
+    auto gameObject = new GameObject(context);
     GameObjectList.push_back(gameObject);
     return gameObject;
 }
 
-GameObject::GameObject()
+GameObject::GameObject(Context* context)
+:
+Object(context)
 {
     MoveSpeed = 3.0f;
 }
@@ -64,7 +67,7 @@ void GameObject::Draw()
     std::string imageName = sprite->SpriteFrames[imageIndex];
     auto spriteFrame = sprite->SpriteSheetGroup->Frames[imageName];
     auto texture = ResourceManager::Textures[sprite->SpriteSheetGroup->Texture_Index];
-    Game::SpriteRendererInstance->DrawSprite(texture,
+    EngineContext->GameInstance->SpriteRendererInstance->DrawSprite(texture,
                                        glm::vec2(this->X, this->Y),
                                        glm::vec2(spriteFrame->W * this->Image_XScale, spriteFrame->H * this->Image_YScale),
                                        this->Rotation,

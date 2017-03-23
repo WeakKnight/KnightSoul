@@ -7,13 +7,21 @@
 //
 
 #include "Room.hpp"
+#include "Context.hpp"
 
-Room* Room::Create()
+Room::Room(Context* context)
+:
+Object(context)
 {
-    return nullptr;
 }
 
-Room* Room::Create(const std::string& path)
+Room* Room::Create(Context* context)
 {
-    return nullptr;
+    auto room = new Room(context);
+    return room;
+}
+
+void Room::AddInstance(GameObject* object)
+{
+    InstanceList.push_back(object);
 }

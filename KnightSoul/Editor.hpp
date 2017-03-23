@@ -12,18 +12,20 @@
 #include <stdio.h>
 #include "SDL.h"
 #include <OpenGL/gl3.h>
+#include "Object.hpp"
 
-class Editor
+class Context;
+
+class Editor : public Object
 {
 public:
-    Editor(GLuint width, GLuint height);
+    Editor(Context* context,GLuint width, GLuint height);
     GLuint Width;
     GLuint Height;
     void Init(SDL_Window* window);
     void Update(float dt);
     void Render();
     void SetGameView(GLuint textureID);
-    float* MoveSpeed;
 private:
     GLuint GameTextureID;
     SDL_Window* Window;

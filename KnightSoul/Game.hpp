@@ -11,15 +11,15 @@
 
 #include <stdio.h>
 #include <OpenGL/gl3.h>
-
+#include "Object.hpp"
 class SpriteRenderer;
-
-class Game
+class Context;
+class Game: public Object
 {
 public:
-    static SpriteRenderer* SpriteRendererInstance;
+    SpriteRenderer* SpriteRendererInstance;
     GLuint Width,Height;
-    Game(GLuint width,GLuint height);
+    Game(Context* context, GLuint width, GLuint height);
     ~Game();
     void Init();
     void ProcessInput(GLfloat dt);

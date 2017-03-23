@@ -12,23 +12,18 @@
 #include <stdio.h>
 #include <list>
 #include <string>
+#include "Object.hpp"
 
 class GameObject;
+class Context;
 
-class InstanceInfo
+class Room : public Object
 {
-    int X;
-    int Y;
-    float Rotation;
-    float Image_XScale;
-    float Image_YScale;
-    std::string ObjectName;
-};
-
-class Room
-{
-    static Room* Create();
-    static Room* Create(const std::string& path);
+public:
+    Room(Context* context);
+    static Room* Create(Context* context);
+    void AddInstance(GameObject* object);
+    std::list<GameObject*> InstanceList;
 };
 
 #endif /* Room_hpp */

@@ -15,13 +15,12 @@
 #include "imgui.h"
 #include "imgui_impl_sdl_gl3.h"
 #include "Texture2D.hpp"
+#include "Context.hpp"
+#include "ObjectFactory.hpp"
 
 const GLuint SCREEN_WIDTH = 1024;
 const GLuint SCREEN_HEIGHT = 768;
 const unsigned int FPS = 60;
-
-Game GameInstance(SCREEN_WIDTH,SCREEN_HEIGHT);
-Editor EditorInstance(SCREEN_WIDTH,SCREEN_HEIGHT);
 
 void* InitGL(SDL_Window* window)
 {
@@ -51,8 +50,13 @@ int main(int argc, const char * argv[]) {
     
     auto mainContext = InitGL(mainWindow);
     //
-    GameInstance.Init();
-    EditorInstance.Init(mainWindow);
+    Context* context = new Context();
+    Game* GameInstance = new Game(context,SCREEN_WIDTH,SCREEN_HEIGHT);
+    Editor* EditorInstance = new Editor(context,SCREEN_WIDTH,SCREEN_HEIGHT);
+    new ObjectFactory(context);
+    //
+    GameInstance->Init();
+    EditorInstance->Init(mainWindow);
     //const Uint8* state = SDL_GetKeyboardState(NULL);
     Input::InitInput(SDL_GetKeyboardState(NULL));
     SDL_Event event;
@@ -67,7 +71,7 @@ int main(int argc, const char * argv[]) {
     glBindFramebuffer(GL_FRAMEBUFFER, frameBuffer);
     glFramebufferTexture2D(GL_FRAMEBUFFER, GL_COLOR_ATTACHMENT0, GL_TEXTURE_2D, GameRendererTarget.ID, 0);
     glBindFramebuffer(GL_FRAMEBUFFER, 0);
-    EditorInstance.SetGameView(GameRendererTarget.ID);
+    EditorInstance->SetGameView(GameRendererTarget.ID);
     //
     float nextFrame = static_cast<float>(SDL_GetTicks());
     bool shouldExit = false;
@@ -84,16 +88,16 @@ int main(int argc, const char * argv[]) {
         {
             ImGui_ImplSdlGL3_ProcessEvent(&event);
         }
-        GameInstance.ProcessInput(deltaTime);
-        GameInstance.Update(deltaTime);
-        EditorInstance.Update(deltaTime);
+        GameInstance->ProcessInput(deltaTime);
+        GameInstance->Update(deltaTime);
+        EditorInstance->Update(deltaTime);
         
         if(nextFrame > static_cast<float>(SDL_GetTicks()))
         {
             glBindFramebuffer(GL_FRAMEBUFFER, frameBuffer);
-            GameInstance.Render();
+            GameInstance->Render();
             glBindFramebuffer(GL_FRAMEBUFFER, 0);
-            EditorInstance.Render();
+            EditorInstance->Render();
             SDL_GL_SwapWindow(mainWindow);
         }
         float delay = static_cast<float> (nextFrame - static_cast<double>(SDL_GetTicks()));
