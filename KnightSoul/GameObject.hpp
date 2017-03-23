@@ -31,7 +31,6 @@ public:
     float Rotation;
     float Image_XScale;
     float Image_YScale;
-    float MoveSpeed;
     Sprite* SpritePointer;
 };
 

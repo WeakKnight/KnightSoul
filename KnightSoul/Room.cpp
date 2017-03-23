@@ -38,6 +38,11 @@ void Room::Update(GLfloat dt)
         gameObject->Update(dt);
     }
 }
+//TODO: remove gameobject from linked list here
+void Room::Destoroy(GLfloat dt)
+{
+    
+}
 
 void Room::Render()
 {

@@ -17,6 +17,8 @@
 
 class GameObject;
 class Context;
+//TODO: Room has views to control view
+class View;
 
 class Room : public Object
 {
@@ -24,6 +26,7 @@ public:
     Room(Context* context);
     void Init();
     void Update(GLfloat dt);
+    void Destoroy(GLfloat dt);
     void Render();
     void AddInstance(GameObject* object);
     std::list<GameObject*> InstanceList;

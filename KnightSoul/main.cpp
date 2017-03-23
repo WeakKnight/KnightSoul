@@ -17,7 +17,8 @@
 #include "Texture2D.hpp"
 #include "Context.hpp"
 #include "ObjectFactory.hpp"
-
+#include "File.hpp"
+//Todo: Game Size and Editor Size logic
 const GLuint SCREEN_WIDTH = 1024;
 const GLuint SCREEN_HEIGHT = 768;
 const unsigned int FPS = 60;
@@ -39,6 +40,7 @@ int main(int argc, const char * argv[]) {
     {
         std::cout << "Hello, World!\n";
     }
+
     auto mainWindow = SDL_CreateWindow(
                                   "KnightSoul",
                                   SDL_WINDOWPOS_CENTERED,
@@ -47,7 +49,10 @@ int main(int argc, const char * argv[]) {
                                   SCREEN_HEIGHT,
                                   SDL_WINDOW_OPENGL
                                   );
-    
+    //set icon
+    auto icon = SDL_LoadBMP("logo.bmp");
+    SDL_SetWindowIcon(mainWindow, icon);
+    //
     auto mainContext = InitGL(mainWindow);
     //
     Context* context = new Context();
@@ -90,6 +95,7 @@ int main(int argc, const char * argv[]) {
         }
         GameInstance->ProcessInput(deltaTime);
         GameInstance->Update(deltaTime);
+        GameInstance->Destoroy(deltaTime);
         EditorInstance->Update(deltaTime);
         
         if(nextFrame > static_cast<float>(SDL_GetTicks()))

@@ -12,7 +12,7 @@
 #include <stdio.h>
 #include "SpriteSheet.hpp"
 #include <map>
-
+//Todo: correct do with Sprite pivot and Sprite Size
 class Sprite
 {
 public:

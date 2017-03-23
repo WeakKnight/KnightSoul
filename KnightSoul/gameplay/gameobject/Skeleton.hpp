@@ -18,6 +18,8 @@ class Skeleton : public GameObject
 {
 public:
     Skeleton(Context* context);
+    void Init() override;
+    void Update(float dt) override;
 };
 
 #endif /* Skeleton_hpp */

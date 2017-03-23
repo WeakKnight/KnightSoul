@@ -14,6 +14,7 @@
 #include "Sprite.hpp"
 #include "Context.hpp"
 #include "Room.hpp"
+#include "ObjectFactory.hpp"
 
 Game::Game(Context* context,GLuint width, GLuint height)
 :
@@ -31,7 +32,7 @@ Game::~Game()
 
 void Game::Init()
 {
-    //todo: move in resource.json
+    //TODO: move in resource.json
     ResourceManager::LoadShader("Resource/BaseShader.vsh", "Resource/BaseShader.fsh", "BaseShader");
     ResourceManager::LoadTexture("Resource/QQ20170106.png", "TestSprite");
     ResourceManager::LoadTexture("Resource/pikapika.png", "PikaSprite");
@@ -42,21 +43,10 @@ void Game::Init()
     ResourceManager::LoadSprite("Resource/testSprite2.json");
     //
     InitSpriteRenderer();
-    //
-    auto spriteIdle = ResourceManager::Sprites["skeleton_idle"];
+    //TODO: read room json to init room
     ActiveRoom = new Room(EngineContext);
-    
-    ////////
-    GameObject* obj1 = new GameObject(EngineContext);
-    obj1->X = 200.0f;
-    obj1->Y = 200.0f;
-    obj1->Image_XScale = 8.0;
-    obj1->Image_YScale = 8.0;
-    obj1->Rotation = 0.0f;
-    obj1->SpritePointer = spriteIdle;
-    ////////
+    GameObject* obj1 = EngineContext->ObjectFactoryInstance->CreateInstanceByName("oSkeleton");
     ActiveRoom->AddInstance(obj1);
-    //
     ActiveRoom->Init();
 }
 
@@ -69,14 +59,19 @@ void Game::InitSpriteRenderer()
     SpriteRendererInstance = new SpriteRenderer(ResourceManager::Shaders["BaseShader"]);
 }
 
+void Game::ProcessInput(GLfloat dt)
+{
+    
+}
+
 void Game::Update(GLfloat dt)
 {
     ActiveRoom->Update(dt);
 }
 
-void Game::ProcessInput(GLfloat dt)
+void Game::Destoroy(GLfloat dt)
 {
-    
+    ActiveRoom->Destoroy(dt);
 }
 
 void Game::Render()

@@ -26,6 +26,7 @@ public:
     void InitSpriteRenderer();
     void ProcessInput(GLfloat dt);
     void Update(GLfloat dt);
+    void Destoroy(GLfloat dt);
     void Render();
     Room* ActiveRoom;
 };

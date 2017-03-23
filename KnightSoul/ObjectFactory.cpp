@@ -9,6 +9,7 @@
 #include "ObjectFactory.hpp"
 #include "GameObject.hpp"
 #include "Context.hpp"
+#include "Skeleton.hpp"
 
 ObjectFactory::ObjectFactory(Context* context)
 :
@@ -19,11 +20,9 @@ Object(context)
 
 GameObject* ObjectFactory::CreateInstanceByName(std::string name)
 {
-    /*
-    if(name == "GameObject")
+    if(name == "oSkeleton")
     {
-        return GameObject::Create();
+        return new Skeleton(EngineContext);
     }
-    */
     return nullptr;
 }
