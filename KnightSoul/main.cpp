@@ -40,7 +40,7 @@ int main(int argc, const char * argv[]) {
         std::cout << "Hello, World!\n";
     }
     auto mainWindow = SDL_CreateWindow(
-                                  "My Game",
+                                  "KnightSoul",
                                   SDL_WINDOWPOS_CENTERED,
                                   SDL_WINDOWPOS_CENTERED,
                                   SCREEN_WIDTH,
