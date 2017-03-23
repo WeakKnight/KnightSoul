@@ -68,6 +68,7 @@ int main(int argc, const char * argv[]) {
     glBindFramebuffer(GL_FRAMEBUFFER, frameBuffer);
     glFramebufferTexture2D(GL_FRAMEBUFFER, GL_COLOR_ATTACHMENT0, GL_TEXTURE_2D, texture, 0);
     glBindFramebuffer(GL_FRAMEBUFFER, 0);
+    EditorInstance.SetGameView(texture);
     //
     float nextFrame = static_cast<float>(SDL_GetTicks());
     bool shouldExit = false;
