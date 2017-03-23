@@ -102,7 +102,7 @@ int main(int argc, const char * argv[]) {
         }
         nextFrame += 1000.0 / FPS;
     }
-
+    ImGui_ImplSdlGL3_Shutdown();
     SDL_GL_DeleteContext(mainContext);
     SDL_DestroyWindow(mainWindow);
     SDL_Quit();
