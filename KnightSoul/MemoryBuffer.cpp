@@ -4,16 +4,16 @@
 #include <stdlib.h>
 #include <memory.h>
 //MemoryBuffer
-//=========================================================================================================
+
 const MemoryBuffer MemoryBuffer::Null;
-//=========================================================================================================
+
 MemoryBuffer::MemoryBuffer():
 _bytes(nullptr),
 _size(0),
 _position(0)
 {
 }
-//=========================================================================================================
+
 MemoryBuffer::MemoryBuffer(MemoryBuffer&& other):
 _bytes(nullptr),
 _size(0),
@@ -21,7 +21,7 @@ _position(0)
 {
 	move(other);
 }
-//=========================================================================================================
+
 MemoryBuffer::MemoryBuffer(const MemoryBuffer& other):
 _bytes(nullptr),
 _size(0),
@@ -29,24 +29,24 @@ _position(0)
 {
 	copy(other._bytes, other._size);
 }
-//=========================================================================================================
+
 MemoryBuffer::~MemoryBuffer()
 {
 	clear();
 }
-//=========================================================================================================
+
 MemoryBuffer& MemoryBuffer::operator= (const MemoryBuffer& other)
 {
 	copy(other._bytes, other._size);
 	return *this;
 }
-//=========================================================================================================
+
 MemoryBuffer& MemoryBuffer::operator= (MemoryBuffer&& other)
 {
 	move(other);
 	return *this;
 }
-//=========================================================================================================
+
 void MemoryBuffer::move(MemoryBuffer& other)
 {
 	_bytes = other._bytes;
@@ -56,22 +56,22 @@ void MemoryBuffer::move(MemoryBuffer& other)
 	other._size = 0;
     other._position = 0;
 }
-//=========================================================================================================
+
 bool MemoryBuffer::isNull() const
 {
 	return (_bytes == nullptr || _size == 0);
 }
-//=========================================================================================================
+
 unsigned char* MemoryBuffer::getBytes() const
 {
 	return _bytes;
 }
-//=========================================================================================================
+
 size_t MemoryBuffer::getSize() const
 {
 	return _size;
 }
-//=========================================================================================================
+
 void MemoryBuffer::copy(const unsigned char* bytes, size_t size)
 {
 	clear();
@@ -83,13 +83,13 @@ void MemoryBuffer::copy(const unsigned char* bytes, size_t size)
 		memcpy(_bytes, bytes, _size);
 	}
 }
-//=========================================================================================================
+
 void MemoryBuffer::fastSet(unsigned char* bytes, size_t size)
 {
 	_bytes = bytes;
 	_size = size;
 }
-//=========================================================================================================
+
 void MemoryBuffer::clear()
 {
 	if (_bytes != nullptr)
@@ -101,7 +101,7 @@ void MemoryBuffer::clear()
 	_size = 0;
     _position = 0;
 }
-//=========================================================================================================
+
 unsigned MemoryBuffer::read(void* dest, unsigned size)
 {
     if (size + _position > _size)
@@ -132,14 +132,14 @@ unsigned MemoryBuffer::read(void* dest, unsigned size)
     
     return size;
 }
-//=========================================================================================================
+
 char* MemoryBuffer::readFileID()
 {
     char* ret = new char[4];
     read(&ret[0], 4);
     return ret;
 }
-//
+
 char* MemoryBuffer::readString(unsigned int size)
 {
     char* ret = new char[size];

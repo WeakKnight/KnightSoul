@@ -55,11 +55,6 @@ void Game::InitSpriteRenderer()
     SpriteRendererInstance = new SpriteRenderer(ResourceManager::Shaders["BaseShader"]);
 }
 
-void Game::ProcessInput(GLfloat dt)
-{
-    
-}
-
 void Game::Update(GLfloat dt)
 {
     ActiveRoom->Update(dt);

@@ -84,7 +84,6 @@ int main(int argc, const char * argv[]) {
         {
             ImGui_ImplSdlGL3_ProcessEvent(&event);
         }
-        GameInstance->ProcessInput(deltaTime);
         GameInstance->Update(deltaTime);
         GameInstance->Destoroy(deltaTime);
         EditorInstance->Update(deltaTime);
