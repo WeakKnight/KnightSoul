@@ -10,6 +10,9 @@
 #include "Context.hpp"
 #include "ResourceManager.hpp"
 #include "Input.hpp"
+#include "Room.hpp"
+#include "View.hpp"
+#include "Game.hpp"
 
 Skeleton::Skeleton(Context* context)
 :
@@ -26,6 +29,7 @@ void Skeleton::Init()
 void Skeleton::Update(float dt)
 {
     GameObject::Update(dt);
+    auto view = EngineContext->GameInstance->ActiveRoom->ActiveView;
     auto spriteIdle = ResourceManager::Sprites["skeleton_idle"];
     auto spriteRun = ResourceManager::Sprites["skeleton_run"];
     if(Input::KeyboardPressed(SDL_SCANCODE_LEFT))
@@ -42,5 +46,7 @@ void Skeleton::Update(float dt)
     {
         SpritePointer = spriteIdle;
     }
+    
+    view->Boundary.Origin = glm::vec2(X - 300, Y - 200);
 }
 

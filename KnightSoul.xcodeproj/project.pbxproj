@@ -44,6 +44,7 @@
 		DEC12DD01E83CAFC00A0FD55 /* Object.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DEC12DCE1E83CAFC00A0FD55 /* Object.cpp */; };
 		DEC12DD31E83CBC700A0FD55 /* Context.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DEC12DD11E83CBC700A0FD55 /* Context.cpp */; };
 		DEC12DD61E84B61400A0FD55 /* Rect.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DEC12DD41E84B61400A0FD55 /* Rect.cpp */; };
+		DEC12DD91E84D19700A0FD55 /* PikaPika.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DEC12DD71E84D19700A0FD55 /* PikaPika.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -420,6 +421,8 @@
 		DEC12DD21E83CBC700A0FD55 /* Context.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Context.hpp; sourceTree = "<group>"; };
 		DEC12DD41E84B61400A0FD55 /* Rect.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Rect.cpp; sourceTree = "<group>"; };
 		DEC12DD51E84B61400A0FD55 /* Rect.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Rect.hpp; sourceTree = "<group>"; };
+		DEC12DD71E84D19700A0FD55 /* PikaPika.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = PikaPika.cpp; sourceTree = "<group>"; };
+		DEC12DD81E84D19700A0FD55 /* PikaPika.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = PikaPika.hpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -917,6 +920,8 @@
 			children = (
 				DEC12DCB1E83C88200A0FD55 /* Skeleton.cpp */,
 				DEC12DCC1E83C88200A0FD55 /* Skeleton.hpp */,
+				DEC12DD71E84D19700A0FD55 /* PikaPika.cpp */,
+				DEC12DD81E84D19700A0FD55 /* PikaPika.hpp */,
 			);
 			path = gameobject;
 			sourceTree = "<group>";
@@ -997,6 +1002,7 @@
 				DE741E061E78228E008416EF /* Game.cpp in Sources */,
 				DEC12A2C1E83643E00A0FD55 /* imgui.cpp in Sources */,
 				DEB3ED831E8031BC009F8BB6 /* Input.cpp in Sources */,
+				DEC12DD91E84D19700A0FD55 /* PikaPika.cpp in Sources */,
 				DEC12A2E1E83643E00A0FD55 /* imgui_draw.cpp in Sources */,
 				DEC12DD61E84B61400A0FD55 /* Rect.cpp in Sources */,
 				DEC12A311E8364DE00A0FD55 /* imgui_impl_sdl_gl3.cpp in Sources */,

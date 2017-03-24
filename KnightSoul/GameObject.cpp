@@ -14,6 +14,8 @@
 #include "SpriteRenderer.hpp"
 #include "Game.hpp"
 #include "Context.hpp"
+#include "Room.hpp"
+#include "View.hpp"
 
 GameObject::GameObject(Context* context)
 :
@@ -41,8 +43,10 @@ void GameObject::Draw()
     std::string imageName = sprite->SpriteFrames[imageIndex];
     auto spriteFrame = sprite->SpriteSheetGroup->Frames[imageName];
     auto texture = ResourceManager::Textures[sprite->SpriteSheetGroup->Texture_Index];
+    auto view = EngineContext->GameInstance->ActiveRoom->ActiveView;
+    
     EngineContext->GameInstance->SpriteRendererInstance->DrawSprite(texture,
-                                       glm::vec2(this->X, this->Y),
+                                       glm::vec2(this->X - view->Boundary.Origin.x, this->Y - view->Boundary.Origin.y),
                                        glm::vec2(spriteFrame->W * this->Image_XScale, spriteFrame->H * this->Image_YScale),
                                        this->Rotation,
                                        glm::vec3(1.0f, 1.0f, 1.0f),

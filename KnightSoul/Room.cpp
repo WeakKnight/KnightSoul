@@ -86,6 +86,7 @@ void Room::Destoroy(GLfloat dt)
     
 }
 
+//TODO: View control Game Port
 void Room::Render()
 {
     glViewport(0, 0, EngineContext->GameInstance->Width, EngineContext->GameInstance->Height);

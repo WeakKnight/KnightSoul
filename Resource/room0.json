@@ -16,6 +16,14 @@
             "xscale":4,
             "yscale":4,
             "rotation":0
+        },
+        {
+            "name":"oPikaPika",
+            "x":500,
+            "y":200,
+            "xscale":4,
+            "yscale":4,
+            "rotation":0
         }
     ]
 }

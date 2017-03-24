@@ -17,7 +17,7 @@
 
 class GameObject;
 class Context;
-//TODO: Room has views to control view
+
 class View;
 
 class Room : public Object

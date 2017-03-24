@@ -10,6 +10,7 @@
 #include "GameObject.hpp"
 #include "Context.hpp"
 #include "Skeleton.hpp"
+#include "PikaPika.hpp"
 
 ObjectFactory::ObjectFactory(Context* context)
 :
@@ -23,6 +24,10 @@ GameObject* ObjectFactory::CreateInstanceByName(std::string name)
     if(name == "oSkeleton")
     {
         return new Skeleton(EngineContext);
+    }
+    else if(name == "oPikaPika")
+    {
+        return new PikaPika(EngineContext);
     }
     return nullptr;
 }
