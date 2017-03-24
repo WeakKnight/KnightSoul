@@ -473,63 +473,15 @@
 		DE741CB21E6D8D69008416EF /* KnightSoul */ = {
 			isa = PBXGroup;
 			children = (
-				DEC12DC91E83C83C00A0FD55 /* gameplay */,
-				DEC12A221E83643E00A0FD55 /* imgui */,
-				DE24308F1E7D7F56005872D4 /* json.hpp */,
-				DE741E0D1E783B8F008416EF /* glm */,
-				DE741D1F1E6D9CDB008416EF /* MemoryBuffer.cpp */,
-				DE741D201E6D9CDB008416EF /* MemoryBuffer.h */,
-				DE741D171E6D9BDD008416EF /* texture */,
-				DE741CBA1E6D8DA0008416EF /* Include */,
+				DEC12DE41E85245E00A0FD55 /* ThirdParty */,
+				DEC12DE31E85243600A0FD55 /* Common */,
+				DEC12DE21E85240400A0FD55 /* Core */,
+				DEC12DE11E8523C300A0FD55 /* Editor */,
+				DEC12DE01E85235800A0FD55 /* Render */,
+				DEC12DC91E83C83C00A0FD55 /* Gameplay */,
 				DE741CB31E6D8D69008416EF /* main.cpp */,
-				DE741D221E6D9D55008416EF /* File.cpp */,
-				DE741D231E6D9D55008416EF /* File.hpp */,
-				DE741D2A1E6DA3E2008416EF /* Shader.cpp */,
-				DE741D2B1E6DA3E2008416EF /* Shader.hpp */,
-				DE741E041E78228E008416EF /* Game.cpp */,
-				DE741E051E78228E008416EF /* Game.hpp */,
-				DE741E0A1E78321F008416EF /* ResourceManager.cpp */,
-				DE741E0B1E78321F008416EF /* ResourceManager.hpp */,
-				DE73A8FB1E7A67D800D69323 /* SpriteRenderer.cpp */,
-				DE73A8FC1E7A67D800D69323 /* SpriteRenderer.hpp */,
-				DE73A8FE1E7AAE7E00D69323 /* GameObject.cpp */,
-				DE73A8FF1E7AAE7E00D69323 /* GameObject.hpp */,
-				DE2430901E7D7F78005872D4 /* SpriteSheet.cpp */,
-				DE2430911E7D7F78005872D4 /* SpriteSheet.hpp */,
-				DEB3ED6C1E7EB034009F8BB6 /* StringUtil.cpp */,
-				DEB3ED6D1E7EB034009F8BB6 /* StringUtil.hpp */,
-				DEB3ED6F1E7ECCE5009F8BB6 /* Sprite.cpp */,
-				DEB3ED701E7ECCE5009F8BB6 /* Sprite.hpp */,
-				DEB3ED7E1E800D71009F8BB6 /* Room.cpp */,
-				DEB3ED7F1E800D71009F8BB6 /* Room.hpp */,
-				DEB3ED811E8031BC009F8BB6 /* Input.cpp */,
-				DEB3ED821E8031BC009F8BB6 /* Input.hpp */,
-				DEC12A1F1E8360CC00A0FD55 /* Editor.cpp */,
-				DEC12A201E8360CC00A0FD55 /* Editor.hpp */,
-				DEC12A321E83A0F000A0FD55 /* View.cpp */,
-				DEC12A331E83A0F000A0FD55 /* View.hpp */,
-				DEC12DC51E83C61A00A0FD55 /* ObjectFactory.cpp */,
-				DEC12DC61E83C61A00A0FD55 /* ObjectFactory.hpp */,
-				DEC12DCE1E83CAFC00A0FD55 /* Object.cpp */,
-				DEC12DCF1E83CAFC00A0FD55 /* Object.hpp */,
-				DEC12DD11E83CBC700A0FD55 /* Context.cpp */,
-				DEC12DD21E83CBC700A0FD55 /* Context.hpp */,
-				DEC12DD41E84B61400A0FD55 /* Rect.cpp */,
-				DEC12DD51E84B61400A0FD55 /* Rect.hpp */,
-				DEC12DDA1E84FFC900A0FD55 /* Surface.cpp */,
-				DEC12DDB1E84FFC900A0FD55 /* Surface.hpp */,
-				DEC12DDD1E851C9500A0FD55 /* GeometryRenderer.cpp */,
-				DEC12DDE1E851C9500A0FD55 /* GeometryRenderer.hpp */,
 			);
 			path = KnightSoul;
-			sourceTree = "<group>";
-		};
-		DE741CBA1E6D8DA0008416EF /* Include */ = {
-			isa = PBXGroup;
-			children = (
-				DE741CBB1E6D8DA0008416EF /* SDL2 */,
-			);
-			path = Include;
 			sourceTree = "<group>";
 		};
 		DE741CBB1E6D8DA0008416EF /* SDL2 */ = {
@@ -606,7 +558,8 @@
 				DE741D001E6D8DA0008416EF /* SDL_version.h */,
 				DE741D011E6D8DA0008416EF /* SDL_video.h */,
 			);
-			path = SDL2;
+			name = SDL2;
+			path = Include/SDL2;
 			sourceTree = "<group>";
 		};
 		DE741D021E6D8E34008416EF /* Frameworks */ = {
@@ -626,7 +579,7 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		DE741D171E6D9BDD008416EF /* texture */ = {
+		DE741D171E6D9BDD008416EF /* Texture */ = {
 			isa = PBXGroup;
 			children = (
 				DE741D1A1E6D9BDD008416EF /* RawImage.cpp */,
@@ -635,10 +588,11 @@
 				DE741E071E78300C008416EF /* Texture2D.cpp */,
 				DE741E081E78300C008416EF /* Texture2D.hpp */,
 			);
+			name = Texture;
 			path = texture;
 			sourceTree = "<group>";
 		};
-		DE741E0D1E783B8F008416EF /* glm */ = {
+		DE741E0D1E783B8F008416EF /* Glm */ = {
 			isa = PBXGroup;
 			children = (
 				DE741E0E1E783B8F008416EF /* CMakeLists.txt */,
@@ -649,6 +603,7 @@
 				DE741E741E783B90008416EF /* gtx */,
 				DE741EEF1E783B90008416EF /* virtrev */,
 			);
+			name = Glm;
 			path = glm;
 			sourceTree = "<group>";
 		};
@@ -899,7 +854,7 @@
 			path = virtrev;
 			sourceTree = "<group>";
 		};
-		DEC12A221E83643E00A0FD55 /* imgui */ = {
+		DEC12A221E83643E00A0FD55 /* Imgui */ = {
 			isa = PBXGroup;
 			children = (
 				DEC12A2F1E8364DE00A0FD55 /* imgui_impl_sdl_gl3.cpp */,
@@ -914,18 +869,20 @@
 				DEC12A2A1E83643E00A0FD55 /* stb_textedit.h */,
 				DEC12A2B1E83643E00A0FD55 /* stb_truetype.h */,
 			);
+			name = Imgui;
 			path = imgui;
 			sourceTree = "<group>";
 		};
-		DEC12DC91E83C83C00A0FD55 /* gameplay */ = {
+		DEC12DC91E83C83C00A0FD55 /* Gameplay */ = {
 			isa = PBXGroup;
 			children = (
-				DEC12DCA1E83C87400A0FD55 /* gameobject */,
+				DEC12DCA1E83C87400A0FD55 /* Gameobject */,
 			);
+			name = Gameplay;
 			path = gameplay;
 			sourceTree = "<group>";
 		};
-		DEC12DCA1E83C87400A0FD55 /* gameobject */ = {
+		DEC12DCA1E83C87400A0FD55 /* Gameobject */ = {
 			isa = PBXGroup;
 			children = (
 				DEC12DCB1E83C88200A0FD55 /* Skeleton.cpp */,
@@ -933,7 +890,96 @@
 				DEC12DD71E84D19700A0FD55 /* PikaPika.cpp */,
 				DEC12DD81E84D19700A0FD55 /* PikaPika.hpp */,
 			);
+			name = Gameobject;
 			path = gameobject;
+			sourceTree = "<group>";
+		};
+		DEC12DE01E85235800A0FD55 /* Render */ = {
+			isa = PBXGroup;
+			children = (
+				DE741D171E6D9BDD008416EF /* Texture */,
+				DE741D2A1E6DA3E2008416EF /* Shader.cpp */,
+				DE741D2B1E6DA3E2008416EF /* Shader.hpp */,
+				DEC12DDA1E84FFC900A0FD55 /* Surface.cpp */,
+				DEC12DDB1E84FFC900A0FD55 /* Surface.hpp */,
+				DE73A8FB1E7A67D800D69323 /* SpriteRenderer.cpp */,
+				DE73A8FC1E7A67D800D69323 /* SpriteRenderer.hpp */,
+				DEC12DDD1E851C9500A0FD55 /* GeometryRenderer.cpp */,
+				DEC12DDE1E851C9500A0FD55 /* GeometryRenderer.hpp */,
+			);
+			name = Render;
+			sourceTree = "<group>";
+		};
+		DEC12DE11E8523C300A0FD55 /* Editor */ = {
+			isa = PBXGroup;
+			children = (
+				DEC12A1F1E8360CC00A0FD55 /* Editor.cpp */,
+				DEC12A201E8360CC00A0FD55 /* Editor.hpp */,
+			);
+			name = Editor;
+			sourceTree = "<group>";
+		};
+		DEC12DE21E85240400A0FD55 /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				DEB3ED7E1E800D71009F8BB6 /* Room.cpp */,
+				DEB3ED7F1E800D71009F8BB6 /* Room.hpp */,
+				DE741E041E78228E008416EF /* Game.cpp */,
+				DE741E051E78228E008416EF /* Game.hpp */,
+				DE741E0A1E78321F008416EF /* ResourceManager.cpp */,
+				DE741E0B1E78321F008416EF /* ResourceManager.hpp */,
+				DE73A8FE1E7AAE7E00D69323 /* GameObject.cpp */,
+				DE73A8FF1E7AAE7E00D69323 /* GameObject.hpp */,
+				DE2430901E7D7F78005872D4 /* SpriteSheet.cpp */,
+				DE2430911E7D7F78005872D4 /* SpriteSheet.hpp */,
+				DEB3ED6F1E7ECCE5009F8BB6 /* Sprite.cpp */,
+				DEB3ED701E7ECCE5009F8BB6 /* Sprite.hpp */,
+				DEC12A321E83A0F000A0FD55 /* View.cpp */,
+				DEC12A331E83A0F000A0FD55 /* View.hpp */,
+				DEC12DC51E83C61A00A0FD55 /* ObjectFactory.cpp */,
+				DEC12DC61E83C61A00A0FD55 /* ObjectFactory.hpp */,
+				DEC12DCE1E83CAFC00A0FD55 /* Object.cpp */,
+				DEC12DCF1E83CAFC00A0FD55 /* Object.hpp */,
+				DEC12DD11E83CBC700A0FD55 /* Context.cpp */,
+				DEC12DD21E83CBC700A0FD55 /* Context.hpp */,
+				DEC12DD41E84B61400A0FD55 /* Rect.cpp */,
+				DEC12DD51E84B61400A0FD55 /* Rect.hpp */,
+			);
+			name = Core;
+			sourceTree = "<group>";
+		};
+		DEC12DE31E85243600A0FD55 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				DE741D1F1E6D9CDB008416EF /* MemoryBuffer.cpp */,
+				DE741D201E6D9CDB008416EF /* MemoryBuffer.h */,
+				DE741D221E6D9D55008416EF /* File.cpp */,
+				DE741D231E6D9D55008416EF /* File.hpp */,
+				DEB3ED6C1E7EB034009F8BB6 /* StringUtil.cpp */,
+				DEB3ED6D1E7EB034009F8BB6 /* StringUtil.hpp */,
+				DEB3ED811E8031BC009F8BB6 /* Input.cpp */,
+				DEB3ED821E8031BC009F8BB6 /* Input.hpp */,
+			);
+			name = Common;
+			sourceTree = "<group>";
+		};
+		DEC12DE41E85245E00A0FD55 /* ThirdParty */ = {
+			isa = PBXGroup;
+			children = (
+				DE741CBB1E6D8DA0008416EF /* SDL2 */,
+				DEC12DE51E85247000A0FD55 /* Json */,
+				DEC12A221E83643E00A0FD55 /* Imgui */,
+				DE741E0D1E783B8F008416EF /* Glm */,
+			);
+			name = ThirdParty;
+			sourceTree = "<group>";
+		};
+		DEC12DE51E85247000A0FD55 /* Json */ = {
+			isa = PBXGroup;
+			children = (
+				DE24308F1E7D7F56005872D4 /* json.hpp */,
+			);
+			name = Json;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
