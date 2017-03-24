@@ -11,4 +11,9 @@
 
 #include <stdio.h>
 
+class GeometryRenderer
+{
+    
+};
+
 #endif /* GeometryRenderer_hpp */

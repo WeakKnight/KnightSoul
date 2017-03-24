@@ -55,7 +55,6 @@ void SpriteRenderer::DrawSprite(Texture2D &texture,
                                 glm::vec3 color,
                                 glm::vec4 spriteFrame)
 {
-    // Prepare transformations
     this->shader.Use();
     glm::mat4 model;
     model = glm::translate(model, glm::vec3(position, 0.0f));
