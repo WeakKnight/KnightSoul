@@ -49,10 +49,6 @@ int main(int argc, const char * argv[]) {
                                   SCREEN_HEIGHT,
                                   SDL_WINDOW_OPENGL
                                   );
-    //set icon
-    auto icon = SDL_LoadBMP("logo.bmp");
-    SDL_SetWindowIcon(mainWindow, icon);
-    //
     auto mainContext = InitGL(mainWindow);
     //
     Context* context = new Context();
