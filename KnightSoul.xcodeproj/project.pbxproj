@@ -43,6 +43,7 @@
 		DEC12DCD1E83C88200A0FD55 /* Skeleton.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DEC12DCB1E83C88200A0FD55 /* Skeleton.cpp */; };
 		DEC12DD01E83CAFC00A0FD55 /* Object.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DEC12DCE1E83CAFC00A0FD55 /* Object.cpp */; };
 		DEC12DD31E83CBC700A0FD55 /* Context.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DEC12DD11E83CBC700A0FD55 /* Context.cpp */; };
+		DEC12DD61E84B61400A0FD55 /* Rect.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DEC12DD41E84B61400A0FD55 /* Rect.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -417,6 +418,8 @@
 		DEC12DCF1E83CAFC00A0FD55 /* Object.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Object.hpp; sourceTree = "<group>"; };
 		DEC12DD11E83CBC700A0FD55 /* Context.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Context.cpp; sourceTree = "<group>"; };
 		DEC12DD21E83CBC700A0FD55 /* Context.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Context.hpp; sourceTree = "<group>"; };
+		DEC12DD41E84B61400A0FD55 /* Rect.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Rect.cpp; sourceTree = "<group>"; };
+		DEC12DD51E84B61400A0FD55 /* Rect.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Rect.hpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -502,6 +505,8 @@
 				DEC12DCF1E83CAFC00A0FD55 /* Object.hpp */,
 				DEC12DD11E83CBC700A0FD55 /* Context.cpp */,
 				DEC12DD21E83CBC700A0FD55 /* Context.hpp */,
+				DEC12DD41E84B61400A0FD55 /* Rect.cpp */,
+				DEC12DD51E84B61400A0FD55 /* Rect.hpp */,
 			);
 			path = KnightSoul;
 			sourceTree = "<group>";
@@ -993,6 +998,7 @@
 				DEC12A2C1E83643E00A0FD55 /* imgui.cpp in Sources */,
 				DEB3ED831E8031BC009F8BB6 /* Input.cpp in Sources */,
 				DEC12A2E1E83643E00A0FD55 /* imgui_draw.cpp in Sources */,
+				DEC12DD61E84B61400A0FD55 /* Rect.cpp in Sources */,
 				DEC12A311E8364DE00A0FD55 /* imgui_impl_sdl_gl3.cpp in Sources */,
 				DE2430921E7D7F78005872D4 /* SpriteSheet.cpp in Sources */,
 				DEB3ED6E1E7EB034009F8BB6 /* StringUtil.cpp in Sources */,

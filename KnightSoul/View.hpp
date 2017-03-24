@@ -10,10 +10,17 @@
 #define View_hpp
 
 #include <stdio.h>
+#include "Rect.hpp"
 
 class View
 {
+public:
+    View(Rect boundary)
+    {
+        Boundary = boundary;
+    }
     
+    Rect Boundary;
 };
 
 #endif /* View_hpp */

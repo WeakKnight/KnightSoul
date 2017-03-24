@@ -1,0 +1,21 @@
+{
+    "name":"room0",
+    "view":
+    {
+        "x":0,
+        "y":0,
+        "width":640,
+        "height":480
+    },
+    "instances":
+    [
+        {
+            "name":"oSkeleton",
+            "x":200,
+            "y":200,
+            "xscale":4,
+            "yscale":4,
+            "rotation":0
+        }
+    ]
+}

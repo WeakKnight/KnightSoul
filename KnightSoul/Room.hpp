@@ -24,12 +24,16 @@ class Room : public Object
 {
 public:
     Room(Context* context);
+    Room(Context* context, const std::string& path);
+    void LoadRoomSetting(const std::string& path);
     void Init();
     void Update(GLfloat dt);
     void Destoroy(GLfloat dt);
     void Render();
     void AddInstance(GameObject* object);
     std::list<GameObject*> InstanceList;
+    View* ActiveView;
+    std::string Name;
 };
 
 #endif /* Room_hpp */

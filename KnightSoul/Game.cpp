@@ -43,10 +43,8 @@ void Game::Init()
     ResourceManager::LoadSprite("Resource/testSprite2.json");
     //
     InitSpriteRenderer();
-    //TODO: read room json to init room
-    ActiveRoom = new Room(EngineContext);
-    GameObject* obj1 = EngineContext->ObjectFactoryInstance->CreateInstanceByName("oSkeleton");
-    ActiveRoom->AddInstance(obj1);
+    //
+    ActiveRoom = new Room(EngineContext, "Resource/room0.json");
     ActiveRoom->Init();
 }
 

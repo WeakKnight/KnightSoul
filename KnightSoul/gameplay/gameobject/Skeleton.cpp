@@ -20,13 +20,7 @@ GameObject(context)
 void Skeleton::Init()
 {
     GameObject::Init();
-    X = 200.0f;
-    Y = 200.0f;
-    Image_XScale = 8.0;
-    Image_YScale = 8.0;
-    Rotation = 0.0f;
     SpritePointer = ResourceManager::Sprites["skeleton_idle"];
-
 }
 
 void Skeleton::Update(float dt)
