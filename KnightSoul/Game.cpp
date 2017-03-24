@@ -34,9 +34,6 @@ void Game::Init()
 {
     //TODO: move in resource.json
     ResourceManager::LoadShader("Resource/BaseShader.vsh", "Resource/BaseShader.fsh", "BaseShader");
-    ResourceManager::LoadTexture("Resource/QQ20170106.png", "TestSprite");
-    ResourceManager::LoadTexture("Resource/pikapika.png", "PikaSprite");
-    ResourceManager::LoadTexture("Resource/windows.jpg", "WindowSprite");
     ResourceManager::LoadTexture("Resource/skeletonTexture.png", "skeletonTexture");
     ResourceManager::LoadSpriteSheet("Resource/texture1.json");
     ResourceManager::LoadSprite("Resource/testSprite.json");
