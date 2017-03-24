@@ -46,6 +46,7 @@
 		DEC12DD61E84B61400A0FD55 /* Rect.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DEC12DD41E84B61400A0FD55 /* Rect.cpp */; };
 		DEC12DD91E84D19700A0FD55 /* PikaPika.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DEC12DD71E84D19700A0FD55 /* PikaPika.cpp */; };
 		DEC12DDC1E84FFC900A0FD55 /* Surface.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DEC12DDA1E84FFC900A0FD55 /* Surface.cpp */; };
+		DEC12DDF1E851C9500A0FD55 /* GeometryRenderer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DEC12DDD1E851C9500A0FD55 /* GeometryRenderer.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -426,6 +427,8 @@
 		DEC12DD81E84D19700A0FD55 /* PikaPika.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = PikaPika.hpp; sourceTree = "<group>"; };
 		DEC12DDA1E84FFC900A0FD55 /* Surface.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Surface.cpp; sourceTree = "<group>"; };
 		DEC12DDB1E84FFC900A0FD55 /* Surface.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Surface.hpp; sourceTree = "<group>"; };
+		DEC12DDD1E851C9500A0FD55 /* GeometryRenderer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = GeometryRenderer.cpp; sourceTree = "<group>"; };
+		DEC12DDE1E851C9500A0FD55 /* GeometryRenderer.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = GeometryRenderer.hpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -515,6 +518,8 @@
 				DEC12DD51E84B61400A0FD55 /* Rect.hpp */,
 				DEC12DDA1E84FFC900A0FD55 /* Surface.cpp */,
 				DEC12DDB1E84FFC900A0FD55 /* Surface.hpp */,
+				DEC12DDD1E851C9500A0FD55 /* GeometryRenderer.cpp */,
+				DEC12DDE1E851C9500A0FD55 /* GeometryRenderer.hpp */,
 			);
 			path = KnightSoul;
 			sourceTree = "<group>";
@@ -998,6 +1003,7 @@
 				DE741D241E6D9D55008416EF /* File.cpp in Sources */,
 				DE73A8FD1E7A67D800D69323 /* SpriteRenderer.cpp in Sources */,
 				DEB3ED711E7ECCE5009F8BB6 /* Sprite.cpp in Sources */,
+				DEC12DDF1E851C9500A0FD55 /* GeometryRenderer.cpp in Sources */,
 				DEC12DDC1E84FFC900A0FD55 /* Surface.cpp in Sources */,
 				DE73A9001E7AAE7E00D69323 /* GameObject.cpp in Sources */,
 				DEB3ED801E800D71009F8BB6 /* Room.cpp in Sources */,

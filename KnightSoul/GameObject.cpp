@@ -46,7 +46,7 @@ void GameObject::Draw()
     auto view = EngineContext->GameInstance->ActiveRoom->ActiveView;
     
     EngineContext->GameInstance->SpriteRendererInstance->DrawSprite(texture,
-                                       glm::vec2(this->X - view->Boundary.Origin.x, this->Y - view->Boundary.Origin.y),
+                                       glm::vec2(this->X - view->Boundary.Origin.x - spriteFrame->W * sprite->pivotX, this->Y - view->Boundary.Origin.y - spriteFrame->H * sprite->pivotY),
                                        glm::vec2(spriteFrame->W * this->Image_XScale, spriteFrame->H * this->Image_YScale),
                                        this->Rotation,
                                        glm::vec3(1.0f, 1.0f, 1.0f),

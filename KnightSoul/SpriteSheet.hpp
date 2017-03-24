@@ -20,21 +20,13 @@ public:
                 int x,
                 int y,
                 int w,
-                int h,
-                int offsetX,
-                int offsetY,
-                int sourceWidth,
-                int sourceHeight)
+                int h)
     {
         Name = name;
         X = x;
         Y = y;
         W = w;
         H = h;
-        OffsetX = offsetX;
-        OffsetY = offsetY;
-        SourceWidth = sourceWidth;
-        SourceHeight = sourceHeight;
     };
     
     std::string Name;
@@ -42,10 +34,6 @@ public:
     int Y;
     int W;
     int H;
-    int OffsetX;
-    int OffsetY;
-    int SourceWidth;
-    int SourceHeight;
 };
 
 class SpriteSheet

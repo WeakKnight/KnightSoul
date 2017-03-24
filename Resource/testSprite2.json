@@ -10,7 +10,7 @@
      "spr_skeleton_run_4.png",
      "spr_skeleton_run_5.png"
      ],
-    "pivotX":0,
-    "pivotY":0,
+    "pivotX":0.5,
+    "pivotY":1,
     "sheet_name":"sheet_1"
 }
