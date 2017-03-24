@@ -12,6 +12,7 @@
 #include "ResourceManager.hpp"
 #include "GameObject.hpp"
 #include "Context.hpp"
+#include "Game.hpp"
 
 Editor::Editor(Context* context,GLuint width, GLuint height)
 :
@@ -37,11 +38,11 @@ void Editor::Update(float dt)
     {
         ImGui::Begin("Game",&Show, window_flags);
         ImGui::SetWindowPos(ImVec2(0.0f, 0.0f));
-        ImGui::SetWindowSize(ImVec2(Width/2+20.0f,Height/2+40.0f),ImGuiSetCond_Once);
-        //ImGui::Text("Hello, world!");
-        ImGui::Image((void*)GameTextureID,ImVec2(Width/2,Height/2), ImVec2(0,1), ImVec2(1,0));
+        ImGui::SetWindowSize(ImVec2(800+20.0f,600+40.0f),ImGuiSetCond_Once);
+        ImGui::Image((void*)(EngineContext->GameInstance->GameSurface->Texture.ID),ImVec2(800,600), ImVec2(0,1), ImVec2(1,0));
         ImGui::End();
     }
+    /*
     {
         ImGui::Begin("Console",&Show, window_flags);
         ImGui::SetWindowPos(ImVec2(0.0f, Height/2 + 42.0f));
@@ -49,12 +50,15 @@ void Editor::Update(float dt)
         ImGui::Text("Hello World");
         ImGui::End();
     }
+     */
+    /*
     {
         ImGui::Begin("Inspector",&Show, window_flags);
         ImGui::SetWindowPos(ImVec2(Width/2+22.0f, 0));
         ImGui::SetWindowSize(ImVec2(Width/2-22.0f,Height/2 + 40.0f),ImGuiSetCond_Once);
         ImGui::End();
     }
+     */
 }
 
 void Editor::Render()
@@ -68,7 +72,3 @@ void Editor::Render()
     ImGui::Render();
 }
 
-void Editor::SetGameView(GLuint textureID)
-{
-    GameTextureID = textureID;
-}

@@ -72,6 +72,7 @@ void Room::Init()
         gameObject->Init();
     }
 }
+
 void Room::Update(GLfloat dt)
 {
     for(auto itr = InstanceList.begin(); itr != InstanceList.end(); itr++)
@@ -80,6 +81,7 @@ void Room::Update(GLfloat dt)
         gameObject->Update(dt);
     }
 }
+
 //TODO: remove gameobject from linked list here
 void Room::Destoroy(GLfloat dt)
 {
@@ -89,7 +91,8 @@ void Room::Destoroy(GLfloat dt)
 //TODO: View control Game Port
 void Room::Render()
 {
-    glViewport(0, 0, EngineContext->GameInstance->Width, EngineContext->GameInstance->Height);
+    auto view = EngineContext->GameInstance->ActiveRoom->ActiveView;
+    glViewport(0, 0, 640, 480);
     glEnable(GL_CULL_FACE);
     glEnable(GL_BLEND);
     glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);

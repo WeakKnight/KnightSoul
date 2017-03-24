@@ -25,9 +25,7 @@ public:
     void Init(SDL_Window* window);
     void Update(float dt);
     void Render();
-    void SetGameView(GLuint textureID);
 private:
-    GLuint GameTextureID;
     SDL_Window* Window;
 };
 

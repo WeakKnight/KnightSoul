@@ -15,13 +15,13 @@
 #include "Context.hpp"
 #include "Room.hpp"
 #include "ObjectFactory.hpp"
+#include "View.hpp"
 
-Game::Game(Context* context,GLuint width, GLuint height)
+Game::Game(Context* context)
 :
 Object(context),
-Width(width),
-Height(height),
-SpriteRendererInstance(nullptr)
+SpriteRendererInstance(nullptr),
+GameSurface(nullptr)
 {
     context->GameInstance = this;
 }
@@ -38,17 +38,18 @@ void Game::Init()
     ResourceManager::LoadSpriteSheet("Resource/texture1.json");
     ResourceManager::LoadSprite("Resource/testSprite.json");
     ResourceManager::LoadSprite("Resource/testSprite2.json");
-    //
-    InitSpriteRenderer();
-    //
     ActiveRoom = new Room(EngineContext, "Resource/room0.json");
     ActiveRoom->Init();
+    
+    GameSurface = new Surface(ActiveRoom->ActiveView->Boundary.Size.x, ActiveRoom->ActiveView->Boundary.Size.y);
+    InitSpriteRenderer();
 }
 
 void Game::InitSpriteRenderer()
 {
-    glm::mat4 projection = glm::ortho(0.0f, static_cast<GLfloat>(this->Width),
-                                      static_cast<GLfloat>(this->Height), 0.0f, -1.0f, 1.0f);
+    auto view = EngineContext->GameInstance->ActiveRoom->ActiveView;
+    glm::mat4 projection = glm::ortho(0.0f, static_cast<GLfloat>(view->Boundary.Size.x),
+                                      static_cast<GLfloat>(view->Boundary.Size.y), 0.0f, -1.0f, 1.0f);
     ResourceManager::Shaders["BaseShader"].Use().SetInteger("image", 0);
     ResourceManager::Shaders["BaseShader"].SetMatrix4("projection", projection);
     SpriteRendererInstance = new SpriteRenderer(ResourceManager::Shaders["BaseShader"]);
@@ -71,5 +72,7 @@ void Game::Destoroy(GLfloat dt)
 
 void Game::Render()
 {
+    Surface::SetTarget(GameSurface);
     ActiveRoom->Render();
+    Surface::ResetTarget();
 }

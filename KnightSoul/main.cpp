@@ -56,7 +56,7 @@ int main(int argc, const char * argv[]) {
     auto mainContext = InitGL(mainWindow);
     //
     Context* context = new Context();
-    Game* GameInstance = new Game(context,SCREEN_WIDTH,SCREEN_HEIGHT);
+    Game* GameInstance = new Game(context);
     Editor* EditorInstance = new Editor(context,SCREEN_WIDTH,SCREEN_HEIGHT);
     new ObjectFactory(context);
     //
@@ -68,15 +68,6 @@ int main(int argc, const char * argv[]) {
     /////////
     GLfloat deltaTime = 0.0f;
     GLfloat lastFrame = 0.0f;
-    //
-    Texture2D GameRendererTarget;
-    GameRendererTarget.Generate(SCREEN_WIDTH, SCREEN_HEIGHT, 0);
-    GLuint frameBuffer;
-    glGenFramebuffers(1, &frameBuffer);
-    glBindFramebuffer(GL_FRAMEBUFFER, frameBuffer);
-    glFramebufferTexture2D(GL_FRAMEBUFFER, GL_COLOR_ATTACHMENT0, GL_TEXTURE_2D, GameRendererTarget.ID, 0);
-    glBindFramebuffer(GL_FRAMEBUFFER, 0);
-    EditorInstance->SetGameView(GameRendererTarget.ID);
     //
     float nextFrame = static_cast<float>(SDL_GetTicks());
     bool shouldExit = false;
@@ -100,9 +91,7 @@ int main(int argc, const char * argv[]) {
         
         if(nextFrame > static_cast<float>(SDL_GetTicks()))
         {
-            glBindFramebuffer(GL_FRAMEBUFFER, frameBuffer);
             GameInstance->Render();
-            glBindFramebuffer(GL_FRAMEBUFFER, 0);
             EditorInstance->Render();
             SDL_GL_SwapWindow(mainWindow);
         }

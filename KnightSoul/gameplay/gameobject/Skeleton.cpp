@@ -47,6 +47,6 @@ void Skeleton::Update(float dt)
         SpritePointer = spriteIdle;
     }
     
-    view->Boundary.Origin = glm::vec2(X - 300, Y - 200);
+    //view->Boundary.Origin = glm::vec2(X - 300, Y - 200);
 }
 

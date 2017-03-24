@@ -12,15 +12,17 @@
 #include <stdio.h>
 #include <OpenGL/gl3.h>
 #include "Object.hpp"
+#include "Surface.hpp"
+
 class SpriteRenderer;
 class Context;
 class Room;
+
 class Game: public Object
 {
 public:
     SpriteRenderer* SpriteRendererInstance;
-    GLuint Width,Height;
-    Game(Context* context, GLuint width, GLuint height);
+    Game(Context* context);
     ~Game();
     void Init();
     void InitSpriteRenderer();
@@ -29,6 +31,7 @@ public:
     void Destoroy(GLfloat dt);
     void Render();
     Room* ActiveRoom;
+    Surface* GameSurface;
 };
 
 #endif /* Game_hpp */
