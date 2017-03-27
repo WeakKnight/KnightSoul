@@ -10,10 +10,14 @@
 #define GeometryRenderer_hpp
 
 #include <stdio.h>
+#include "glm.hpp"
 
 class GeometryRenderer
 {
-    
+public:
+    GeometryRenderer();
+    ~GeometryRenderer();
+    void DrawRectangle(glm::vec2 origin, glm::vec2 size);
 };
 
 #endif /* GeometryRenderer_hpp */
