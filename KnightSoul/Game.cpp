@@ -16,6 +16,7 @@
 #include "Room.hpp"
 #include "ObjectFactory.hpp"
 #include "View.hpp"
+#include "GeometryRenderer.hpp"
 
 Game::Game(Context* context)
 :
@@ -34,15 +35,18 @@ void Game::Init()
 {
     //TODO: move in resource.json
     ResourceManager::LoadShader("Resource/BaseShader.vsh", "Resource/BaseShader.fsh", "BaseShader");
+    ResourceManager::LoadShader("Resource/LineShader.vsh", "Resource/LineShader.fsh", "LineShader");
     ResourceManager::LoadTexture("Resource/skeletonTexture.png", "skeletonTexture");
     ResourceManager::LoadSpriteSheet("Resource/texture1.json");
     ResourceManager::LoadSprite("Resource/testSprite.json");
     ResourceManager::LoadSprite("Resource/testSprite2.json");
+    ResourceManager::LoadSprite("Resource/testSprite3.json");
     ActiveRoom = new Room(EngineContext, "Resource/room0.json");
     ActiveRoom->Init();
     
     GameSurface = new Surface(ActiveRoom->ActiveView->Boundary.Size.x, ActiveRoom->ActiveView->Boundary.Size.y);
     InitSpriteRenderer();
+    InitGeometryRenderer();
 }
 
 void Game::InitSpriteRenderer()
@@ -53,6 +57,15 @@ void Game::InitSpriteRenderer()
     ResourceManager::Shaders["BaseShader"].Use().SetInteger("image", 0);
     ResourceManager::Shaders["BaseShader"].SetMatrix4("projection", projection);
     SpriteRendererInstance = new SpriteRenderer(ResourceManager::Shaders["BaseShader"]);
+}
+
+void Game::InitGeometryRenderer()
+{
+    auto view = EngineContext->GameInstance->ActiveRoom->ActiveView;
+    glm::mat4 projection = glm::ortho(0.0f, static_cast<GLfloat>(view->Boundary.Size.x),
+                                      static_cast<GLfloat>(view->Boundary.Size.y), 0.0f, -1.0f, 1.0f);
+    ResourceManager::Shaders["LineShader"].SetMatrix4("projection", projection);
+    GeometryRendererInstance = new GeometryRenderer(ResourceManager::Shaders["LineShader"]);
 }
 
 void Game::Update(GLfloat dt)

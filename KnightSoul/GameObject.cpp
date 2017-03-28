@@ -12,6 +12,7 @@
 #include "ResourceManager.hpp"
 #include "SpriteSheet.hpp"
 #include "SpriteRenderer.hpp"
+#include "GeometryRenderer.hpp"
 #include "Game.hpp"
 #include "Context.hpp"
 #include "Room.hpp"
@@ -51,5 +52,6 @@ void GameObject::Draw()
                                        this->Rotation,
                                        glm::vec3(1.0f, 1.0f, 1.0f),
                                        glm::vec4((float)(spriteFrame->X)/(float)(texture.Width), (float)(spriteFrame->Y)/(float)(texture.Height), (float)(spriteFrame->W)/(float)(texture.Width), (float)(spriteFrame->H)/(float)(texture.Height)));
+    EngineContext->GameInstance->GeometryRendererInstance->DrawRectangle(glm::vec2(X,Y), glm::vec2(spriteFrame->W,spriteFrame->H));
 }
 

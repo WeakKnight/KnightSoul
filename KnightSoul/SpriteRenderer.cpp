@@ -55,6 +55,13 @@ void SpriteRenderer::DrawSprite(Texture2D &texture,
                                 glm::vec3 color,
                                 glm::vec4 spriteFrame)
 {
+    int facingX = 1;
+    if(size.x < 0)
+    {
+        facingX = -1;
+    }
+    size.x = fabsf(size.x);
+    
     this->shader.Use();
     glm::mat4 model;
     model = glm::translate(model, glm::vec3(position, 0.0f));
@@ -68,6 +75,8 @@ void SpriteRenderer::DrawSprite(Texture2D &texture,
     this->shader.SetMatrix4("model", model);
     this->shader.SetVector3f("spriteColor", color);
     this->shader.SetVector4f("spriteFrame", spriteFrame);
+    this->shader.SetInteger("facing", facingX);
+    
     glActiveTexture(GL_TEXTURE0);
     texture.Bind();
     

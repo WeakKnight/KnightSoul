@@ -29,24 +29,30 @@ void Skeleton::Init()
 void Skeleton::Update(float dt)
 {
     GameObject::Update(dt);
-    auto view = EngineContext->GameInstance->ActiveRoom->ActiveView;
+    //auto view = EngineContext->GameInstance->ActiveRoom->ActiveView;
     auto spriteIdle = ResourceManager::Sprites["skeleton_idle"];
     auto spriteRun = ResourceManager::Sprites["skeleton_run"];
+    auto spriteRoll = ResourceManager::Sprites["skeleton_roll"];
     if(Input::KeyboardPressed(SDL_SCANCODE_LEFT))
     {
         X -= 3.0f;
+        Image_XScale = -1;
         SpritePointer = spriteRun;
     }
     if(Input::KeyboardPressed(SDL_SCANCODE_RIGHT))
     {
         X += 3.0f;
+        Image_XScale = 1;
         SpritePointer = spriteRun;
     }
     if(!Input::KeyboardPressed(SDL_SCANCODE_LEFT) && !Input::KeyboardPressed(SDL_SCANCODE_RIGHT))
     {
         SpritePointer = spriteIdle;
     }
-    
+    if(Input::KeyboardPressed(SDL_SCANCODE_DOWN))
+    {
+        SpritePointer = spriteRoll;
+    }
     //view->Boundary.Origin = glm::vec2(X - 300, Y - 200);
 }
 

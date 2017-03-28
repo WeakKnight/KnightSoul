@@ -1,0 +1,17 @@
+{
+    "name":"skeleton_roll",
+    "image_speed":0.15,
+    "frames":
+    [
+     "spr_skeleton_roll_0.png",
+     "spr_skeleton_roll_1.png",
+     "spr_skeleton_roll_2.png",
+     "spr_skeleton_roll_3.png",
+     "spr_skeleton_roll_4.png",
+     "spr_skeleton_roll_5.png",
+     "spr_skeleton_roll_6.png"
+     ],
+    "pivotX":0.5,
+    "pivotY":1,
+    "sheet_name":"sheet_1"
+}

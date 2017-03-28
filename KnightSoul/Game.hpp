@@ -15,6 +15,7 @@
 #include "Surface.hpp"
 
 class SpriteRenderer;
+class GeometryRenderer;
 class Context;
 class Room;
 
@@ -22,15 +23,18 @@ class Game: public Object
 {
 public:
     SpriteRenderer* SpriteRendererInstance;
+    GeometryRenderer* GeometryRendererInstance;
     Game(Context* context);
     ~Game();
     void Init();
-    void InitSpriteRenderer();
     void Update(GLfloat dt);
     void Destoroy(GLfloat dt);
     void Render();
     Room* ActiveRoom;
     Surface* GameSurface;
+private:
+    void InitSpriteRenderer();
+    void InitGeometryRenderer();
 };
 
 #endif /* Game_hpp */
