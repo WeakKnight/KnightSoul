@@ -64,6 +64,7 @@ void Game::InitGeometryRenderer()
     auto view = EngineContext->GameInstance->ActiveRoom->ActiveView;
     glm::mat4 projection = glm::ortho(0.0f, static_cast<GLfloat>(view->Boundary.Size.x),
                                       static_cast<GLfloat>(view->Boundary.Size.y), 0.0f, -1.0f, 1.0f);
+    ResourceManager::Shaders["LineShader"].Use().SetInteger("image", 0);
     ResourceManager::Shaders["LineShader"].SetMatrix4("projection", projection);
     GeometryRendererInstance = new GeometryRenderer(ResourceManager::Shaders["LineShader"]);
 }

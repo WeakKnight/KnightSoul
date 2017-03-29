@@ -26,8 +26,8 @@ public:
     float ImageSpeed;
     float ImageIndex;
     float ImageNumber;
-    int pivotX;
-    int pivotY;
+    float pivotX;
+    float pivotY;
 };
 
 #endif /* Sprite_hpp */

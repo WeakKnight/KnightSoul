@@ -52,6 +52,10 @@ void GameObject::Draw()
                                        this->Rotation,
                                        glm::vec3(1.0f, 1.0f, 1.0f),
                                        glm::vec4((float)(spriteFrame->X)/(float)(texture.Width), (float)(spriteFrame->Y)/(float)(texture.Height), (float)(spriteFrame->W)/(float)(texture.Width), (float)(spriteFrame->H)/(float)(texture.Height)));
-    EngineContext->GameInstance->GeometryRendererInstance->DrawRectangle(glm::vec2(X,Y), glm::vec2(spriteFrame->W,spriteFrame->H));
+    //draw sprite bound
+    EngineContext->GameInstance->GeometryRendererInstance->DrawRectangle(glm::vec2(X- view->Boundary.Origin.x,Y- view->Boundary.Origin.y), glm::vec2(spriteFrame->W,spriteFrame->H));
+    //draw pivot
+    EngineContext->GameInstance->GeometryRendererInstance->DrawRectangle(glm::vec2(X- view->Boundary.Origin.x - spriteFrame->W * sprite->pivotX,Y- view->Boundary.Origin.y- spriteFrame->H * sprite->pivotY),
+                                                                         glm::vec2(5,5));
 }
 

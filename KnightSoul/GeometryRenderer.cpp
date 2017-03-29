@@ -28,13 +28,14 @@ void GeometryRenderer::initRenderData()
     GLuint VBO;
     GLfloat vertices[] = {
         // Pos
+        0.0f, 0.0f,
         0.0f, 1.0f,
         1.0f, 0.0f,
-        0.0f, 0.0f,
-        
-        0.0f, 1.0f,
         1.0f, 1.0f,
-        1.0f, 0.0f
+        0.0f, 0.0f,
+        1.0f, 0.0f,
+        0.0f, 1.0f,
+        1.0f, 1.0f
     };
     
     glGenVertexArrays(1, &this->quadVAO);
@@ -56,14 +57,14 @@ void GeometryRenderer::DrawRectangle(glm::vec2 origin, glm::vec2 size)
     glm::mat4 model;
     model = glm::translate(model, glm::vec3(origin, 0.0f));
     
-    //model = glm::translate(model, glm::vec3(0.5f * size.x, 0.5f * size.y, 0.0f));
-    //model = glm::translate(model, glm::vec3(-0.5f * size.x, -0.5f * size.y, 0.0f));
+    model = glm::translate(model, glm::vec3(0.5f * size.x, 0.5f * size.y, 0.0f));
+    model = glm::translate(model, glm::vec3(-0.5f * size.x, -0.5f * size.y, 0.0f));
     
     model = glm::scale(model, glm::vec3(size, 1.0f));
     
     this->shader.SetMatrix4("model", model);
 
     glBindVertexArray(this->quadVAO);
-    glDrawArrays(GL_TRIANGLES, 0, 6);
+    glDrawArrays(GL_LINES, 0, 8);
     glBindVertexArray(0);
 }

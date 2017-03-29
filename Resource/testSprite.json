@@ -8,6 +8,6 @@
     "spr_skeleton_idle_2.png"
     ],
     "pivotX":0.5,
-    "pivotY":1,
+    "pivotY":0,
     "sheet_name":"sheet_1"
 }
