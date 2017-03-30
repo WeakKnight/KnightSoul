@@ -43,19 +43,13 @@ void GameObject::Draw()
     int imageIndex = (int)(sprite->ImageIndex);
     std::string imageName = sprite->SpriteFrames[imageIndex];
     auto spriteFrame = sprite->SpriteSheetGroup->Frames[imageName];
-    auto texture = ResourceManager::Textures[sprite->SpriteSheetGroup->Texture_Index];
     auto view = EngineContext->GameInstance->ActiveRoom->ActiveView;
     
-    EngineContext->GameInstance->SpriteRendererInstance->DrawSprite(texture,
-                                       glm::vec2(this->X - view->Boundary.Origin.x - spriteFrame->W * sprite->pivotX, this->Y - view->Boundary.Origin.y - spriteFrame->H * sprite->pivotY),
-                                       glm::vec2(spriteFrame->W * this->Image_XScale, spriteFrame->H * this->Image_YScale),
-                                       this->Rotation,
-                                       glm::vec3(1.0f, 1.0f, 1.0f),
-                                       glm::vec4((float)(spriteFrame->X)/(float)(texture.Width), (float)(spriteFrame->Y)/(float)(texture.Height), (float)(spriteFrame->W)/(float)(texture.Width), (float)(spriteFrame->H)/(float)(texture.Height)));
+    EngineContext->GameInstance->SpriteRendererInstance->DrawSprite(SpritePointer, glm::vec2(X- view->Boundary.Origin.x,Y- view->Boundary.Origin.y), glm::vec2(Image_XScale,Image_YScale), Rotation);
     //draw sprite bound
-    EngineContext->GameInstance->GeometryRendererInstance->DrawRectangle(glm::vec2(X- view->Boundary.Origin.x,Y- view->Boundary.Origin.y), glm::vec2(spriteFrame->W,spriteFrame->H));
-    //draw pivot
-    EngineContext->GameInstance->GeometryRendererInstance->DrawRectangle(glm::vec2(X- view->Boundary.Origin.x - spriteFrame->W * sprite->pivotX,Y- view->Boundary.Origin.y- spriteFrame->H * sprite->pivotY),
-                                                                         glm::vec2(5,5));
+//    EngineContext->GameInstance->GeometryRendererInstance->DrawRectangle(glm::vec2(X- view->Boundary.Origin.x,Y- view->Boundary.Origin.y), glm::vec2(spriteFrame->W,spriteFrame->H));
+    //draw origin x,y
+    EngineContext->GameInstance->GeometryRendererInstance->DrawRectangle(glm::vec2(X- view->Boundary.Origin.x,Y- view->Boundary.Origin.y),
+                                                                         glm::vec2(3,3));
 }
 

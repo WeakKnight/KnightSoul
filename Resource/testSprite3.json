@@ -11,7 +11,7 @@
      "spr_skeleton_roll_5.png",
      "spr_skeleton_roll_6.png"
      ],
-    "pivotX":0.5,
+    "pivotX":0.25,
     "pivotY":0,
     "sheet_name":"sheet_1"
 }

@@ -7,6 +7,8 @@
 //
 
 #include "SpriteRenderer.hpp"
+#include "Sprite.hpp"
+#include "ResourceManager.hpp"
 #include "glm.hpp"
 
 SpriteRenderer::SpriteRenderer(Shader &shader)
@@ -81,7 +83,25 @@ void SpriteRenderer::DrawSprite(Texture2D &texture,
     glBindVertexArray(0);
 }
 
-void SpriteRenderer::DrawSprite(glm::vec2 position, Sprite* sprite)
+void SpriteRenderer::DrawSprite(Sprite* sprite, glm::vec2 position, glm::vec2 scale, GLfloat rotate, glm::vec3 color)
 {
-    
+    int imageIndex = (int)(sprite->ImageIndex);
+    std::string imageName = sprite->SpriteFrames[imageIndex];
+    auto spriteFrame = sprite->SpriteSheetGroup->Frames[imageName];
+    auto texture = ResourceManager::Textures[sprite->SpriteSheetGroup->Texture_Index];
+    auto spriteWidth = scale.x * spriteFrame->W;
+    auto spriteHeight = scale.y * spriteFrame->H;
+    auto pivotX = sprite->pivotX;
+    auto pivotY = sprite->pivotY;
+    auto finalX = position.x - pivotX * spriteWidth;
+    if(scale.x < 0)
+    {
+        finalX = position.x + (spriteWidth - pivotX * spriteWidth);
+    }
+    DrawSprite(texture,
+               glm::vec2(finalX, position.y - pivotY * spriteHeight),
+               glm::vec2(spriteWidth, spriteHeight),
+               rotate,
+               color,
+               glm::vec4((float)(spriteFrame->X)/(float)(texture.Width), (float)(spriteFrame->Y)/(float)(texture.Height), (float)(spriteFrame->W)/(float)(texture.Width), (float)(spriteFrame->H)/(float)(texture.Height)));
 }
