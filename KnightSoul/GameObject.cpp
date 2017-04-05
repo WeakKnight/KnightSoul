@@ -42,14 +42,14 @@ void GameObject::Draw()
     auto sprite = this->SpritePointer;
     int imageIndex = (int)(sprite->ImageIndex);
     std::string imageName = sprite->SpriteFrames[imageIndex];
-    auto spriteFrame = sprite->SpriteSheetGroup->Frames[imageName];
+    //auto spriteFrame = sprite->SpriteSheetGroup->Frames[imageName];
     auto view = EngineContext->GameInstance->ActiveRoom->ActiveView;
     
     EngineContext->GameInstance->SpriteRendererInstance->DrawSprite(SpritePointer, glm::vec2(X- view->Boundary.Origin.x,Y- view->Boundary.Origin.y), glm::vec2(Image_XScale,Image_YScale), Rotation);
     //draw sprite bound
 //    EngineContext->GameInstance->GeometryRendererInstance->DrawRectangle(glm::vec2(X- view->Boundary.Origin.x,Y- view->Boundary.Origin.y), glm::vec2(spriteFrame->W,spriteFrame->H));
     //draw origin x,y
-    EngineContext->GameInstance->GeometryRendererInstance->DrawRectangle(glm::vec2(X- view->Boundary.Origin.x,Y- view->Boundary.Origin.y),
-                                                                         glm::vec2(3,3));
+    //EngineContext->GameInstance->GeometryRendererInstance->DrawRectangle(glm::vec2(X- view->Boundary.Origin.x,Y- view->Boundary.Origin.y),
+    //                                                                     glm::vec2(3,3));
 }
 

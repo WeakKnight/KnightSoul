@@ -1,0 +1,30 @@
+{
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "24988DB532DC93AD89E4A3248D503EA91AD7D8DC",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "AF12DE761B5DD37A9CDE23680283D993BB881068" : 9223372036854775807,
+    "24988DB532DC93AD89E4A3248D503EA91AD7D8DC" : 9223372036854775807
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "6D3E51C3-79BB-4152-A25E-F6C4AF6477C6",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "AF12DE761B5DD37A9CDE23680283D993BB881068" : "KnightSoul\/KnightSoul\/stb\/",
+    "24988DB532DC93AD89E4A3248D503EA91AD7D8DC" : "KnightSoul\/"
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "KnightSoul",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 204,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "KnightSoul.xcodeproj",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/WeakKnight\/KnightSoul.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "24988DB532DC93AD89E4A3248D503EA91AD7D8DC"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/nothings\/stb.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "AF12DE761B5DD37A9CDE23680283D993BB881068"
+    }
+  ]
+}

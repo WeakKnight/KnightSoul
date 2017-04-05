@@ -29,6 +29,8 @@
 		DE741E061E78228E008416EF /* Game.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DE741E041E78228E008416EF /* Game.cpp */; };
 		DE741E091E78300C008416EF /* Texture2D.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DE741E071E78300C008416EF /* Texture2D.cpp */; };
 		DE741E0C1E78321F008416EF /* ResourceManager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DE741E0A1E78321F008416EF /* ResourceManager.cpp */; };
+		DE888EAB1E94C0D000F8579C /* SpriteEditor.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DE888EA91E94C0D000F8579C /* SpriteEditor.cpp */; };
+		DE88903C1E94DA1D00F8579C /* stb_vorbis.c in Sources */ = {isa = PBXBuildFile; fileRef = DE888EEC1E94DA1C00F8579C /* stb_vorbis.c */; };
 		DEB3ED6E1E7EB034009F8BB6 /* StringUtil.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DEB3ED6C1E7EB034009F8BB6 /* StringUtil.cpp */; };
 		DEB3ED711E7ECCE5009F8BB6 /* Sprite.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DEB3ED6F1E7ECCE5009F8BB6 /* Sprite.cpp */; };
 		DEB3ED801E800D71009F8BB6 /* Room.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DEB3ED7E1E800D71009F8BB6 /* Room.cpp */; };
@@ -155,7 +157,6 @@
 		DE741D151E6D8FFA008416EF /* libiconv.2.4.0.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libiconv.2.4.0.tbd; path = usr/lib/libiconv.2.4.0.tbd; sourceTree = SDKROOT; };
 		DE741D1A1E6D9BDD008416EF /* RawImage.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = RawImage.cpp; sourceTree = "<group>"; };
 		DE741D1B1E6D9BDD008416EF /* RawImage.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = RawImage.hpp; sourceTree = "<group>"; };
-		DE741D1C1E6D9BDD008416EF /* stb_image.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = stb_image.h; sourceTree = "<group>"; };
 		DE741D1F1E6D9CDB008416EF /* MemoryBuffer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = MemoryBuffer.cpp; sourceTree = "<group>"; };
 		DE741D201E6D9CDB008416EF /* MemoryBuffer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MemoryBuffer.h; sourceTree = "<group>"; };
 		DE741D221E6D9D55008416EF /* File.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = File.cpp; sourceTree = "<group>"; };
@@ -390,6 +391,28 @@
 		DE741EED1E783B90008416EF /* wrap.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = wrap.hpp; sourceTree = "<group>"; };
 		DE741EEE1E783B90008416EF /* wrap.inl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = wrap.inl; sourceTree = "<group>"; };
 		DE741EF01E783B90008416EF /* xstream.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = xstream.hpp; sourceTree = "<group>"; };
+		DE888EA91E94C0D000F8579C /* SpriteEditor.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = SpriteEditor.cpp; sourceTree = "<group>"; };
+		DE888EAA1E94C0D000F8579C /* SpriteEditor.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = SpriteEditor.hpp; sourceTree = "<group>"; };
+		DE888EDB1E94DA1C00F8579C /* stb.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = stb.h; sourceTree = "<group>"; };
+		DE888EDC1E94DA1C00F8579C /* stb_c_lexer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = stb_c_lexer.h; sourceTree = "<group>"; };
+		DE888EDD1E94DA1C00F8579C /* stb_connected_components.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = stb_connected_components.h; sourceTree = "<group>"; };
+		DE888EDE1E94DA1C00F8579C /* stb_divide.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = stb_divide.h; sourceTree = "<group>"; };
+		DE888EDF1E94DA1C00F8579C /* stb_dxt.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = stb_dxt.h; sourceTree = "<group>"; };
+		DE888EE01E94DA1C00F8579C /* stb_easy_font.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = stb_easy_font.h; sourceTree = "<group>"; };
+		DE888EE11E94DA1C00F8579C /* stb_herringbone_wang_tile.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = stb_herringbone_wang_tile.h; sourceTree = "<group>"; };
+		DE888EE21E94DA1C00F8579C /* stb_image.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = stb_image.h; sourceTree = "<group>"; };
+		DE888EE31E94DA1C00F8579C /* stb_image_resize.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = stb_image_resize.h; sourceTree = "<group>"; };
+		DE888EE41E94DA1C00F8579C /* stb_image_write.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = stb_image_write.h; sourceTree = "<group>"; };
+		DE888EE51E94DA1C00F8579C /* stb_leakcheck.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = stb_leakcheck.h; sourceTree = "<group>"; };
+		DE888EE61E94DA1C00F8579C /* stb_perlin.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = stb_perlin.h; sourceTree = "<group>"; };
+		DE888EE71E94DA1C00F8579C /* stb_rect_pack.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = stb_rect_pack.h; sourceTree = "<group>"; };
+		DE888EE81E94DA1C00F8579C /* stb_sprintf.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = stb_sprintf.h; sourceTree = "<group>"; };
+		DE888EE91E94DA1C00F8579C /* stb_textedit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = stb_textedit.h; sourceTree = "<group>"; };
+		DE888EEA1E94DA1C00F8579C /* stb_tilemap_editor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = stb_tilemap_editor.h; sourceTree = "<group>"; };
+		DE888EEB1E94DA1C00F8579C /* stb_truetype.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = stb_truetype.h; sourceTree = "<group>"; };
+		DE888EEC1E94DA1C00F8579C /* stb_vorbis.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = stb_vorbis.c; sourceTree = "<group>"; };
+		DE888EED1E94DA1C00F8579C /* stb_voxel_render.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = stb_voxel_render.h; sourceTree = "<group>"; };
+		DE888EEE1E94DA1C00F8579C /* stretchy_buffer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = stretchy_buffer.h; sourceTree = "<group>"; };
 		DEB3ED6C1E7EB034009F8BB6 /* StringUtil.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = StringUtil.cpp; sourceTree = "<group>"; };
 		DEB3ED6D1E7EB034009F8BB6 /* StringUtil.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = StringUtil.hpp; sourceTree = "<group>"; };
 		DEB3ED6F1E7ECCE5009F8BB6 /* Sprite.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Sprite.cpp; sourceTree = "<group>"; };
@@ -584,7 +607,6 @@
 			children = (
 				DE741D1A1E6D9BDD008416EF /* RawImage.cpp */,
 				DE741D1B1E6D9BDD008416EF /* RawImage.hpp */,
-				DE741D1C1E6D9BDD008416EF /* stb_image.h */,
 				DE741E071E78300C008416EF /* Texture2D.cpp */,
 				DE741E081E78300C008416EF /* Texture2D.hpp */,
 			);
@@ -854,6 +876,33 @@
 			path = virtrev;
 			sourceTree = "<group>";
 		};
+		DE888EB11E94DA1C00F8579C /* stb */ = {
+			isa = PBXGroup;
+			children = (
+				DE888EDB1E94DA1C00F8579C /* stb.h */,
+				DE888EDC1E94DA1C00F8579C /* stb_c_lexer.h */,
+				DE888EDD1E94DA1C00F8579C /* stb_connected_components.h */,
+				DE888EDE1E94DA1C00F8579C /* stb_divide.h */,
+				DE888EDF1E94DA1C00F8579C /* stb_dxt.h */,
+				DE888EE01E94DA1C00F8579C /* stb_easy_font.h */,
+				DE888EE11E94DA1C00F8579C /* stb_herringbone_wang_tile.h */,
+				DE888EE21E94DA1C00F8579C /* stb_image.h */,
+				DE888EE31E94DA1C00F8579C /* stb_image_resize.h */,
+				DE888EE41E94DA1C00F8579C /* stb_image_write.h */,
+				DE888EE51E94DA1C00F8579C /* stb_leakcheck.h */,
+				DE888EE61E94DA1C00F8579C /* stb_perlin.h */,
+				DE888EE71E94DA1C00F8579C /* stb_rect_pack.h */,
+				DE888EE81E94DA1C00F8579C /* stb_sprintf.h */,
+				DE888EE91E94DA1C00F8579C /* stb_textedit.h */,
+				DE888EEA1E94DA1C00F8579C /* stb_tilemap_editor.h */,
+				DE888EEB1E94DA1C00F8579C /* stb_truetype.h */,
+				DE888EEC1E94DA1C00F8579C /* stb_vorbis.c */,
+				DE888EED1E94DA1C00F8579C /* stb_voxel_render.h */,
+				DE888EEE1E94DA1C00F8579C /* stretchy_buffer.h */,
+			);
+			path = stb;
+			sourceTree = "<group>";
+		};
 		DEC12A221E83643E00A0FD55 /* Imgui */ = {
 			isa = PBXGroup;
 			children = (
@@ -915,6 +964,8 @@
 			children = (
 				DEC12A1F1E8360CC00A0FD55 /* Editor.cpp */,
 				DEC12A201E8360CC00A0FD55 /* Editor.hpp */,
+				DE888EA91E94C0D000F8579C /* SpriteEditor.cpp */,
+				DE888EAA1E94C0D000F8579C /* SpriteEditor.hpp */,
 			);
 			name = Editor;
 			sourceTree = "<group>";
@@ -966,6 +1017,7 @@
 		DEC12DE41E85245E00A0FD55 /* ThirdParty */ = {
 			isa = PBXGroup;
 			children = (
+				DE888EB11E94DA1C00F8579C /* stb */,
 				DE741CBB1E6D8DA0008416EF /* SDL2 */,
 				DEC12DE51E85247000A0FD55 /* Json */,
 				DEC12A221E83643E00A0FD55 /* Imgui */,
@@ -1041,10 +1093,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				DEC12A341E83A0F000A0FD55 /* View.cpp in Sources */,
+				DE88903C1E94DA1D00F8579C /* stb_vorbis.c in Sources */,
 				DE741E091E78300C008416EF /* Texture2D.cpp in Sources */,
 				DEC12DD01E83CAFC00A0FD55 /* Object.cpp in Sources */,
 				DEC12DD31E83CBC700A0FD55 /* Context.cpp in Sources */,
 				DE741D1E1E6D9BDD008416EF /* RawImage.cpp in Sources */,
+				DE888EAB1E94C0D000F8579C /* SpriteEditor.cpp in Sources */,
 				DEC12A211E8360CC00A0FD55 /* Editor.cpp in Sources */,
 				DE741D241E6D9D55008416EF /* File.cpp in Sources */,
 				DE73A8FD1E7A67D800D69323 /* SpriteRenderer.cpp in Sources */,
