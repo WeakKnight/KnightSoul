@@ -15,6 +15,9 @@
 #include "Game.hpp"
 #include "SpriteEditor.hpp"
 #include "ResourceManager.hpp"
+#include "json.hpp"
+#include "StringUtil.hpp"
+#include <iostream>
 
 Editor::Editor(Context* context,GLuint width, GLuint height)
 :
@@ -50,6 +53,8 @@ void Editor::Update(float dt)
         static int columnCount = 0;
         static int gridWidth = 0;
         static int gridHeight = 0;
+        static int imageCount = 0;
+        static char* imageName = new char[50];
         auto texture = ResourceManager::Textures["Character"];
         ImGui::Begin("SpriteEditor",&Show, 0);
         ImGui::Image((void*)(texture.ID),
@@ -63,13 +68,20 @@ void Editor::Update(float dt)
         ImGui::InputInt("ColumnCount", &columnCount);
         ImGui::InputInt("GridWidth", &gridWidth);
         ImGui::InputInt("GridHeight", &gridHeight);
-        
+        ImGui::InputInt("ImageCount", &imageCount);
+        ImGui::InputText("ImageName", imageName, 50);
         if(gridWidth > 0 && gridHeight > 0 && texture.Width > 0 && texture.Height > 0)
         {
+            int count = 0;
             for(int y = 0; y < rowCount; y ++)
             {
                 for(int x = 0; x < columnCount; x++)
                 {
+                    count+=1;
+                    if(count > imageCount)
+                    {
+                        break;
+                    }
                     float singleTexWidth = (float)gridWidth/texture.Width;
                     float singleTexHeight = (float)gridHeight/texture.Height;
                     auto leftTopPos = ImVec2((float)x * singleTexWidth, (float)y * singleTexHeight);
@@ -87,7 +99,39 @@ void Editor::Update(float dt)
                 }
             }
         }
-        
+        if(ImGui::Button("Build"))
+        {
+            nlohmann::json j;
+            j["name"] = "sheet_2";
+            j["file"] = "Character.png";
+            int count = 0;
+            for(int y = 0; y < rowCount; y ++)
+            {
+                for(int x = 0; x < columnCount; x++)
+                {
+                    count+=1;
+                    if(count > imageCount)
+                    {
+                        break;
+                    }
+                    float singleTexWidth = (float)gridWidth;
+                    float singleTexHeight = (float)gridHeight;
+                    auto leftTopPos = ImVec2((float)x * singleTexWidth, (float)y * singleTexHeight);
+                    //auto rightBottomPos = ImVec2((float)x * singleTexWidth + singleTexWidth, (float)y * singleTexHeight + singleTexHeight);
+                    j["frames"][StringUtil::Format("%s%d",imageName,count - 1)]["frame"]["w"] = gridWidth;
+                    j["frames"][StringUtil::Format("%s%d",imageName,count - 1)]["frame"]["h"] = gridHeight;
+                    j["frames"][StringUtil::Format("%s%d",imageName,count - 1)]["frame"]["x"] = leftTopPos.x;
+                    j["frames"][StringUtil::Format("%s%d",imageName,count - 1)]["frame"]["y"] = leftTopPos.y;
+                    j["frames"][StringUtil::Format("%s%d",imageName,count - 1)]["pivot"]["x"] = 0.5;
+                    j["frames"][StringUtil::Format("%s%d",imageName,count - 1)]["pivot"]["y"] = 0.5;
+                    if(x != columnCount - 1)
+                    {
+                        ImGui::SameLine();
+                    }
+                }
+            }
+            auto str = j.dump();
+        }
         ImGui::End();
     }
     /*
