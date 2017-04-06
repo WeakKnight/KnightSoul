@@ -13,6 +13,8 @@
 #include "GameObject.hpp"
 #include "Context.hpp"
 #include "Game.hpp"
+#include "SpriteEditor.hpp"
+#include "ResourceManager.hpp"
 
 Editor::Editor(Context* context,GLuint width, GLuint height)
 :
@@ -25,6 +27,7 @@ Height(height)
 
 void Editor::Init(SDL_Window* window)
 {
+    ResourceManager::LoadTexture("Resource/Character.png", "Character");
     Window = window;
     ImGui_ImplSdlGL3_Init(window);
 }
@@ -40,6 +43,51 @@ void Editor::Update(float dt)
         ImGui::SetWindowPos(ImVec2(0.0f, 0.0f));
         ImGui::SetWindowSize(ImVec2(800+20.0f,600+40.0f),ImGuiSetCond_Once);
         ImGui::Image((void*)(EngineContext->GameInstance->GameSurface->Texture.ID),ImVec2(800,600), ImVec2(0,1), ImVec2(1,0));
+        ImGui::End();
+    }
+    {
+        static int rowCount = 0;
+        static int columnCount = 0;
+        static int gridWidth = 0;
+        static int gridHeight = 0;
+        auto texture = ResourceManager::Textures["Character"];
+        ImGui::Begin("SpriteEditor",&Show, 0);
+        ImGui::Image((void*)(texture.ID),
+                     ImVec2(texture.Width,texture.Height),
+                     ImVec2(0,0),
+                     ImVec2(1,1),
+                     ImVec4(1.0, 1.0, 1.0, 1.0),
+                     ImVec4(1.0, 1.0, 1.0, 1.0));
+        
+        ImGui::InputInt("RowCount", &rowCount);
+        ImGui::InputInt("ColumnCount", &columnCount);
+        ImGui::InputInt("GridWidth", &gridWidth);
+        ImGui::InputInt("GridHeight", &gridHeight);
+        
+        if(gridWidth > 0 && gridHeight > 0 && texture.Width > 0 && texture.Height > 0)
+        {
+            for(int y = 0; y < rowCount; y ++)
+            {
+                for(int x = 0; x < columnCount; x++)
+                {
+                    float singleTexWidth = (float)gridWidth/texture.Width;
+                    float singleTexHeight = (float)gridHeight/texture.Height;
+                    auto leftTopPos = ImVec2((float)x * singleTexWidth, (float)y * singleTexHeight);
+                    auto rightBottomPos = ImVec2((float)x * singleTexWidth + singleTexWidth, (float)y * singleTexHeight + singleTexHeight);
+                    ImGui::Image((void*)(ResourceManager::Textures["Character"].ID),
+                                 ImVec2(32, 32),
+                                 leftTopPos,
+                                 rightBottomPos,
+                                 ImVec4(1.0, 1.0, 1.0, 1.0),
+                                 ImVec4(1.0, 1.0, 1.0, 1.0));
+                    if(x != columnCount - 1)
+                    {
+                        ImGui::SameLine();
+                    }
+                }
+            }
+        }
+        
         ImGui::End();
     }
     /*
