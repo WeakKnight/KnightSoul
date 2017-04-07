@@ -88,4 +88,25 @@ namespace File
         
         return (char*)data;
     }
+    
+    bool WriteFile(const std::string& path, const uint8_t* data, const size_t len)
+    {
+        assert(!path.empty());
+        assert(data);
+        assert(len > 0);
+        
+        if (data == nullptr)
+        {
+            return false;
+        }
+        
+        FILE* fp = fopen(path.c_str(), "w" );
+        if (fp == nullptr)
+        {
+            return false;
+        }
+        
+        fwrite(data, len, 1, fp);
+        return fclose(fp) == 0;
+    }
 }

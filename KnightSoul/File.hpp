@@ -17,5 +17,6 @@ namespace File
 {
     MemoryBuffer ReadFile(const std::string& path);
     char* ReadString(const std::string& path);
+    bool WriteFile(const std::string& path, const uint8_t* data, const size_t len);
 }
 #endif /* File_hpp */

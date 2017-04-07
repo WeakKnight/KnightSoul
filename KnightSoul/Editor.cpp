@@ -18,6 +18,7 @@
 #include "json.hpp"
 #include "StringUtil.hpp"
 #include <iostream>
+#include "File.hpp"
 
 Editor::Editor(Context* context,GLuint width, GLuint height)
 :
@@ -131,6 +132,7 @@ void Editor::Update(float dt)
                 }
             }
             auto str = j.dump();
+            File::WriteFile("/Users/knight/Documents/KnightSoulWorkSpace/KnightSoul/Resource/texture2.json", (const uint8_t*)str.c_str(), str.size());
         }
         ImGui::End();
     }
