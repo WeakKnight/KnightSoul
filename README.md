@@ -8,5 +8,5 @@ a basic 2d game framework, work in progress
 4. replace stl container class
 5. self memory allocator
 6. resource editor
-7. implemation c++ reflect
+7. implementation c++ reflect
 ![Image](https://github.com/WeakKnight/KnightSoul/blob/master/KnightSoulShot.png?raw=true)
