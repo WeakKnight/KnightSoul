@@ -2,7 +2,7 @@
 # KnightSoul
 a basic 2d game framework, work in progress
 ## RoadMap
-1. remake a basic 2d scoller game
+1. remake a basic 2d scroller game
 2. add audio
 3. replace glm with my math class
 4. replace stl container class
