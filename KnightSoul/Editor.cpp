@@ -31,7 +31,6 @@ Height(height)
 
 void Editor::Init(SDL_Window* window)
 {
-    ResourceManager::LoadTexture("Resource/Character.png", "Character");
     Window = window;
     ImGui_ImplSdlGL3_Init(window);
 }
@@ -56,7 +55,7 @@ void Editor::Update(float dt)
         static int gridHeight = 0;
         static int imageCount = 0;
         static char* imageName = new char[50];
-        auto texture = ResourceManager::Textures["Character"];
+        auto texture = ResourceManager::Textures["Tiles"];
         ImGui::Begin("SpriteEditor",&Show, 0);
         ImGui::Image((void*)(texture.ID),
                      ImVec2(texture.Width,texture.Height),
@@ -87,7 +86,7 @@ void Editor::Update(float dt)
                     float singleTexHeight = (float)gridHeight/texture.Height;
                     auto leftTopPos = ImVec2((float)x * singleTexWidth, (float)y * singleTexHeight);
                     auto rightBottomPos = ImVec2((float)x * singleTexWidth + singleTexWidth, (float)y * singleTexHeight + singleTexHeight);
-                    ImGui::Image((void*)(ResourceManager::Textures["Character"].ID),
+                    ImGui::Image((void*)(ResourceManager::Textures["Tiles"].ID),
                                  ImVec2(32, 32),
                                  leftTopPos,
                                  rightBottomPos,
@@ -103,8 +102,8 @@ void Editor::Update(float dt)
         if(ImGui::Button("Build"))
         {
             nlohmann::json j;
-            j["name"] = "sheet_2";
-            j["file"] = "Character.png";
+            j["name"] = "sheet_3";
+            j["file"] = "Tiles.png";
             int count = 0;
             for(int y = 0; y < rowCount; y ++)
             {
@@ -132,7 +131,7 @@ void Editor::Update(float dt)
                 }
             }
             auto str = j.dump();
-            File::WriteFile("/Users/knight/Documents/KnightSoulWorkSpace/KnightSoul/Resource/texture2.json", (const uint8_t*)str.c_str(), str.size());
+            File::WriteFile("/Users/knight/Documents/KnightSoulWorkSpace/KnightSoul/Resource/texture3.json", (const uint8_t*)str.c_str(), str.size());
         }
         ImGui::End();
     }

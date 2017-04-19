@@ -23,15 +23,15 @@ GameObject(context)
 void Skeleton::Init()
 {
     GameObject::Init();
-    SpritePointer = ResourceManager::Sprites["skeleton_idle"];
+    SpritePointer = ResourceManager::Sprites["dudeIdle"];
 }
 
 void Skeleton::Update(float dt)
 {
     GameObject::Update(dt);
     //auto view = EngineContext->GameInstance->ActiveRoom->ActiveView;
-    auto spriteIdle = ResourceManager::Sprites["skeleton_idle"];
-    auto spriteRun = ResourceManager::Sprites["skeleton_run"];
+    auto spriteIdle = ResourceManager::Sprites["dudeIdle"];
+    auto spriteRun = ResourceManager::Sprites["dudeRun"];
     auto spriteRoll = ResourceManager::Sprites["skeleton_roll"];
     if(Input::KeyboardPressed(SDL_SCANCODE_LEFT))
     {

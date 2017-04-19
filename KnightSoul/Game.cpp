@@ -34,13 +34,47 @@ Game::~Game()
 void Game::Init()
 {
     //TODO: move in resource.json
+    ResourceManager::LoadTexture("Resource/Tiles.png", "Tiles");
+    ResourceManager::LoadTexture("Resource/Character.png", "Character");
     ResourceManager::LoadShader("Resource/BaseShader.vsh", "Resource/BaseShader.fsh", "BaseShader");
     ResourceManager::LoadShader("Resource/LineShader.vsh", "Resource/LineShader.fsh", "LineShader");
     ResourceManager::LoadTexture("Resource/skeletonTexture.png", "skeletonTexture");
     ResourceManager::LoadSpriteSheet("Resource/texture1.json");
+    ResourceManager::LoadSpriteSheet("Resource/texture2.json");
+    ResourceManager::LoadSpriteSheet("Resource/texture3.json");
     ResourceManager::LoadSprite("Resource/testSprite.json");
     ResourceManager::LoadSprite("Resource/testSprite2.json");
     ResourceManager::LoadSprite("Resource/testSprite3.json");
+    auto dudeIdleSpr = Sprite::Create();
+    dudeIdleSpr->SpriteSheetGroup = ResourceManager::SpriteSheets["sheet_2"];
+    dudeIdleSpr->SpriteFrames[0] = "dude0";
+    dudeIdleSpr->SpriteFrames[1] = "dude1";
+    //dudeIdleSpr->SpriteFrames[2] = "dude2";
+    dudeIdleSpr->ImageNumber = 2;
+    dudeIdleSpr->ImageSpeed = 0.1;
+    dudeIdleSpr->pivotX = 0.5;
+    ResourceManager::Sprites["dudeIdle"] = dudeIdleSpr;
+    //
+    auto dudeRunSpr = Sprite::Create();
+    dudeRunSpr->SpriteSheetGroup = ResourceManager::SpriteSheets["sheet_2"];
+    dudeRunSpr->SpriteFrames[0] = "dude8";
+    dudeRunSpr->SpriteFrames[1] = "dude9";
+    dudeRunSpr->SpriteFrames[2] = "dude10";
+    dudeRunSpr->ImageNumber = 3;
+    dudeRunSpr->ImageSpeed = 0.15;
+    dudeRunSpr->pivotX = 0.5;
+    ResourceManager::Sprites["dudeRun"] = dudeRunSpr;
+    //
+    auto blockSpr = Sprite::Create();
+    blockSpr->SpriteSheetGroup = ResourceManager::SpriteSheets["sheet_3"];
+    blockSpr->SpriteFrames[0] = "Block0";
+    blockSpr->SpriteFrames[1] = "Block1";
+    blockSpr->SpriteFrames[2] = "Block2";
+    blockSpr->ImageNumber = 3;
+    blockSpr->ImageSpeed = 0;
+    blockSpr->pivotX = 0.5;
+    ResourceManager::Sprites["block"] = blockSpr;
+    //
     ActiveRoom = new Room(EngineContext, "Resource/room0.json");
     ActiveRoom->Init();
     

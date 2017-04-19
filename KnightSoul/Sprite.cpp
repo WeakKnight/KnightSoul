@@ -49,6 +49,10 @@ Sprite* Sprite::Create(const std::string& jsonPath)
 
 void Sprite::Update(float dt)
 {
+    if((ImageSpeed - 0.0f)*(ImageSpeed - 0.0f) < 0.000000001f)
+    {
+        return;
+    }
     if(ImageIndex + ImageSpeed >= ImageNumber)
     {
         ImageIndex = ImageIndex + ImageSpeed - ImageNumber;

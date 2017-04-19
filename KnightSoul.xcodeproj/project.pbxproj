@@ -49,6 +49,7 @@
 		DEC12DD91E84D19700A0FD55 /* PikaPika.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DEC12DD71E84D19700A0FD55 /* PikaPika.cpp */; };
 		DEC12DDC1E84FFC900A0FD55 /* Surface.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DEC12DDA1E84FFC900A0FD55 /* Surface.cpp */; };
 		DEC12DDF1E851C9500A0FD55 /* GeometryRenderer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DEC12DDD1E851C9500A0FD55 /* GeometryRenderer.cpp */; };
+		DECC119F1EA78BC200FCCDBA /* CollisionComponent.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DECC119D1EA78BC200FCCDBA /* CollisionComponent.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -452,6 +453,8 @@
 		DEC12DDB1E84FFC900A0FD55 /* Surface.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Surface.hpp; sourceTree = "<group>"; };
 		DEC12DDD1E851C9500A0FD55 /* GeometryRenderer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = GeometryRenderer.cpp; sourceTree = "<group>"; };
 		DEC12DDE1E851C9500A0FD55 /* GeometryRenderer.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = GeometryRenderer.hpp; sourceTree = "<group>"; };
+		DECC119D1EA78BC200FCCDBA /* CollisionComponent.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CollisionComponent.cpp; sourceTree = "<group>"; };
+		DECC119E1EA78BC200FCCDBA /* CollisionComponent.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = CollisionComponent.hpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -995,6 +998,8 @@
 				DEC12DD21E83CBC700A0FD55 /* Context.hpp */,
 				DEC12DD41E84B61400A0FD55 /* Rect.cpp */,
 				DEC12DD51E84B61400A0FD55 /* Rect.hpp */,
+				DECC119D1EA78BC200FCCDBA /* CollisionComponent.cpp */,
+				DECC119E1EA78BC200FCCDBA /* CollisionComponent.hpp */,
 			);
 			name = Core;
 			sourceTree = "<group>";
@@ -1098,6 +1103,7 @@
 				DEC12DD01E83CAFC00A0FD55 /* Object.cpp in Sources */,
 				DEC12DD31E83CBC700A0FD55 /* Context.cpp in Sources */,
 				DE741D1E1E6D9BDD008416EF /* RawImage.cpp in Sources */,
+				DECC119F1EA78BC200FCCDBA /* CollisionComponent.cpp in Sources */,
 				DE888EAB1E94C0D000F8579C /* SpriteEditor.cpp in Sources */,
 				DEC12A211E8360CC00A0FD55 /* Editor.cpp in Sources */,
 				DE741D241E6D9D55008416EF /* File.cpp in Sources */,

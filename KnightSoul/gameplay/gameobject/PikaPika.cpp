@@ -19,7 +19,7 @@ GameObject(context)
 void PikaPika::Init()
 {
     GameObject::Init();
-    SpritePointer = ResourceManager::Sprites["skeleton_idle"];
+    SpritePointer = ResourceManager::Sprites["block"];
 }
 
 void PikaPika::Update(float dt)
