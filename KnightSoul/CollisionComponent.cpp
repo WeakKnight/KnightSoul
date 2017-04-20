@@ -8,12 +8,14 @@
 
 #include "CollisionComponent.hpp"
 #include "GameObject.hpp"
+#include "Context.hpp"
 
 static std::vector<CollisionComponent*> CollisionComPool = {};
 
 unsigned int CollisionComponent::GlobalComID = 1;
 
-CollisionComponent::CollisionComponent(GameObject* parent)
+CollisionComponent::CollisionComponent(Context* context, GameObject* parent)
+:Object(context)
 {
     CollisionComPool.push_back(this);
     Parent = parent;
@@ -32,5 +34,9 @@ CollisionComponent::~CollisionComponent()
     }
 }
 
+bool CollisionComponent::PlaceMeeting(int x, int y)
+{
+    return false;
+}
 
 

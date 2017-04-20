@@ -11,12 +11,15 @@
 
 #include <stdio.h>
 #include <vector>
+#include "Object.hpp"
 class GameObject;
-class CollisionComponent {
+class Context;
+class CollisionComponent:public Object {
 public:
     static unsigned int GlobalComID;
-    CollisionComponent(GameObject* parent);
+    CollisionComponent(Context* context, GameObject* parent);
     ~CollisionComponent();
+    bool PlaceMeeting(int x, int y);
 private:
     GameObject* Parent = nullptr;
     int ID = 0;

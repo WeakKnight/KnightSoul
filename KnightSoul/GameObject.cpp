@@ -24,7 +24,7 @@ GameObject::GameObject(Context* context)
 Object(context),
 CollisionCom(nullptr)
 {
-    CollisionCom = new CollisionComponent(this);
+    CollisionCom = new CollisionComponent(context, this);
 }
 
 void GameObject::Init()
@@ -48,7 +48,7 @@ void GameObject::Draw()
     //auto spriteFrame = sprite->SpriteSheetGroup->Frames[imageName];
     auto view = EngineContext->GameInstance->ActiveRoom->ActiveView;
     
-    EngineContext->GameInstance->SpriteRendererInstance->DrawSprite(SpritePointer, glm::vec2(X- view->Boundary.Origin.x,Y- view->Boundary.Origin.y), glm::vec2(Image_XScale,Image_YScale), Rotation);
+    EngineContext->GameInstance->SpriteRendererInstance->DrawSprite(SpritePointer, glm::vec2(X - view->Boundary.Origin.x,Y- view->Boundary.Origin.y), glm::vec2(Image_XScale,Image_YScale), Rotation);
     //draw sprite bound
 //    EngineContext->GameInstance->GeometryRendererInstance->DrawRectangle(glm::vec2(X- view->Boundary.Origin.x,Y- view->Boundary.Origin.y), glm::vec2(spriteFrame->W,spriteFrame->H));
     //draw origin x,y
