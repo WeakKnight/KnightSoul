@@ -7,8 +7,12 @@
 //
 
 #include "CollisionComponent.hpp"
+#include "Collision.hpp"
 #include "GameObject.hpp"
+#include "Game.hpp"
 #include "Context.hpp"
+#include "Room.hpp"
+
 
 static std::vector<CollisionComponent*> CollisionComPool = {};
 
@@ -34,8 +38,30 @@ CollisionComponent::~CollisionComponent()
     }
 }
 
-bool CollisionComponent::PlaceMeeting(int x, int y)
+bool CollisionComponent::PlaceMeeting(float x, float y)
 {
+    auto objList = this->EngineContext->GameInstance->ActiveRoom->InstanceList;
+    for(auto itr = objList.begin(); itr != objList.end(); itr++)
+    {
+        auto obj = (*itr);
+        if (obj->CollisionCom->ID == ID)
+        {
+            continue;
+        }
+        else
+        {
+            return Collision::RectIntersectRect(Parent->X + OffsetX + x,
+                                     Parent->Y + OffsetY + y,
+                                     Parent->X + OffsetX + x + Width,
+                                     Parent->Y + OffsetY + y + Height,
+                                     obj->X + obj->CollisionCom->OffsetX,
+                                     obj->Y + obj->CollisionCom->OffsetY,
+                                     obj->X + obj->CollisionCom->OffsetX + obj->CollisionCom->Width,
+                                     obj->Y + obj->CollisionCom->OffsetY + obj->CollisionCom->Height
+                                     );
+        }
+        
+    }
     return false;
 }
 

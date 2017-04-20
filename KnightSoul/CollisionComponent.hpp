@@ -19,14 +19,14 @@ public:
     static unsigned int GlobalComID;
     CollisionComponent(Context* context, GameObject* parent);
     ~CollisionComponent();
-    bool PlaceMeeting(int x, int y);
+    bool PlaceMeeting(float x, float y);
+    float OffsetX = 0;
+    float OffsetY = 0;
+    float Width = 0;
+    float Height = 0;
 private:
     GameObject* Parent = nullptr;
-    int ID = 0;
-    int OffsetX = 0;
-    int OffsetY = 0;
-    int Width = 0;
-    int Height = 0;
+    unsigned int ID = 0;
 };
 
 #endif /* CollisionComponent_hpp */

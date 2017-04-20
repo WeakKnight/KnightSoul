@@ -13,6 +13,9 @@
 #include "Room.hpp"
 #include "View.hpp"
 #include "Game.hpp"
+#include "CollisionComponent.hpp"
+#include "Sprite.hpp"
+#include "SpriteSheet.hpp"
 
 Skeleton::Skeleton(Context* context)
 :
@@ -24,6 +27,8 @@ void Skeleton::Init()
 {
     GameObject::Init();
     SpritePointer = ResourceManager::Sprites["dudeIdle"];
+    CollisionCom->Width = 32;
+    CollisionCom->Height = 32;
 }
 
 void Skeleton::Update(float dt)
@@ -52,6 +57,10 @@ void Skeleton::Update(float dt)
     if(Input::KeyboardPressed(SDL_SCANCODE_DOWN))
     {
         SpritePointer = spriteRoll;
+    }
+    if(!CollisionCom->PlaceMeeting(0, 1))
+    {
+        Y+=1;
     }
     //view->Boundary.Origin = glm::vec2(X - 300, Y - 200);
 }

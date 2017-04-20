@@ -72,7 +72,7 @@ void Game::Init()
     blockSpr->SpriteFrames[2] = "Block2";
     blockSpr->ImageNumber = 3;
     blockSpr->ImageSpeed = 0;
-    blockSpr->pivotX = 0.5;
+    blockSpr->pivotX = 0.0;
     ResourceManager::Sprites["block"] = blockSpr;
     //
     ActiveRoom = new Room(EngineContext, "Resource/room0.json");

@@ -9,6 +9,7 @@
 #include "PikaPika.hpp"
 #include "Context.hpp"
 #include "ResourceManager.hpp"
+#include "CollisionComponent.hpp"
 
 PikaPika::PikaPika(Context* context)
 :
@@ -19,6 +20,9 @@ GameObject(context)
 void PikaPika::Init()
 {
     GameObject::Init();
+    CollisionCom->Width = 48;
+    CollisionCom->Height = 48;
+    CollisionCom->OffsetY = 0;
     SpritePointer = ResourceManager::Sprites["block"];
 }
 
