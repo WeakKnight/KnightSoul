@@ -17,16 +17,19 @@
 #include "Context.hpp"
 #include "Room.hpp"
 #include "View.hpp"
+#include "CollisionComponent.hpp"
 
 GameObject::GameObject(Context* context)
 :
-Object(context)
+Object(context),
+CollisionCom(nullptr)
 {
+    CollisionCom = new CollisionComponent(this);
 }
 
 void GameObject::Init()
 {
-    
+    delete CollisionCom;
 }
 
 void GameObject::Update(float dt)

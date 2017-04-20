@@ -32,11 +32,5 @@ CollisionComponent::~CollisionComponent()
     }
 }
 
-std::vector<CollisionComponent*> CollisionComponent::CheckCollision()
-{
-    return {};
-}
-
-
 
 

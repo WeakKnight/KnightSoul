@@ -17,7 +17,6 @@ public:
     static unsigned int GlobalComID;
     CollisionComponent(GameObject* parent);
     ~CollisionComponent();
-    std::vector<CollisionComponent*> CheckCollision();
 private:
     GameObject* Parent = nullptr;
     int ID = 0;

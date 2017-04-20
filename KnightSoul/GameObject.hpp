@@ -18,11 +18,13 @@
 #include "Object.hpp"
 
 class Sprite;
+class CollisionComponent;
 class Context;
 class GameObject : public Object
 {
 public:
     GameObject(Context* context);
+    ~GameObject();
     virtual void Init();
     virtual void Update(float dt);
     virtual void Draw();
@@ -32,6 +34,7 @@ public:
     float Image_XScale;
     float Image_YScale;
     Sprite* SpritePointer;
+    CollisionComponent* CollisionCom;
 };
 
 #endif /* GameObject_hpp */
