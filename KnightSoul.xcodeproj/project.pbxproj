@@ -51,6 +51,7 @@
 		DEC12DDF1E851C9500A0FD55 /* GeometryRenderer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DEC12DDD1E851C9500A0FD55 /* GeometryRenderer.cpp */; };
 		DECC119F1EA78BC200FCCDBA /* CollisionComponent.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DECC119D1EA78BC200FCCDBA /* CollisionComponent.cpp */; };
 		DECC11A71EA8A50E00FCCDBA /* Math.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DECC11A61EA8A50E00FCCDBA /* Math.cpp */; };
+		DECC11A91EA8B29F00FCCDBA /* imgui_node_graph_test.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DECC11A81EA8B29F00FCCDBA /* imgui_node_graph_test.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -459,6 +460,7 @@
 		DECC11A11EA88F1F00FCCDBA /* Collision.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.h; fileEncoding = 4; path = Collision.hpp; sourceTree = "<group>"; };
 		DECC11A41EA89D9D00FCCDBA /* Math.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Math.hpp; sourceTree = "<group>"; };
 		DECC11A61EA8A50E00FCCDBA /* Math.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Math.cpp; sourceTree = "<group>"; };
+		DECC11A81EA8B29F00FCCDBA /* imgui_node_graph_test.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = imgui_node_graph_test.cpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -969,6 +971,7 @@
 		DEC12DE11E8523C300A0FD55 /* Editor */ = {
 			isa = PBXGroup;
 			children = (
+				DECC11A81EA8B29F00FCCDBA /* imgui_node_graph_test.cpp */,
 				DEC12A1F1E8360CC00A0FD55 /* Editor.cpp */,
 				DEC12A201E8360CC00A0FD55 /* Editor.hpp */,
 				DE888EA91E94C0D000F8579C /* SpriteEditor.cpp */,
@@ -1132,6 +1135,7 @@
 				DEC12DD61E84B61400A0FD55 /* Rect.cpp in Sources */,
 				DEC12A311E8364DE00A0FD55 /* imgui_impl_sdl_gl3.cpp in Sources */,
 				DE2430921E7D7F78005872D4 /* SpriteSheet.cpp in Sources */,
+				DECC11A91EA8B29F00FCCDBA /* imgui_node_graph_test.cpp in Sources */,
 				DEB3ED6E1E7EB034009F8BB6 /* StringUtil.cpp in Sources */,
 				DE741CB41E6D8D69008416EF /* main.cpp in Sources */,
 				DECC11A71EA8A50E00FCCDBA /* Math.cpp in Sources */,

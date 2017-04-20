@@ -19,6 +19,7 @@
 #include "StringUtil.hpp"
 #include <iostream>
 #include "File.hpp"
+#include "imgui_node_graph_test.cpp"
 
 Editor::Editor(Context* context,GLuint width, GLuint height)
 :
@@ -152,6 +153,8 @@ void Editor::Update(float dt)
         ImGui::End();
     }
      */
+    bool open = true;
+    ShowExampleAppCustomNodeGraph(&open);
 }
 
 void Editor::Render()
