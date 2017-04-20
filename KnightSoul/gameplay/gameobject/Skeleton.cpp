@@ -28,8 +28,10 @@ void Skeleton::Init()
 {
     GameObject::Init();
     SpritePointer = ResourceManager::Sprites["dudeIdle"];
-    CollisionCom->Width = 32;
-    CollisionCom->Height = 32;
+    CollisionCom->Width = 20;
+    CollisionCom->Height = 24;
+    CollisionCom->OffsetX = -10;
+    CollisionCom->OffsetY = 3;
 }
 
 void Skeleton::Update(float dt)
@@ -38,7 +40,19 @@ void Skeleton::Update(float dt)
     //auto view = EngineContext->GameInstance->ActiveRoom->ActiveView;
     auto spriteIdle = ResourceManager::Sprites["dudeIdle"];
     auto spriteRun = ResourceManager::Sprites["dudeRun"];
-    auto spriteRoll = ResourceManager::Sprites["skeleton_roll"];
+    auto spriteJump = ResourceManager::Sprites["dudeJump"];
+    
+    if(CollisionCom->PlaceMeeting(0, 1))
+    {
+        onGround = true;
+        SpeedY = 0.0f;
+    }
+    else
+    {
+        onGround = false;
+        SpeedY += 0.25;
+    }
+    
     if(Input::KeyboardPressed(SDL_SCANCODE_LEFT))
     {
         SpeedX = -3.0f;
@@ -56,18 +70,15 @@ void Skeleton::Update(float dt)
         SpeedX = 0.0f;
         SpritePointer = spriteIdle;
     }
-    if(Input::KeyboardPressed(SDL_SCANCODE_DOWN))
+    if(Input::KeyboardPressed(SDL_SCANCODE_UP) && onGround)
     {
-        SpritePointer = spriteRoll;
+        SpeedY = -6.0f;
     }
-    if(CollisionCom->PlaceMeeting(0, 1))
+    if(!onGround)
     {
-        SpeedY = 0.0f;
+        SpritePointer = spriteJump;
     }
-    else
-    {
-        SpeedY += 0.75;
-    }
+    
     //view->Boundary.Origin = glm::vec2(X - 300, Y - 200);
     DoMove();
 }

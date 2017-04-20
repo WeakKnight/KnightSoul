@@ -6,16 +6,15 @@
 //  Copyright © 2017年 Knight. All rights reserved.
 //
 
-#ifndef Math_hpp
-#define Math_hpp
-
-#include <stdio.h>
+#include <stdlib.h>
 
 namespace Math
 {
-    template <typename T> int sign(T val) {
+    template <typename T> int sign(T val)
+    {
         return (T(0) < val) - (val < T(0));
     }
+    
+    int irandom(int min, int max);
 }
 
-#endif /* Math_hpp */

@@ -22,6 +22,7 @@ public:
     void Update(float dt) override;
     float SpeedX = 0;
     float SpeedY = 0;
+    bool onGround = false;
     void DoMove();
 };
 

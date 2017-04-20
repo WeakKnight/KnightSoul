@@ -50,6 +50,7 @@
 		DEC12DDC1E84FFC900A0FD55 /* Surface.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DEC12DDA1E84FFC900A0FD55 /* Surface.cpp */; };
 		DEC12DDF1E851C9500A0FD55 /* GeometryRenderer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DEC12DDD1E851C9500A0FD55 /* GeometryRenderer.cpp */; };
 		DECC119F1EA78BC200FCCDBA /* CollisionComponent.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DECC119D1EA78BC200FCCDBA /* CollisionComponent.cpp */; };
+		DECC11A71EA8A50E00FCCDBA /* Math.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DECC11A61EA8A50E00FCCDBA /* Math.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -457,6 +458,7 @@
 		DECC119E1EA78BC200FCCDBA /* CollisionComponent.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = CollisionComponent.hpp; sourceTree = "<group>"; };
 		DECC11A11EA88F1F00FCCDBA /* Collision.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.h; fileEncoding = 4; path = Collision.hpp; sourceTree = "<group>"; };
 		DECC11A41EA89D9D00FCCDBA /* Math.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Math.hpp; sourceTree = "<group>"; };
+		DECC11A61EA8A50E00FCCDBA /* Math.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Math.cpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -1019,6 +1021,7 @@
 				DEB3ED821E8031BC009F8BB6 /* Input.hpp */,
 				DECC11A11EA88F1F00FCCDBA /* Collision.hpp */,
 				DECC11A41EA89D9D00FCCDBA /* Math.hpp */,
+				DECC11A61EA8A50E00FCCDBA /* Math.cpp */,
 			);
 			name = Common;
 			sourceTree = "<group>";
@@ -1131,6 +1134,7 @@
 				DE2430921E7D7F78005872D4 /* SpriteSheet.cpp in Sources */,
 				DEB3ED6E1E7EB034009F8BB6 /* StringUtil.cpp in Sources */,
 				DE741CB41E6D8D69008416EF /* main.cpp in Sources */,
+				DECC11A71EA8A50E00FCCDBA /* Math.cpp in Sources */,
 				DE741D2C1E6DA3E2008416EF /* Shader.cpp in Sources */,
 				DE741E0C1E78321F008416EF /* ResourceManager.cpp in Sources */,
 			);

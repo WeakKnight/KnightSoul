@@ -65,6 +65,14 @@ void Game::Init()
     dudeRunSpr->pivotX = 0.5;
     ResourceManager::Sprites["dudeRun"] = dudeRunSpr;
     //
+    auto dudeJumpSpr = Sprite::Create();
+    dudeJumpSpr->SpriteSheetGroup = ResourceManager::SpriteSheets["sheet_2"];
+    dudeJumpSpr->SpriteFrames[0] = "dude4";
+    dudeJumpSpr->ImageNumber = 1;
+    dudeJumpSpr->ImageSpeed = 0;
+    dudeJumpSpr->pivotX = 0.5;
+    ResourceManager::Sprites["dudeJump"] = dudeJumpSpr;
+    //
     auto blockSpr = Sprite::Create();
     blockSpr->SpriteSheetGroup = ResourceManager::SpriteSheets["sheet_3"];
     blockSpr->SpriteFrames[0] = "Block0";

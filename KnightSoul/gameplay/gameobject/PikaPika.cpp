@@ -10,6 +10,8 @@
 #include "Context.hpp"
 #include "ResourceManager.hpp"
 #include "CollisionComponent.hpp"
+#include "Sprite.hpp"
+#include "Math.hpp"
 
 PikaPika::PikaPika(Context* context)
 :
@@ -24,6 +26,9 @@ void PikaPika::Init()
     CollisionCom->Height = 48;
     CollisionCom->OffsetY = 0;
     SpritePointer = ResourceManager::Sprites["block"];
+    int testRand = rand()%2;
+    int number = testRand;
+    SpritePointer->ImageIndex = number;
 }
 
 void PikaPika::Update(float dt)
