@@ -20,6 +20,9 @@ public:
     Skeleton(Context* context);
     void Init() override;
     void Update(float dt) override;
+    float SpeedX = 0;
+    float SpeedY = 0;
+    void DoMove();
 };
 
 #endif /* Skeleton_hpp */

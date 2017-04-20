@@ -46,11 +46,11 @@ bool CollisionComponent::PlaceMeeting(float x, float y)
         auto obj = (*itr);
         if (obj->CollisionCom->ID == ID)
         {
-            continue;
+
         }
         else
         {
-            return Collision::RectIntersectRect(Parent->X + OffsetX + x,
+            if(Collision::RectIntersectRect(Parent->X + OffsetX + x,
                                      Parent->Y + OffsetY + y,
                                      Parent->X + OffsetX + x + Width,
                                      Parent->Y + OffsetY + y + Height,
@@ -58,7 +58,10 @@ bool CollisionComponent::PlaceMeeting(float x, float y)
                                      obj->Y + obj->CollisionCom->OffsetY,
                                      obj->X + obj->CollisionCom->OffsetX + obj->CollisionCom->Width,
                                      obj->Y + obj->CollisionCom->OffsetY + obj->CollisionCom->Height
-                                     );
+                                     ))
+            {
+                return true;
+            }
         }
         
     }

@@ -456,6 +456,7 @@
 		DECC119D1EA78BC200FCCDBA /* CollisionComponent.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CollisionComponent.cpp; sourceTree = "<group>"; };
 		DECC119E1EA78BC200FCCDBA /* CollisionComponent.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = CollisionComponent.hpp; sourceTree = "<group>"; };
 		DECC11A11EA88F1F00FCCDBA /* Collision.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.h; fileEncoding = 4; path = Collision.hpp; sourceTree = "<group>"; };
+		DECC11A41EA89D9D00FCCDBA /* Math.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Math.hpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -1017,6 +1018,7 @@
 				DEB3ED811E8031BC009F8BB6 /* Input.cpp */,
 				DEB3ED821E8031BC009F8BB6 /* Input.hpp */,
 				DECC11A11EA88F1F00FCCDBA /* Collision.hpp */,
+				DECC11A41EA89D9D00FCCDBA /* Math.hpp */,
 			);
 			name = Common;
 			sourceTree = "<group>";
