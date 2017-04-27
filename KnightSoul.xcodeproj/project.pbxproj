@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		DE2430921E7D7F78005872D4 /* SpriteSheet.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DE2430901E7D7F78005872D4 /* SpriteSheet.cpp */; };
 		DE2430941E7D820A005872D4 /* Resource in CopyFiles */ = {isa = PBXBuildFile; fileRef = DE2430931E7D820A005872D4 /* Resource */; };
+		DE71DBB41EB1D1A9004EBC94 /* DudeBullet.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DE71DBB21EB1D1A9004EBC94 /* DudeBullet.cpp */; };
 		DE73A8FD1E7A67D800D69323 /* SpriteRenderer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DE73A8FB1E7A67D800D69323 /* SpriteRenderer.cpp */; };
 		DE73A9001E7AAE7E00D69323 /* GameObject.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DE73A8FE1E7AAE7E00D69323 /* GameObject.cpp */; };
 		DE741CB41E6D8D69008416EF /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DE741CB31E6D8D69008416EF /* main.cpp */; };
@@ -72,6 +73,8 @@
 		DE2430901E7D7F78005872D4 /* SpriteSheet.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = SpriteSheet.cpp; sourceTree = "<group>"; };
 		DE2430911E7D7F78005872D4 /* SpriteSheet.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = SpriteSheet.hpp; sourceTree = "<group>"; };
 		DE2430931E7D820A005872D4 /* Resource */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Resource; sourceTree = "<group>"; };
+		DE71DBB21EB1D1A9004EBC94 /* DudeBullet.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = DudeBullet.cpp; sourceTree = "<group>"; };
+		DE71DBB31EB1D1A9004EBC94 /* DudeBullet.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = DudeBullet.hpp; sourceTree = "<group>"; };
 		DE73A8FB1E7A67D800D69323 /* SpriteRenderer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = SpriteRenderer.cpp; sourceTree = "<group>"; };
 		DE73A8FC1E7A67D800D69323 /* SpriteRenderer.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = SpriteRenderer.hpp; sourceTree = "<group>"; };
 		DE73A8FE1E7AAE7E00D69323 /* GameObject.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = GameObject.cpp; sourceTree = "<group>"; };
@@ -947,6 +950,8 @@
 				DEC12DCC1E83C88200A0FD55 /* Skeleton.hpp */,
 				DEC12DD71E84D19700A0FD55 /* PikaPika.cpp */,
 				DEC12DD81E84D19700A0FD55 /* PikaPika.hpp */,
+				DE71DBB21EB1D1A9004EBC94 /* DudeBullet.cpp */,
+				DE71DBB31EB1D1A9004EBC94 /* DudeBullet.hpp */,
 			);
 			name = Gameobject;
 			path = gameobject;
@@ -1135,6 +1140,7 @@
 				DEC12DD61E84B61400A0FD55 /* Rect.cpp in Sources */,
 				DEC12A311E8364DE00A0FD55 /* imgui_impl_sdl_gl3.cpp in Sources */,
 				DE2430921E7D7F78005872D4 /* SpriteSheet.cpp in Sources */,
+				DE71DBB41EB1D1A9004EBC94 /* DudeBullet.cpp in Sources */,
 				DECC11A91EA8B29F00FCCDBA /* imgui_node_graph_test.cpp in Sources */,
 				DEB3ED6E1E7EB034009F8BB6 /* StringUtil.cpp in Sources */,
 				DE741CB41E6D8D69008416EF /* main.cpp in Sources */,
