@@ -17,6 +17,7 @@
 #include "Sprite.hpp"
 #include "SpriteSheet.hpp"
 #include "Math.hpp"
+#include "DudeBullet.hpp"
 
 Skeleton::Skeleton(Context* context)
 :
@@ -66,8 +67,24 @@ void Skeleton::Update(float dt)
     
     if(Input::KeyboardPressed(SDL_SCANCODE_SPACE))
     {
-        isAttack = true;
-        Alarm[0] = 15;
+        if(!isAttack)
+        {
+            isAttack = true;
+            Alarm[0] = 15;
+            auto bullet = new DudeBullet(EngineContext);
+            bullet->X = X;
+            bullet->Y = Y;
+            EngineContext->GameInstance->ActiveRoom->AddInstance(bullet);
+        }
+        if(Alarm[0] < 10)
+        {
+            Alarm[0] = 15;
+            //make bullet
+            auto bullet = new DudeBullet(EngineContext);
+            bullet->X = X;
+            bullet->Y = Y;
+            EngineContext->GameInstance->ActiveRoom->AddInstance(bullet);
+        }
     }
     
     if(Input::KeyboardPressed(SDL_SCANCODE_LEFT))

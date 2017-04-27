@@ -22,15 +22,16 @@ GameObject(context)
 void DudeBullet::Init()
 {
     GameObject::Init();
-    CollisionCom->Width = 48;
-    CollisionCom->Height = 48;
+    CollisionCom->Width = 8;
+    CollisionCom->Height = 8;
     CollisionCom->OffsetY = 0;
-    SpritePointer = ResourceManager::Sprites["block"];
+    SpritePointer = ResourceManager::Sprites["bullet"];
     SpritePointer->ImageIndex = 0;
 }
 
 void DudeBullet::Update(float dt)
 {
     GameObject::Update(dt);
+    X+=5;
 }
 

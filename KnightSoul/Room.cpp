@@ -85,6 +85,7 @@ void Room::Update(GLfloat dt)
     auto i = AddingInstanceList.begin();
     while (i != AddingInstanceList.end())
     {
+        (*i)->Init();
         InstanceList.push_back((*i));
         i = AddingInstanceList.erase(i);
     }

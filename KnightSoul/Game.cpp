@@ -36,7 +36,6 @@ void Game::Init()
     //TODO: move in resource.json
     ResourceManager::LoadShader("Resource/BaseShader.vsh", "Resource/BaseShader.fsh", "BaseShader");
     ResourceManager::LoadShader("Resource/LineShader.vsh", "Resource/LineShader.fsh", "LineShader");
-    ResourceManager::LoadTexture("Resource/skeletonTexture.png", "skeletonTexture");
     ResourceManager::LoadSpriteSheet("Resource/texture1.json");
     ResourceManager::LoadSpriteSheet("Resource/texture2.json");
     ResourceManager::LoadSpriteSheet("Resource/texture3.json");
@@ -107,6 +106,15 @@ void Game::Init()
     blockSpr->ImageSpeed = 0;
     blockSpr->pivotX = 0.0;
     ResourceManager::Sprites["block"] = blockSpr;
+    //
+    auto bulletSpr = Sprite::Create();
+    bulletSpr->SpriteSheetGroup = ResourceManager::SpriteSheets["sheet_4"];
+    bulletSpr->SpriteFrames[0] = "T_Shot_00.png";
+    bulletSpr->SpriteFrames[1] = "T_Shot_01.png";
+    bulletSpr->ImageNumber = 2;
+    bulletSpr->ImageSpeed = 0.10;
+    bulletSpr->pivotX = 0.5;
+    ResourceManager::Sprites["bullet"] = bulletSpr;
     //
     ActiveRoom = new Room(EngineContext, "Resource/room0.json");
     ActiveRoom->Init();

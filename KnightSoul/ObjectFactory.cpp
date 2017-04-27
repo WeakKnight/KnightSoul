@@ -11,6 +11,7 @@
 #include "Context.hpp"
 #include "Skeleton.hpp"
 #include "PikaPika.hpp"
+#include "DudeBullet.hpp"
 
 ObjectFactory::ObjectFactory(Context* context)
 :
@@ -28,6 +29,10 @@ GameObject* ObjectFactory::CreateInstanceByName(std::string name)
     else if(name == "oPikaPika")
     {
         return new PikaPika(EngineContext);
+    }
+    else if(name == "oDudeBullet")
+    {
+        return new DudeBullet(EngineContext);
     }
     return nullptr;
 }
