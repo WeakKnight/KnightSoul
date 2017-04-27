@@ -20,6 +20,7 @@ public:
     PikaPika(Context* context);
     void Init() override;
     void Update(float dt) override;
+    std::string GameplayTag = "Block";
 };
 
 #endif /* PikaPika_hpp */

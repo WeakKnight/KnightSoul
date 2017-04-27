@@ -70,15 +70,15 @@ void Skeleton::Update(float dt)
         if(!isAttack)
         {
             isAttack = true;
-            Alarm[0] = 15;
+            Alarm[0] = 30;
             auto bullet = new DudeBullet(EngineContext);
             bullet->X = X;
             bullet->Y = Y;
             EngineContext->GameInstance->ActiveRoom->AddInstance(bullet);
         }
-        if(Alarm[0] < 10)
+        if(Alarm[0] < 5)
         {
-            Alarm[0] = 15;
+            Alarm[0] = 30;
             //make bullet
             auto bullet = new DudeBullet(EngineContext);
             bullet->X = X;

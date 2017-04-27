@@ -112,7 +112,7 @@ void Game::Init()
     bulletSpr->SpriteFrames[0] = "T_Shot_00.png";
     bulletSpr->SpriteFrames[1] = "T_Shot_01.png";
     bulletSpr->ImageNumber = 2;
-    bulletSpr->ImageSpeed = 0.10;
+    bulletSpr->ImageSpeed = 0.05;
     bulletSpr->pivotX = 0.5;
     ResourceManager::Sprites["bullet"] = bulletSpr;
     //

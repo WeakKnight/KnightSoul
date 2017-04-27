@@ -38,6 +38,7 @@ public:
     Sprite* SpritePointer;
     CollisionComponent* CollisionCom;
     int Alarm[12] = {};
+    std::string GameplayTag = "GameObject";
 };
 
 #endif /* GameObject_hpp */

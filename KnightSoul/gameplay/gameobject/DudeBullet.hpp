@@ -18,8 +18,10 @@ class DudeBullet : public GameObject
 {
 public:
     DudeBullet(Context* context);
-    void Init() override;
-    void Update(float dt) override;
+    virtual void Init() override;
+    virtual void Update(float dt) override;
+    virtual void Draw() override;
+    std::string GameplayTag = "Bullet";
 };
 
 
