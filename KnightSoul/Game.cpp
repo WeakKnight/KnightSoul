@@ -34,14 +34,13 @@ Game::~Game()
 void Game::Init()
 {
     //TODO: move in resource.json
-    ResourceManager::LoadTexture("Resource/Tiles.png", "Tiles");
-    ResourceManager::LoadTexture("Resource/Character.png", "Character");
     ResourceManager::LoadShader("Resource/BaseShader.vsh", "Resource/BaseShader.fsh", "BaseShader");
     ResourceManager::LoadShader("Resource/LineShader.vsh", "Resource/LineShader.fsh", "LineShader");
     ResourceManager::LoadTexture("Resource/skeletonTexture.png", "skeletonTexture");
     ResourceManager::LoadSpriteSheet("Resource/texture1.json");
     ResourceManager::LoadSpriteSheet("Resource/texture2.json");
     ResourceManager::LoadSpriteSheet("Resource/texture3.json");
+    ResourceManager::LoadSpriteSheet("Resource/bullet.json");
     ResourceManager::LoadSprite("Resource/testSprite.json");
     ResourceManager::LoadSprite("Resource/testSprite2.json");
     ResourceManager::LoadSprite("Resource/testSprite3.json");
