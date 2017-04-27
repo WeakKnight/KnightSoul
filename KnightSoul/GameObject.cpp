@@ -36,6 +36,26 @@ void GameObject::Init()
 {
 }
 
+void GameObject::CalcAlarm()
+{
+    for(int i = 0; i < 12; i++)
+    {
+        if(Alarm[i] > 0)
+        {
+            Alarm[i] -= 1;
+            if(Alarm[i] == 0)
+            {
+                AlarmEvent(i);
+            }
+        }
+    }
+}
+
+void GameObject::AlarmEvent(int alarmId)
+{
+    
+}
+
 void GameObject::Update(float dt)
 {
     if(SpritePointer)

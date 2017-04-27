@@ -73,6 +73,32 @@ void Game::Init()
     dudeJumpSpr->pivotX = 0.5;
     ResourceManager::Sprites["dudeJump"] = dudeJumpSpr;
     //
+    auto dudeIdleAttackSpr = Sprite::Create();
+    dudeIdleAttackSpr->SpriteSheetGroup = ResourceManager::SpriteSheets["sheet_2"];
+    dudeIdleAttackSpr->SpriteFrames[0] = "dude3";
+    dudeIdleAttackSpr->ImageNumber = 1;
+    dudeIdleAttackSpr->ImageSpeed = 0;
+    dudeIdleAttackSpr->pivotX = 0.5;
+    ResourceManager::Sprites["dudeIdleAttack"] = dudeIdleAttackSpr;
+    //
+    auto dudeRunAttackSpr = Sprite::Create();
+    dudeRunAttackSpr->SpriteSheetGroup = ResourceManager::SpriteSheets["sheet_2"];
+    dudeRunAttackSpr->SpriteFrames[0] = "dude11";
+    dudeRunAttackSpr->SpriteFrames[1] = "dude12";
+    dudeRunAttackSpr->SpriteFrames[2] = "dude13";
+    dudeRunAttackSpr->ImageNumber = 3;
+    dudeRunAttackSpr->ImageSpeed = 0.15;
+    dudeRunAttackSpr->pivotX = 0.5;
+    ResourceManager::Sprites["dudeRunAttack"] = dudeRunAttackSpr;
+    //
+    auto dudeJumpAttackSpr = Sprite::Create();
+    dudeJumpAttackSpr->SpriteSheetGroup = ResourceManager::SpriteSheets["sheet_2"];
+    dudeJumpAttackSpr->SpriteFrames[0] = "dude5";
+    dudeJumpAttackSpr->ImageNumber = 1;
+    dudeJumpAttackSpr->ImageSpeed = 0.15;
+    dudeJumpAttackSpr->pivotX = 0.5;
+    ResourceManager::Sprites["dudeJumpAttack"] = dudeJumpAttackSpr;
+    //
     auto blockSpr = Sprite::Create();
     blockSpr->SpriteSheetGroup = ResourceManager::SpriteSheets["sheet_3"];
     blockSpr->SpriteFrames[0] = "Block0";

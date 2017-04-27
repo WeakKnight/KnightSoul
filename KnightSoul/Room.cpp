@@ -61,11 +61,18 @@ void Room::LoadRoomSetting(const std::string& path)
 
 void Room::AddInstance(GameObject* object)
 {
-    InstanceList.push_back(object);
+    AddingInstanceList.push_back(object);
 }
 
 void Room::Init()
 {
+    auto i = AddingInstanceList.begin();
+    while (i != AddingInstanceList.end())
+    {
+        InstanceList.push_back((*i));
+        i = AddingInstanceList.erase(i);
+    }
+    
     for(auto itr = InstanceList.begin(); itr != InstanceList.end(); itr++)
     {
         auto gameObject = (*itr);
@@ -75,9 +82,17 @@ void Room::Init()
 
 void Room::Update(GLfloat dt)
 {
+    auto i = AddingInstanceList.begin();
+    while (i != AddingInstanceList.end())
+    {
+        InstanceList.push_back((*i));
+        i = AddingInstanceList.erase(i);
+    }
+    
     for(auto itr = InstanceList.begin(); itr != InstanceList.end(); itr++)
     {
         auto gameObject = (*itr);
+        gameObject->CalcAlarm();
         gameObject->Update(dt);
     }
 }

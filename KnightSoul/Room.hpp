@@ -31,7 +31,8 @@ public:
     void Destoroy(GLfloat dt);
     void Render();
     void AddInstance(GameObject* object);
-    std::list<GameObject*> InstanceList;
+    std::list<GameObject*> AddingInstanceList = {};
+    std::list<GameObject*> InstanceList = {};
     View* ActiveView;
     std::string Name;
 };

@@ -18,11 +18,13 @@ class Skeleton : public GameObject
 {
 public:
     Skeleton(Context* context);
-    void Init() override;
-    void Update(float dt) override;
+    virtual void Init() override;
+    virtual void AlarmEvent(int alarmId) override;
+    virtual void Update(float dt) override;
     float SpeedX = 0;
     float SpeedY = 0;
     bool onGround = false;
+    bool isAttack = false;
     void DoMove();
 };
 

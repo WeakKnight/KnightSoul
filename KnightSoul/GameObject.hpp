@@ -26,6 +26,8 @@ public:
     GameObject(Context* context);
     ~GameObject();
     virtual void Init();
+    void CalcAlarm();
+    virtual void AlarmEvent(int alarmId);
     virtual void Update(float dt);
     virtual void Draw();
     float X;
@@ -35,6 +37,7 @@ public:
     float Image_YScale;
     Sprite* SpritePointer;
     CollisionComponent* CollisionCom;
+    int Alarm[12] = {};
 };
 
 #endif /* GameObject_hpp */

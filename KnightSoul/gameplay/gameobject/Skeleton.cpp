@@ -34,6 +34,15 @@ void Skeleton::Init()
     CollisionCom->OffsetY = 3;
 }
 
+void Skeleton::AlarmEvent(int alarmId)
+{
+    GameObject::AlarmEvent(alarmId);
+    if(alarmId == 0)
+    {
+        isAttack = false;
+    }
+}
+
 void Skeleton::Update(float dt)
 {
     GameObject::Update(dt);
@@ -41,7 +50,9 @@ void Skeleton::Update(float dt)
     auto spriteIdle = ResourceManager::Sprites["dudeIdle"];
     auto spriteRun = ResourceManager::Sprites["dudeRun"];
     auto spriteJump = ResourceManager::Sprites["dudeJump"];
-    
+    auto spriteIdleAttack = ResourceManager::Sprites["dudeIdleAttack"];
+    auto spriteRunAttack = ResourceManager::Sprites["dudeRunAttack"];
+    auto spriteJumpAttack = ResourceManager::Sprites["dudeJumpAttack"];
     if(CollisionCom->PlaceMeeting(0, 1))
     {
         onGround = true;
@@ -53,22 +64,40 @@ void Skeleton::Update(float dt)
         SpeedY += 0.25;
     }
     
+    if(Input::KeyboardPressed(SDL_SCANCODE_SPACE))
+    {
+        isAttack = true;
+        Alarm[0] = 15;
+    }
+    
     if(Input::KeyboardPressed(SDL_SCANCODE_LEFT))
     {
         SpeedX = -3.0f;
         Image_XScale = -1;
         SpritePointer = spriteRun;
+        if(isAttack)
+        {
+            SpritePointer = spriteRunAttack;
+        }
     }
     if(Input::KeyboardPressed(SDL_SCANCODE_RIGHT))
     {
         SpeedX = 3.0f;
         Image_XScale = 1;
         SpritePointer = spriteRun;
+        if(isAttack)
+        {
+            SpritePointer = spriteRunAttack;
+        }
     }
     if(!Input::KeyboardPressed(SDL_SCANCODE_LEFT) && !Input::KeyboardPressed(SDL_SCANCODE_RIGHT))
     {
         SpeedX = 0.0f;
         SpritePointer = spriteIdle;
+        if(isAttack)
+        {
+            SpritePointer = spriteIdleAttack;
+        }
     }
     if(Input::KeyboardPressed(SDL_SCANCODE_UP) && onGround)
     {
@@ -77,6 +106,10 @@ void Skeleton::Update(float dt)
     if(!onGround)
     {
         SpritePointer = spriteJump;
+        if(isAttack)
+        {
+            SpritePointer = spriteJumpAttack;
+        }
     }
     
     //view->Boundary.Origin = glm::vec2(X - 300, Y - 200);
