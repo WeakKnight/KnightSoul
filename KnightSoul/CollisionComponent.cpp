@@ -13,7 +13,6 @@
 #include "Context.hpp"
 #include "Room.hpp"
 
-
 static std::vector<CollisionComponent*> CollisionComPool = {};
 
 unsigned int CollisionComponent::GlobalComID = 1;
@@ -50,17 +49,24 @@ bool CollisionComponent::PlaceMeeting(float x, float y)
         }
         else
         {
-            if(Collision::RectIntersectRect(Parent->X + OffsetX + x,
-                                     Parent->Y + OffsetY + y,
-                                     Parent->X + OffsetX + x + Width,
-                                     Parent->Y + OffsetY + y + Height,
-                                     obj->X + obj->CollisionCom->OffsetX,
-                                     obj->Y + obj->CollisionCom->OffsetY,
-                                     obj->X + obj->CollisionCom->OffsetX + obj->CollisionCom->Width,
-                                     obj->Y + obj->CollisionCom->OffsetY + obj->CollisionCom->Height
-                                     ))
+            if(Type == CollisionType::CheckByGameplayTag && TagTarget != obj->GameplayTag)
             {
-                return true;
+                
+            }
+            else
+            {
+                if(Collision::RectIntersectRect(Parent->X + OffsetX + x,
+                                         Parent->Y + OffsetY + y,
+                                         Parent->X + OffsetX + x + Width,
+                                         Parent->Y + OffsetY + y + Height,
+                                         obj->X + obj->CollisionCom->OffsetX,
+                                         obj->Y + obj->CollisionCom->OffsetY,
+                                         obj->X + obj->CollisionCom->OffsetX + obj->CollisionCom->Width,
+                                         obj->Y + obj->CollisionCom->OffsetY + obj->CollisionCom->Height
+                                         ))
+                {
+                    return true;
+                }
             }
         }
         
@@ -68,4 +74,9 @@ bool CollisionComponent::PlaceMeeting(float x, float y)
     return false;
 }
 
-
+void CollisionComponent::SetGameplayTagTarget(const char* tagText)
+{
+    Tag tag = {tagText};
+    TagTarget = tag;
+    Type = CollisionType::CheckByGameplayTag;
+}

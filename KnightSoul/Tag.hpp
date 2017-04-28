@@ -15,10 +15,23 @@
 class Tag
 {
 public:
+    
+    void operator =(const Tag& other)
+    {
+        TagText = other.TagText;
+        HashCode = other.HashCode;
+    }
+    
+    bool operator !=(const Tag& other) const
+    {
+        return (HashCode != other.HashCode);
+    }
+    
     bool operator ==(const Tag& other) const
     {
         return (HashCode == other.HashCode);
     }
+    
     Tag(const char* tagStr);
     std::string TagText = {};
     std::size_t HashCode = 0;

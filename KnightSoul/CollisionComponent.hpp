@@ -12,13 +12,16 @@
 #include <stdio.h>
 #include <vector>
 #include "Object.hpp"
+#include "Tag.hpp"
+
 class GameObject;
 class Context;
 
 enum class CollisionType : char
 {
     CheckAll = 1,
-    CheckByGameplayTag = 2
+    CheckByGameplayTag = 2,
+    CheckByInstance = 3
 };
 
 class CollisionComponent:public Object {
@@ -31,9 +34,12 @@ public:
     float OffsetY = 0;
     float Width = 0;
     float Height = 0;
+    void SetGameplayTagTarget(const char* tagText);
 private:
+    CollisionType Type = CollisionType::CheckAll;
     GameObject* Parent = nullptr;
     unsigned int ID = 0;
+    Tag TagTarget = {""};
 };
 
 #endif /* CollisionComponent_hpp */

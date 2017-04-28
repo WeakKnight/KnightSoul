@@ -33,6 +33,7 @@ void Skeleton::Init()
     CollisionCom->Height = 24;
     CollisionCom->OffsetX = -10;
     CollisionCom->OffsetY = 3;
+    CollisionCom->SetGameplayTagTarget("Block");
 }
 
 void Skeleton::AlarmEvent(int alarmId)
