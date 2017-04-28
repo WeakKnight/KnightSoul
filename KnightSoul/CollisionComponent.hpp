@@ -14,6 +14,13 @@
 #include "Object.hpp"
 class GameObject;
 class Context;
+
+enum class CollisionType : char
+{
+    CheckAll = 1,
+    CheckByGameplayTag = 2
+};
+
 class CollisionComponent:public Object {
 public:
     static unsigned int GlobalComID;
