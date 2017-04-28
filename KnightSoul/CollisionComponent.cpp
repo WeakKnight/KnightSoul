@@ -49,9 +49,23 @@ bool CollisionComponent::PlaceMeeting(float x, float y)
         }
         else
         {
-            if(Type == CollisionType::CheckByGameplayTag && TagTarget != obj->GameplayTag)
+            if(Type == CollisionType::CheckByGameplayTag)
             {
-                
+                if(TagTarget == obj->GameplayTag)
+                {
+                    if(Collision::RectIntersectRect(Parent->X + OffsetX + x,
+                                                    Parent->Y + OffsetY + y,
+                                                    Parent->X + OffsetX + x + Width,
+                                                    Parent->Y + OffsetY + y + Height,
+                                                    obj->X + obj->CollisionCom->OffsetX,
+                                                    obj->Y + obj->CollisionCom->OffsetY,
+                                                    obj->X + obj->CollisionCom->OffsetX + obj->CollisionCom->Width,
+                                                    obj->Y + obj->CollisionCom->OffsetY + obj->CollisionCom->Height
+                                                    ))
+                    {
+                        return true;
+                    }
+                }
             }
             else
             {

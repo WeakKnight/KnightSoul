@@ -10,5 +10,6 @@
 
 Tag::Tag(const char* tagStr)
 {
-    HashCode = std::hash<std::string>{}(tagStr);
+    TagText = tagStr;
+    HashCode = std::hash<std::string>{}(TagText);
 }

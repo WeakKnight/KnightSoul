@@ -39,7 +39,7 @@ public:
     Sprite* SpritePointer;
     CollisionComponent* CollisionCom;
     int Alarm[12] = {};
-    Tag GameplayTag = {"GameObject"};
+    Tag GameplayTag = Tag("GameObject");
 };
 
 #endif /* GameObject_hpp */

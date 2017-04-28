@@ -21,7 +21,7 @@ public:
     virtual void Init() override;
     virtual void Update(float dt) override;
     virtual void Draw() override;
-    Tag GameplayTag = {"Bullet"};
+    Tag GameplayTag = Tag("Bullet");
 };
 
 
