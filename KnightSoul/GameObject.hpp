@@ -16,6 +16,7 @@
 #include "glm/glm.hpp"
 #include "glm/gtc/type_ptr.hpp"
 #include "Object.hpp"
+#include "Tag.hpp"
 
 class Sprite;
 class CollisionComponent;
@@ -38,7 +39,7 @@ public:
     Sprite* SpritePointer;
     CollisionComponent* CollisionCom;
     int Alarm[12] = {};
-    std::string GameplayTag = "GameObject";
+    Tag GameplayTag = {"GameObject"};
 };
 
 #endif /* GameObject_hpp */

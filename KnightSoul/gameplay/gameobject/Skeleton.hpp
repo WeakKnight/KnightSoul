@@ -26,7 +26,7 @@ public:
     bool onGround = false;
     bool isAttack = false;
     void DoMove();
-    std::string GameplayTag = "Dude";
+    Tag GameplayTag = {"Dude"};
 };
 
 #endif /* Skeleton_hpp */
