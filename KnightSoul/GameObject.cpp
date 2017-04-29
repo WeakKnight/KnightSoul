@@ -73,7 +73,7 @@ void GameObject::Draw()
     auto view = EngineContext->GameInstance->ActiveRoom->ActiveView;
     EngineContext->GameInstance->SpriteRendererInstance->DrawSprite(SpritePointer, glm::vec2(X - view->Boundary.Origin.x,Y- view->Boundary.Origin.y), glm::vec2(Image_XScale,Image_YScale), Rotation);
     //draw sprite bound
-    bool debug = true;
+    bool debug = false;
     if(debug)
     {
     EngineContext->GameInstance->GeometryRendererInstance->DrawRectangle(glm::vec2(X- view->Boundary.Origin.x + CollisionCom->OffsetX,
@@ -86,3 +86,7 @@ void GameObject::Draw()
     //                                                                     glm::vec2(3,3));
 }
 
+void GameObject::SetGameplayTag(const char *tag)
+{
+    GameplayTag = Tag(tag);
+}

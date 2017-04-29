@@ -26,7 +26,6 @@ public:
     bool onGround = false;
     bool isAttack = false;
     void DoMove();
-    Tag GameplayTag = Tag("Player");
 };
 
 #endif /* Skeleton_hpp */

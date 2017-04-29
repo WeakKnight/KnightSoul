@@ -26,6 +26,7 @@ void DudeBullet::Init()
     SpritePointer->ImageIndex = 0;
     Image_XScale = 1;
     Image_YScale = 1;
+    SetGameplayTag("Bullet");
 }
 
 void DudeBullet::Update(float dt)

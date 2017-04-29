@@ -31,6 +31,7 @@ public:
     virtual void AlarmEvent(int alarmId);
     virtual void Update(float dt);
     virtual void Draw();
+    virtual void SetGameplayTag(const char* tag);
     float X;
     float Y;
     float Rotation;

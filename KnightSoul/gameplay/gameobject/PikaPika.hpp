@@ -20,7 +20,6 @@ public:
     PikaPika(Context* context);
     void Init() override;
     void Update(float dt) override;
-    Tag GameplayTag = Tag("Block");
 };
 
 #endif /* PikaPika_hpp */

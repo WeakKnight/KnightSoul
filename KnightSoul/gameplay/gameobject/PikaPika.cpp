@@ -29,6 +29,7 @@ void PikaPika::Init()
     int testRand = rand()%2;
     int number = testRand;
     SpritePointer->ImageIndex = number;
+    SetGameplayTag("Block");
 }
 
 void PikaPika::Update(float dt)
