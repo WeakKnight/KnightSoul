@@ -11,10 +11,11 @@
 
 #include <stdio.h>
 #include "GameObject.hpp"
+#include "Entity.hpp"
 
 class Context;
 
-class DudeBullet : public GameObject
+class DudeBullet : public Entity
 {
 public:
     DudeBullet(Context* context);

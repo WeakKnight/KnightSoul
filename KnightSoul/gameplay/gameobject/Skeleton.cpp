@@ -56,6 +56,7 @@ void Skeleton::Update(float dt)
     auto spriteIdleAttack = ResourceManager::Sprites["dudeIdleAttack"];
     auto spriteRunAttack = ResourceManager::Sprites["dudeRunAttack"];
     auto spriteJumpAttack = ResourceManager::Sprites["dudeJumpAttack"];
+    
     if(CollisionCom->PlaceMeeting(0, 1))
     {
         onGround = true;
@@ -76,6 +77,7 @@ void Skeleton::Update(float dt)
             auto bullet = new DudeBullet(EngineContext);
             bullet->X = X;
             bullet->Y = Y;
+            bullet->SpeedX = 5 * Image_XScale;
             EngineContext->GameInstance->ActiveRoom->AddInstance(bullet);
         }
         if(Alarm[0] < 5)
@@ -85,6 +87,7 @@ void Skeleton::Update(float dt)
             auto bullet = new DudeBullet(EngineContext);
             bullet->X = X;
             bullet->Y = Y;
+            bullet->SpeedX = 5 * Image_XScale;
             EngineContext->GameInstance->ActiveRoom->AddInstance(bullet);
         }
     }

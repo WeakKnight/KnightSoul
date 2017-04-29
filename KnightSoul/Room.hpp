@@ -33,6 +33,7 @@ public:
     void AddInstance(GameObject* object);
     std::list<GameObject*> AddingInstanceList = {};
     std::list<GameObject*> InstanceList = {};
+    std::list<GameObject*> DestroyInstanceList = {};
     View* ActiveView;
     std::string Name;
 };

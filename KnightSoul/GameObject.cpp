@@ -32,6 +32,17 @@ GameObject::~GameObject()
     delete CollisionCom;
 }
 
+void GameObject::DestroyInstance(GameObject* gameobject)
+{
+    if(gameobject->WillBeDestroyed)
+    {
+        return;
+    }
+    gameobject->WillBeDestroyed = true;
+    auto room = gameobject->EngineContext->GameInstance->ActiveRoom;
+    room->DestroyInstanceList.push_back(gameobject);
+}
+
 void GameObject::Init()
 {
 }

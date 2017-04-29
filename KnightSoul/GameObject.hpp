@@ -26,6 +26,7 @@ class GameObject : public Object
 public:
     GameObject(Context* context);
     ~GameObject();
+    static void DestroyInstance(GameObject* gameobject);
     virtual void Init();
     void CalcAlarm();
     virtual void AlarmEvent(int alarmId);
@@ -42,6 +43,7 @@ public:
     CollisionComponent* CollisionCom;
     int Alarm[12] = {};
     Tag GameplayTag = Tag("GameObject");
+    bool WillBeDestroyed = false;
 };
 
 #endif /* GameObject_hpp */
