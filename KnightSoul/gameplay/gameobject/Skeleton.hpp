@@ -11,21 +11,22 @@
 
 #include <stdio.h>
 #include "GameObject.hpp"
+#include "Entity.hpp"
 
 class Context;
 
-class Skeleton : public GameObject
+class Skeleton : public Entity
 {
 public:
     Skeleton(Context* context);
     virtual void Init() override;
     virtual void AlarmEvent(int alarmId) override;
     virtual void Update(float dt) override;
-    float SpeedX = 0;
-    float SpeedY = 0;
+    //float SpeedX = 0;
+    //float SpeedY = 0;
     bool onGround = false;
     bool isAttack = false;
-    void DoMove();
+    //void DoMove();
 };
 
 #endif /* Skeleton_hpp */

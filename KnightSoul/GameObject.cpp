@@ -64,6 +64,11 @@ void GameObject::Update(float dt)
     }
 }
 
+void GameObject::EndUpdate(float dt)
+{
+    
+}
+
 void GameObject::Draw()
 {
     auto sprite = this->SpritePointer;

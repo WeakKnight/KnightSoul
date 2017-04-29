@@ -54,6 +54,7 @@
 		DECC119F1EA78BC200FCCDBA /* CollisionComponent.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DECC119D1EA78BC200FCCDBA /* CollisionComponent.cpp */; };
 		DECC11A71EA8A50E00FCCDBA /* Math.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DECC11A61EA8A50E00FCCDBA /* Math.cpp */; };
 		DECC11A91EA8B29F00FCCDBA /* imgui_node_graph_test.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DECC11A81EA8B29F00FCCDBA /* imgui_node_graph_test.cpp */; };
+		DEFE38591EB4C57600B6FFA4 /* Entity.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DEFE38571EB4C57600B6FFA4 /* Entity.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -467,6 +468,8 @@
 		DECC11A41EA89D9D00FCCDBA /* Math.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Math.hpp; sourceTree = "<group>"; };
 		DECC11A61EA8A50E00FCCDBA /* Math.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Math.cpp; sourceTree = "<group>"; };
 		DECC11A81EA8B29F00FCCDBA /* imgui_node_graph_test.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = imgui_node_graph_test.cpp; sourceTree = "<group>"; };
+		DEFE38571EB4C57600B6FFA4 /* Entity.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Entity.cpp; sourceTree = "<group>"; };
+		DEFE38581EB4C57600B6FFA4 /* Entity.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Entity.hpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -955,6 +958,8 @@
 				DEC12DD81E84D19700A0FD55 /* PikaPika.hpp */,
 				DE71DBB21EB1D1A9004EBC94 /* DudeBullet.cpp */,
 				DE71DBB31EB1D1A9004EBC94 /* DudeBullet.hpp */,
+				DEFE38571EB4C57600B6FFA4 /* Entity.cpp */,
+				DEFE38581EB4C57600B6FFA4 /* Entity.hpp */,
 			);
 			name = Gameobject;
 			path = gameobject;
@@ -1128,6 +1133,7 @@
 				DE6B7A331EB2DE8D00AFD323 /* Tag.cpp in Sources */,
 				DEC12A211E8360CC00A0FD55 /* Editor.cpp in Sources */,
 				DE741D241E6D9D55008416EF /* File.cpp in Sources */,
+				DEFE38591EB4C57600B6FFA4 /* Entity.cpp in Sources */,
 				DE73A8FD1E7A67D800D69323 /* SpriteRenderer.cpp in Sources */,
 				DEB3ED711E7ECCE5009F8BB6 /* Sprite.cpp in Sources */,
 				DEC12DDF1E851C9500A0FD55 /* GeometryRenderer.cpp in Sources */,

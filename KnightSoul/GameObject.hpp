@@ -30,6 +30,7 @@ public:
     void CalcAlarm();
     virtual void AlarmEvent(int alarmId);
     virtual void Update(float dt);
+    virtual void EndUpdate(float dt);
     virtual void Draw();
     virtual void SetGameplayTag(const char* tag);
     float X;

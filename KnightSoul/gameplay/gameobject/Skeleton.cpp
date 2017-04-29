@@ -21,7 +21,7 @@
 
 Skeleton::Skeleton(Context* context)
 :
-GameObject(context)
+Entity(context)
 {
 }
 
@@ -132,27 +132,5 @@ void Skeleton::Update(float dt)
     }
     
     //view->Boundary.Origin = glm::vec2(X - 300, Y - 200);
-    DoMove();
-}
-
-void Skeleton::DoMove()
-{
-    int xValue = floorf(std::abs(SpeedX));
-    int yValue = floorf(std::abs(SpeedY));
-    
-    for(int x = 0; x < xValue; x++)
-    {
-        if(!CollisionCom->PlaceMeeting(1 * Math::sign(SpeedX), 0))
-        {
-            X += Math::sign(SpeedX);
-        }
-    }
-    
-    for(int y = 0; y < yValue; y++)
-    {
-        if(!CollisionCom->PlaceMeeting(0,1 * Math::sign(SpeedY)))
-        {
-            Y += Math::sign(SpeedY);
-        }
-    }
+    //DoMove();
 }

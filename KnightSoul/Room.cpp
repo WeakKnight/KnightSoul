@@ -95,6 +95,7 @@ void Room::Update(GLfloat dt)
         auto gameObject = (*itr);
         gameObject->CalcAlarm();
         gameObject->Update(dt);
+        gameObject->EndUpdate(dt);
     }
 }
 
